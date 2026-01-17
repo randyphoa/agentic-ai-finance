@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Development/build config (not needed for GitHub Pages)
+tsconfig.json
+package.json
+package-lock.json
+node_modules/
+
+# TypeScript source and build artifacts
+*.ts
+!*.d.ts
+*.js.map
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

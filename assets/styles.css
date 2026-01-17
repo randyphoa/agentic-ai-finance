@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    background: white;
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    zoom: 0.5;
+}
+
+@media (min-width: 1200px) { .slide { zoom: 0.6; } }
+@media (min-width: 1400px) { .slide { zoom: 0.7; } }
+@media (min-width: 1600px) { .slide { zoom: 0.8; } }
+@media (min-width: 2200px) { .slide { zoom: 1; } }
+
+/* Counter zoom for webchat to maintain readable font size */
+#chatbot-container { zoom: 1.2; }
+
+/* Hide webchat header title */
+.wxoLiteHeaderTitle.custom-avatar-title { display: none !important; }

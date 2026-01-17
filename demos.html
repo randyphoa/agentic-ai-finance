@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFO Agentic AI Demos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/js/common.js"></script>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header -->
+        <div class="mb-5 pb-8 border-b border-ibm-gray-30">
+            <p class="text-ibm-blue text-lg font-medium uppercase tracking-wider">Agentic AI Demos</p>
+            <h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">AI Agents Transforming Finance</h1>
+            <p class="text-ibm-gray text-2xl mt-6">AI agents that <span class="font-semibold text-ibm-gray-100">automate reconciliation</span>, <span class="font-semibold text-ibm-gray-100">accelerate close cycles</span>, and <span class="font-semibold text-ibm-gray-100">optimize cash flow</span>, delivering <span class="font-semibold text-ibm-gray-100">30-80% efficiency gains</span></p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col justify-center">
+            <!-- Individual Agent Demos -->
+            <div class="mb-12">
+                <p class="text-base text-ibm-gray-50 uppercase tracking-wider mb-4 font-medium">Specialised Agents</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- FP&A - Financial Forecasting -->
+                    <a href="demo/financial-forecasting.html" class="bg-ibm-yellow-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-yellow-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-gray-80 font-medium">FP&A</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            Financial Forecasting
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Builds predictive models for cash flow and budget variances with scenario simulation.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-gray-100 font-medium">24% more accurate</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-gray-100 font-medium">33% faster cycle</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-gray-100 font-medium">25% lower cost</span>
+                        </div>
+                    </a>
+                    <!-- O2C - Order-to-Cash Agent -->
+                    <a href="demo/order-to-cash.html" class="bg-ibm-teal-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-teal-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-teal-60 font-medium">O2C</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            Order-to-Cash Agent
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">End-to-end O2C from order extraction to collections and payment prediction.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-teal-60 font-medium">32% lower DSO</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">43% less bad debt</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">28% faster cycle</span>
+                        </div>
+                    </a>
+                    <!-- O2C - Cash Application -->
+                    <a href="demo/cash-application.html" class="bg-ibm-teal-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-teal-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-teal-60 font-medium">O2C</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Cash Application
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Matches payments to invoices using pattern analysis and learns from corrections.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-teal-60 font-medium">90%+ auto-match</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">75% faster</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">80% less manual</span>
+                        </div>
+                    </a>
+                    <!-- P2P - Procure-to-Pay -->
+                    <a href="demo/procure-to-pay.html" class="bg-ibm-magenta-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-magenta-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-magenta-60 font-medium">P2P</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            Procure-to-Pay Agent
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Automates supplier vetting, invoice processing, and PO validation with OCR.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-magenta-60 font-medium">25% lower cost</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-magenta-60 font-medium">32% faster approval</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-magenta-60 font-medium">36% compliance</span>
+                        </div>
+                    </a>
+                    <!-- R2R - Intelligent Audit -->
+                    <a href="demo/intelligent-audit.html" class="bg-ibm-blue-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-blue-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-blue-60 font-medium">R2R</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-blue-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                            Intelligent Audit
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Scans statements, checks compliance, and flags anomalies with risk prioritization.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-blue-60 font-medium">40% faster audit</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">70% less manual</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">95%+ compliance</span>
+                        </div>
+                    </a>
+                    <!-- R2R - Continuous Close -->
+                    <a href="demo/continuous-close.html" class="bg-ibm-blue-10 p-4 rounded-lg flex flex-col h-full hover:bg-ibm-blue-20 transition-colors">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-blue-60 font-medium">R2R</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-blue-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Continuous Close
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Automates data collection, consolidation, and reconciliation for real-time close.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-blue-60 font-medium">50% faster close</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">70% less manual</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">99%+ accuracy</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Multi-Agent Scenarios -->
+            <div>
+                <p class="text-base text-ibm-gray-50 uppercase tracking-wider mb-4 font-medium">Collaborative Intelligence</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Scenario A -->
+                    <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col h-full">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-blue-60 font-medium">R2R</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-blue-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            Autonomous Financial Close
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Multi-agent orchestration with continuous reconciliation and anomaly detection.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-blue-60 font-medium">70% faster close</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">85% less manual</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-blue-60 font-medium">95% less errors</span>
+                        </div>
+                    </div>
+                    <!-- Scenario B -->
+                    <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col h-full">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-teal-60 font-medium">O2C</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            Intelligent O2C Suite
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Complete O2C with credit decisions, fraud screening, and predictive collections.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-teal-60 font-medium">40% lower DSO</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">50% less bad debt</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-teal-60 font-medium">95%+ auto-match</span>
+                        </div>
+                    </div>
+                    <!-- Scenario E -->
+                    <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col h-full">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-base text-ibm-purple-60 font-medium">All</span>
+                        </div>
+                        <p class="text-xl font-semibold text-ibm-gray-100 mb-2 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-ibm-purple-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            CFO Command Center
+                        </p>
+                        <p class="text-base text-ibm-gray mb-2">Unified visibility with natural language queries and real-time dashboards.</p>
+                        <div class="flex flex-wrap gap-2 text-base mt-auto">
+                            <span class="text-ibm-purple-60 font-medium">80% faster decisions</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-purple-60 font-medium">40% more productive</span>
+                            <span class="text-ibm-gray-50">•</span>
+                            <span class="text-ibm-purple-60 font-medium">Always audit-ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-auto pt-6 flex items-center justify-between">
+            <p class="text-base text-ibm-gray-50">Sources: <a href="https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/agentic-process-automation" class="hover:text-ibm-blue underline" target="_blank">IBM IBV Orchestrating Agentic AI</a> | <a href="https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/ai-finance" class="hover:text-ibm-blue underline" target="_blank">AI-Powered Productivity: Finance</a> | <a href="https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/ai-advantage-finance" class="hover:text-ibm-blue underline" target="_blank">Benchmarking the AI Advantage in Finance</a></p>
+            <div class="flex items-center gap-6 text-base">
+                <span class="flex items-center gap-2"><span class="w-3 h-3 bg-ibm-yellow-30 rounded-full"></span> <span class="text-ibm-gray-50">FP&A</span></span>
+                <span class="flex items-center gap-2"><span class="w-3 h-3 bg-ibm-teal-60 rounded-full"></span> <span class="text-ibm-gray-50">O2C</span></span>
+                <span class="flex items-center gap-2"><span class="w-3 h-3 bg-ibm-magenta-60 rounded-full"></span> <span class="text-ibm-gray-50">P2P</span></span>
+                <span class="flex items-center gap-2"><span class="w-3 h-3 bg-ibm-blue-60 rounded-full"></span> <span class="text-ibm-gray-50">R2R</span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
