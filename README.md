@@ -16,57 +16,66 @@ The demos cover four core financial process areas:
 ## Specialized Agent Demos
 
 ### Financial Forecasting (FP&A)
-Analyzes historical financial data to build predictive models for cash flow projections and budget variances. Features scenario simulation and uncertainty assessment.
+Predictive models for cash flow projections and budget variance analysis.
 - 24% more accurate forecasts
 - 33% faster budget cycle
 - 25% lower planning cost
 
+### Pricing Analytics (FP&A)
+Analyzes pricing strategies, elasticity, and competitive positioning with AI models.
+- 2-5% EBITDA boost
+- 20-40% faster pricing
+- 2-5% revenue growth
+
+### Financial Reporting (FP&A)
+Generates financial and management reports with variance analysis and insights.
+- 50% faster reports
+- 50% fewer errors
+- 30% faster forecasts
+
 ### Order-to-Cash Agent (O2C)
-Manages end-to-end O2C process from order extraction and compliance checking to collections management and customer payment prediction.
+End-to-end O2C from order extraction to collections and payment prediction.
 - 32% lower days sales outstanding
 - 43% less bad debt
 - 28% faster invoice-to-payment cycle
 
-### Cash Application (O2C)
-Automates cash application by analyzing historical patterns to match incoming payments to open invoices. Handles complex remittance scenarios and learns from corrections.
-- 90%+ auto-match rate
-- 75% faster processing
-- 80% less manual intervention
-
 ### Procure-to-Pay Agent (P2P)
-Automates source-to-pay workflow from supplier vetting to invoice processing, approval routing, and purchase order validation with intelligent OCR.
+Automates supplier vetting, invoice processing, and PO validation with OCR.
 - 25% lower cost per invoice
 - 32% faster receipt-to-approval
 - 36% improved compliance
 
-### Intelligent Audit (R2R)
-AI agent that automates audit workflows by scanning financial statements, cross-checking compliance regulations, and flagging anomalies with risk-based prioritization.
-- 40% faster audit cycles
-- 70% less manual review
-- 95%+ compliance accuracy
-
-### Continuous Close (R2R)
-Enables continuous financial close by automating data collection, consolidation, and reconciliation throughout the period. Delivers real-time financial insights.
-- 50% faster close cycle
-- 70% less manual work
-- 99%+ accuracy
-
-### Reconciliation & Anomaly Detection (R2R)
-Performs automated account reconciliation with AI-powered anomaly detection, pattern recognition, and exception handling.
+### Accounting Automation (R2R)
+Automates journal entries, contract review, and accounting workflows with AI.
+- 96% anomaly accuracy
+- 80% less manual work
+- 66% faster processing
 
 ## Multi-Agent Scenarios
 
-### Autonomous Financial Close
-Multi-agent system orchestrating the entire close process with continuous reconciliation, real-time anomaly detection, automated consolidations, and compliance validation.
+### Margin Compression Analysis (FP&A / P2P)
+Reactive multi-agent diagnosis and correction of margin erosion across revenue and cost levers.
+- 50% faster diagnosis
+- 30-50% faster action
+- 2-5% margin recovery
 
-### Intelligent O2C Suite
-Comprehensive system managing the complete O2C cycle with real-time credit decisions, fraud screening, AI-powered payment matching, and predictive collections strategies.
+### Liquidity Response Simulation (FP&A / O2C / P2P)
+Predicts liquidity gaps and balances competing levers — accelerating receivables vs. deferring payables.
+- 91-day forecast window
+- 15% working capital improvement
+- 40-60% faster action
 
-### Finance Command Center
-Ultimate orchestration system providing unified visibility with natural language queries, real-time dashboards, strategic scenario modeling, and cross-functional coordination.
+### Period-End Orchestration (FP&A / O2C / P2P / R2R)
+Four agents work in parallel toward month-end close with a shared readiness scorecard.
+- 50% faster close
+- 60-70% less manual work
+- 95%+ accuracy
 
 ## Sources
 
 - [IBM IBV: Orchestrating Agentic AI](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/agentic-process-automation)
 - [IBM IBV: AI-Powered Productivity in Finance](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/ai-finance)
 - [IBM IBV: Benchmarking the AI Advantage in Finance](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/ai-advantage-finance)
+- [BCG: AI ROI in Finance](https://www.bcg.com/publications/2025/how-to-get-roi-from-ai-in-the-finance-function)
+- [BCG: Human + AI Finance](https://www.bcg.com/publications/2025/convergence-human-ai-next-era-of-finance)
+- [McKinsey: Digital Pricing](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/digital-pricing-transformations-the-key-to-better-margins)

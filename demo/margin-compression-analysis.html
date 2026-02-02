@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Margin Compression Analysis</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../assets/tailwind-config.js"></script>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="../assets/js/common.js"></script>
+	</head>
+	<body>
+		<div class="slide">
+			<!-- Header -->
+			<div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+				<div>
+					<p class="text-ibm-gray-80 text-lg font-medium uppercase tracking-wider">Multi-Agent · FP&A / P2P</p>
+					<h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Margin Compression Analysis</h1>
+				</div>
+				<a href="../demos.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+				</a>
+			</div>
+
+			<!-- Section Titles Row -->
+			<div class="grid grid-cols-2 gap-6 mb-2 items-end">
+				<div class="flex gap-0">
+					<button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+						Overview
+					</button>
+					<button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Data
+					</button>
+					<button id="tab-agents" onclick="switchTab('agents')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Agents
+					</button>
+				</div>
+
+				<div>
+					<h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="flex-1 flex flex-col gap-5 min-h-0">
+				<!-- Main Two Column Layout -->
+				<div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+					<!-- Left Column -->
+					<div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+						<!-- Overview Tab Content -->
+						<div id="content-overview" class="flex flex-col gap-4 flex-1">
+							<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+							<!-- Metrics -->
+							<div class="grid grid-cols-3 gap-3">
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">50%</p>
+									<p class="text-base font-medium text-ibm-gray-20">Faster margin diagnosis</p>
+								</div>
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">30-50%</p>
+									<p class="text-base font-medium text-ibm-gray-20">Faster corrective action</p>
+								</div>
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">2-5%</p>
+									<p class="text-base font-medium text-ibm-gray-20">Margin recovery per quarter</p>
+								</div>
+							</div>
+
+							<!-- Key Capabilities -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+								<div class="flex-1 grid grid-cols-2 gap-3">
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Event-Driven Activation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Reporting agent detects margin decline and triggers workflow</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Root Cause Analysis</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Cross-functional diagnosis across revenue and cost drivers</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Bidirectional Collaboration</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Pricing and P2P agents inform each other on trade-offs</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Scenario Modeling</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Combined lever modeling with projected margin outcomes</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Scenario -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+								<div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+									<!-- Persona -->
+									<div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+										<div class="w-10 h-10 bg-ibm-gray-80 rounded-full flex items-center justify-center flex-shrink-0">
+											<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+											</svg>
+										</div>
+										<div>
+											<p class="text-lg font-semibold text-ibm-gray-100">David Nguyen, VP Finance</p>
+											<p class="text-base text-ibm-gray-80">Investigating margin compression across enterprise product line</p>
+										</div>
+									</div>
+									<div class="space-y-3">
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+											<p class="text-lg text-ibm-gray-80">Reporting Agent flags <span class="text-ibm-gray-80 font-semibold">4.2pp margin decline</span> in enterprise product line</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+											<p class="text-lg text-ibm-gray-80">Pricing Analytics identifies mix shift to lower-margin deals and <span class="text-ibm-gray-80 font-semibold">8% competitor undercut</span></p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+											<p class="text-lg text-ibm-gray-80">P2P Agent finds supplier costs up 12%, identifies <span class="text-ibm-gray-80 font-semibold">$2.2M renegotiation opportunity</span></p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+											<p class="text-lg text-ibm-gray-80">Forecasting projects combined actions restore <span class="text-ibm-gray-80 font-semibold">margin to 37.4%</span> within 12 months</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Data Tab Content -->
+						<div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+							<!-- Data Sub-navigation -->
+							<div class="flex gap-2 flex-wrap">
+								<button onclick="switchDataSource('margins')" id="ds-margins" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-80 text-white font-medium">Product Line Margins</button>
+								<button onclick="switchDataSource('cost')" id="ds-cost" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Cost Structure</button>
+								<button onclick="switchDataSource('pricing')" id="ds-pricing" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Pricing History</button>
+								<button onclick="switchDataSource('market')" id="ds-market" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Market Dynamics</button>
+								<button onclick="switchDataSource('suppliers')" id="ds-suppliers" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Supplier Contracts</button>
+							</div>
+
+							<!-- Product Line Margins -->
+							<div id="data-margins" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Gross Margin by Product Line (Last 4 Quarters)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Product Line</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q1 FY25</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q2 FY25</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q3 FY25</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q4 FY25</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Trend</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Industrial Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">38.2%</td><td class="py-1.5 pr-3 text-ibm-gray-80">35.1%</td><td class="py-1.5 pr-3 text-ibm-gray-80">31.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">29.3%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-890 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Electronic Assemblies</td><td class="py-1.5 pr-3 text-ibm-gray-80">42.5%</td><td class="py-1.5 pr-3 text-ibm-gray-80">42.1%</td><td class="py-1.5 pr-3 text-ibm-gray-80">41.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">41.6%</td><td class="py-1.5 text-ibm-gray-80">-90 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Instruments</td><td class="py-1.5 pr-3 text-ibm-gray-80">51.3%</td><td class="py-1.5 pr-3 text-ibm-gray-80">50.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">50.2%</td><td class="py-1.5 pr-3 text-ibm-gray-80">49.7%</td><td class="py-1.5 text-ibm-gray-80">-160 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Custom Solutions</td><td class="py-1.5 pr-3 text-ibm-gray-80">44.7%</td><td class="py-1.5 pr-3 text-ibm-gray-80">45.2%</td><td class="py-1.5 pr-3 text-ibm-gray-80">44.9%</td><td class="py-1.5 pr-3 text-ibm-gray-80">45.1%</td><td class="py-1.5 text-ibm-gray-80">+40 bps</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Maintenance Services</td><td class="py-1.5 pr-3 text-ibm-gray-80">62.1%</td><td class="py-1.5 pr-3 text-ibm-gray-80">61.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">62.4%</td><td class="py-1.5 pr-3 text-ibm-gray-80">62.0%</td><td class="py-1.5 text-ibm-gray-80">-10 bps</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Industrial Components – SKU-Level Profitability</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">SKU</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Product</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Revenue</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Margin</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">YoY</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IC-2001</td><td class="py-1.5 pr-3 text-ibm-gray-80">Steel Bearing Assembly</td><td class="py-1.5 pr-3 text-ibm-gray-80">$12.4M</td><td class="py-1.5 pr-3 text-ibm-gray-80">25.8%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-1,120 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IC-2002</td><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Gear Set</td><td class="py-1.5 pr-3 text-ibm-gray-80">$8.7M</td><td class="py-1.5 pr-3 text-ibm-gray-80">32.2%</td><td class="py-1.5 text-ibm-gray-80">-780 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IC-2003</td><td class="py-1.5 pr-3 text-ibm-gray-80">Hydraulic Valve Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$6.3M</td><td class="py-1.5 pr-3 text-ibm-gray-80">34.9%</td><td class="py-1.5 text-ibm-gray-80">-640 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IC-2004</td><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Coupling</td><td class="py-1.5 pr-3 text-ibm-gray-80">$5.1M</td><td class="py-1.5 pr-3 text-ibm-gray-80">25.5%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-1,050 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IC-2005</td><td class="py-1.5 pr-3 text-ibm-gray-80">Linear Motion Guide</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">33.3%</td><td class="py-1.5 text-ibm-gray-80">-520 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IC-2006</td><td class="py-1.5 pr-3 text-ibm-gray-80">Pneumatic Actuator</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4.2M</td><td class="py-1.5 pr-3 text-ibm-gray-80">31.0%</td><td class="py-1.5 text-ibm-gray-80">-890 bps</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IC-2007</td><td class="py-1.5 pr-3 text-ibm-gray-80">Standard Fastener Kit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.6M</td><td class="py-1.5 pr-3 text-ibm-gray-80">22.2%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-1,280 bps</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">IC-2008</td><td class="py-1.5 pr-3 text-ibm-gray-80">Thermal Management Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.1M</td><td class="py-1.5 pr-3 text-ibm-gray-80">35.5%</td><td class="py-1.5 text-ibm-gray-80">-380 bps</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Unit Economics</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Metric</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q1 FY24</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Q4 FY25</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Change</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue per Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,718</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,708</td><td class="py-1.5 text-ibm-gray-80">-0.3%</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">COGS per Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2,296</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2,623</td><td class="py-1.5 text-ibm-gray-80 font-medium">+14.2%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Gross Profit per Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1,422</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1,085</td><td class="py-1.5 text-ibm-gray-80 font-medium">-23.7%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Material Cost per Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1,296</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1,508</td><td class="py-1.5 text-ibm-gray-80 font-medium">+16.4%</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Logistics per Unit</td><td class="py-1.5 pr-3 text-ibm-gray-80">$204</td><td class="py-1.5 pr-3 text-ibm-gray-80">$238</td><td class="py-1.5 text-ibm-gray-80 font-medium">+16.7%</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Cost Structure -->
+							<div id="data-cost" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Cost Breakdown by Category (Q4 FY25)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">% of COGS</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">YoY Change</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">$19.6M</td><td class="py-1.5 pr-3 text-ibm-gray-80">57.5%</td><td class="py-1.5 text-ibm-gray-80 font-medium">+11.3%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Direct Labor</td><td class="py-1.5 pr-3 text-ibm-gray-80">$7.5M</td><td class="py-1.5 pr-3 text-ibm-gray-80">22.0%</td><td class="py-1.5 text-ibm-gray-80">+4.9%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Manufacturing Overhead</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.9M</td><td class="py-1.5 pr-3 text-ibm-gray-80">11.4%</td><td class="py-1.5 text-ibm-gray-80">+2.1%</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Logistics & Distribution</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.1M</td><td class="py-1.5 pr-3 text-ibm-gray-80">9.1%</td><td class="py-1.5 text-ibm-gray-80 font-medium">+14.2%</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total COGS</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">$34.1M</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">100%</td><td class="py-1.5 font-semibold text-ibm-gray-80">+8.4%</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Raw Materials Detail</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Material</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Spend</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Price Trend</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Carbon Steel</td><td class="py-1.5 pr-3 text-ibm-gray-80">$5.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Steel Corp</td><td class="py-1.5 text-ibm-gray-80 font-medium">+11.3% YoY</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Bearings (purchased)</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Global Bearings Inc</td><td class="py-1.5 text-ibm-gray-80">+2.3% YoY</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Aluminum</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals Ltd</td><td class="py-1.5 text-ibm-gray-80">+6.4% YoY</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Alloy Steel</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2.4M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Steel Corp</td><td class="py-1.5 text-ibm-gray-80">+9.8% YoY</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Copper Alloys</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals Ltd</td><td class="py-1.5 text-ibm-gray-80">+8.1% YoY</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Seals & Gaskets</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1.2M</td><td class="py-1.5 pr-3 text-ibm-gray-80">TechSeal Solutions</td><td class="py-1.5 text-ibm-gray-80">+3.1% YoY</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Cost Reduction Opportunities</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Initiative</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Savings</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Assembly line utilization</td><td class="py-1.5 pr-3 text-ibm-gray-80">Labor</td><td class="py-1.5 text-ibm-gray-80">$0.28M</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Steel supplier renegotiation</td><td class="py-1.5 pr-3 text-ibm-gray-80">Materials</td><td class="py-1.5 text-ibm-gray-80">$0.23M</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Logistics provider rebid</td><td class="py-1.5 pr-3 text-ibm-gray-80">Logistics</td><td class="py-1.5 text-ibm-gray-80">$0.15M</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals markup reduction</td><td class="py-1.5 pr-3 text-ibm-gray-80">Materials</td><td class="py-1.5 text-ibm-gray-80">$0.15M</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Castings supplier switch</td><td class="py-1.5 pr-3 text-ibm-gray-80">Materials</td><td class="py-1.5 text-ibm-gray-80">$0.14M</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total Identified</td><td class="py-1.5 pr-3 text-ibm-gray-80"></td><td class="py-1.5 font-semibold text-ibm-gray-80">$1.22M</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Pricing History -->
+							<div id="data-pricing" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">List Price Changes (Last 8 Quarters)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Quarter</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Avg List Price</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Change</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q1 FY24</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,718</td><td class="py-1.5 pr-3 text-ibm-gray-80">—</td><td class="py-1.5 text-ibm-gray-80">Annual +3.2%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q2 FY24</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,731</td><td class="py-1.5 pr-3 text-ibm-gray-80">+0.3%</td><td class="py-1.5 text-ibm-gray-80">Minor adjustment</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q3 FY24</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,739</td><td class="py-1.5 pr-3 text-ibm-gray-80">+0.2%</td><td class="py-1.5 text-ibm-gray-80">No change</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q4 FY24</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,754</td><td class="py-1.5 pr-3 text-ibm-gray-80">+0.4%</td><td class="py-1.5 text-ibm-gray-80">Selective increases</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Q1 FY25</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,756</td><td class="py-1.5 pr-3 text-ibm-gray-80">+0.1%</td><td class="py-1.5 text-ibm-gray-80 font-medium">Annual increase deferred</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q2 FY25</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,734</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">-0.6%</td><td class="py-1.5 text-ibm-gray-80">Discounting to retain accounts</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Q3 FY25</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,718</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">-0.4%</td><td class="py-1.5 text-ibm-gray-80">Price match requests</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Q4 FY25</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,708</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">-0.3%</td><td class="py-1.5 text-ibm-gray-80">Competitive bids</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Competitive Price Benchmarking</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Competitor</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Share</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">vs Our List</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">12mo Movement</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Meridian Industrial</td><td class="py-1.5 pr-3 text-ibm-gray-80">22%</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">-8%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-2.1%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Atlas Manufacturing</td><td class="py-1.5 pr-3 text-ibm-gray-80">18%</td><td class="py-1.5 pr-3 text-ibm-gray-80">-4%</td><td class="py-1.5 text-ibm-gray-80">+1.2%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">12%</td><td class="py-1.5 pr-3 text-ibm-gray-80">-12%</td><td class="py-1.5 text-ibm-gray-80">-5.3%</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">EuroTech GmbH</td><td class="py-1.5 pr-3 text-ibm-gray-80">8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">+6%</td><td class="py-1.5 text-ibm-gray-80">+2.8%</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Price Elasticity by SKU Category</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Elasticity</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Safe Increase</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">-0.6 (inelastic)</td><td class="py-1.5 text-ibm-gray-80">+5% to +8%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Standard Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">-1.4 (elastic)</td><td class="py-1.5 text-ibm-gray-80">+1% to +3%</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Specialty Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">-0.8 (moderate)</td><td class="py-1.5 text-ibm-gray-80">+3% to +6%</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Market Dynamics -->
+							<div id="data-market" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Market Overview</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Metric</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Value</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Trend</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">TAM</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4.2B</td><td class="py-1.5 text-ibm-gray-80">+2.8% CAGR</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Our Market Share</td><td class="py-1.5 pr-3 text-ibm-gray-80">24%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-1.8 pts YoY</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Industry Avg Gross Margin</td><td class="py-1.5 pr-3 text-ibm-gray-80">33.2%</td><td class="py-1.5 text-ibm-gray-80">-190 bps YoY</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Our Gross Margin</td><td class="py-1.5 pr-3 text-ibm-gray-80">29.3%</td><td class="py-1.5 text-ibm-gray-80 font-medium">-890 bps YoY</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Competitive Landscape</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Company</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Share</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Margin</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Threat</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Our Company</td><td class="py-1.5 pr-3 text-ibm-gray-80">24%</td><td class="py-1.5 pr-3 text-ibm-gray-80">29.3%</td><td class="py-1.5 text-ibm-gray-80">—</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Meridian Industrial</td><td class="py-1.5 pr-3 text-ibm-gray-80">22%</td><td class="py-1.5 pr-3 text-ibm-gray-80">31.5%</td><td class="py-1.5 text-ibm-gray-80 font-medium">HIGH</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Atlas Manufacturing</td><td class="py-1.5 pr-3 text-ibm-gray-80">18%</td><td class="py-1.5 pr-3 text-ibm-gray-80">34.2%</td><td class="py-1.5 text-ibm-gray-80">MEDIUM</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">12%</td><td class="py-1.5 pr-3 text-ibm-gray-80">22.8%</td><td class="py-1.5 text-ibm-gray-80">MEDIUM</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">EuroTech GmbH</td><td class="py-1.5 pr-3 text-ibm-gray-80">8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">38.4%</td><td class="py-1.5 text-ibm-gray-80">LOW</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Industry Cost Trends</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Input</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">YoY Change</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">FY26 Outlook</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Carbon Steel</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">+11.3%</td><td class="py-1.5 text-ibm-gray-80">+3-5% (moderating)</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Aluminum</td><td class="py-1.5 pr-3 text-ibm-gray-80">+6.4%</td><td class="py-1.5 text-ibm-gray-80">+2-4% (stable)</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Copper</td><td class="py-1.5 pr-3 text-ibm-gray-80">+8.1%</td><td class="py-1.5 text-ibm-gray-80">+1-3% (stabilizing)</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Ocean Freight</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">+14.2%</td><td class="py-1.5 text-ibm-gray-80">+5-8% (elevated)</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Labor</td><td class="py-1.5 pr-3 text-ibm-gray-80">+4.9%</td><td class="py-1.5 text-ibm-gray-80">+3-4% (steady)</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Supplier Contracts -->
+							<div id="data-suppliers" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Active Supplier Agreements</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Spend</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Expires</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Pricing Model</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Apex Steel Corp</td><td class="py-1.5 pr-3 text-ibm-gray-80">$8.2M</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">Dec 2025</td><td class="py-1.5 text-ibm-gray-80">Fixed + quarterly escalator</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals Ltd</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4.6M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Jun 2026</td><td class="py-1.5 text-ibm-gray-80">Market index + 8% markup</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Global Bearings Inc</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.8M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Feb 2027</td><td class="py-1.5 text-ibm-gray-80">Fixed annual pricing</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Precision Castings Co</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3.4M</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">Aug 2025</td><td class="py-1.5 text-ibm-gray-80">Cost-plus (materials + 22%)</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Midwest Logistics</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2.9M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Mar 2027</td><td class="py-1.5 text-ibm-gray-80">Rate card + fuel surcharge</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">TechSeal Solutions</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2.1M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Dec 2026</td><td class="py-1.5 text-ibm-gray-80">Fixed with annual review</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Renegotiation Priority</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Excess vs Market</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Savings</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Priority</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Apex Steel Corp</td><td class="py-1.5 pr-3 text-ibm-gray-80">+2.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">$0.23M</td><td class="py-1.5 text-ibm-gray-80 font-medium">95/100</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Midwest Logistics</td><td class="py-1.5 pr-3 text-ibm-gray-80">+5.1%</td><td class="py-1.5 pr-3 text-ibm-gray-80">$0.15M</td><td class="py-1.5 text-ibm-gray-80 font-medium">88/100</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Castings Co</td><td class="py-1.5 pr-3 text-ibm-gray-80">+4.0%</td><td class="py-1.5 pr-3 text-ibm-gray-80">$0.14M</td><td class="py-1.5 text-ibm-gray-80">85/100</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals Ltd</td><td class="py-1.5 pr-3 text-ibm-gray-80">+3.2%</td><td class="py-1.5 pr-3 text-ibm-gray-80">$0.15M</td><td class="py-1.5 text-ibm-gray-80">78/100</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Cost Increase History (Last 12 Months)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Increase</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Market Benchmark</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Apex Steel – Carbon</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">+11.3%</td><td class="py-1.5 text-ibm-gray-80">Market +8.7%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Steel – Alloy</td><td class="py-1.5 pr-3 text-ibm-gray-80">+9.8%</td><td class="py-1.5 text-ibm-gray-80">Market +7.2%</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Midwest Logistics</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">+14.2%</td><td class="py-1.5 text-ibm-gray-80">Industry +9.1%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Castings</td><td class="py-1.5 pr-3 text-ibm-gray-80">+7.6%</td><td class="py-1.5 text-ibm-gray-80">Industry +5.8%</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Metals – Al</td><td class="py-1.5 pr-3 text-ibm-gray-80">+6.4%</td><td class="py-1.5 text-ibm-gray-80">Market +5.9%</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- Agents Tab Content -->
+						<div id="content-agents" class="flex flex-col gap-4 flex-1 hidden">
+							<div class="grid grid-cols-2 gap-3 flex-1">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-lg font-semibold text-ibm-gray-100">Financial & Management Reporting</h3>
+									</div>
+									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Automates financial and management reporting by consolidating data across business units and generating real-time reports without manual intervention. Delivers executive-ready outputs with AI-generated commentary.</p>
+									<div class="border-t border-ibm-gray-30 pt-3">
+										<p class="text-sm text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-sm text-ibm-gray-80">Consolidates business unit data, generates variance commentary identifying where margins are compressing, and produces the final executive report with KPI dashboard.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+										<h3 class="text-lg font-semibold text-ibm-gray-100">Pricing Analytics</h3>
+									</div>
+									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Provides cognitive pricing analytics and pricing automation capabilities. Analyzes market dynamics, competitor pricing, customer behavior, and cost structures to recommend optimal pricing strategies that maximize revenue.</p>
+									<div class="border-t border-ibm-gray-30 pt-3">
+										<p class="text-sm text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-sm text-ibm-gray-80">Benchmarks pricing against competitors, analyzes revenue-side erosion, and simulates the revenue impact of corrective pricing adjustments.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+										<h3 class="text-lg font-semibold text-ibm-gray-100">Procure-to-Pay</h3>
+									</div>
+									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Helps procurement teams process supplier invoices quickly and accurately. Validates invoices against purchase orders and contracts, flags exceptions that need human review, and optimizes payment workflows for discount capture.</p>
+									<div class="border-t border-ibm-gray-30 pt-3">
+										<p class="text-sm text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-sm text-ibm-gray-80">Vets supplier pricing competitiveness, validates invoice costs against purchase orders, and identifies supplier renegotiation and cost optimization opportunities.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+										<h3 class="text-lg font-semibold text-ibm-gray-100">Financial Forecasting</h3>
+									</div>
+									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Helps FP&A professionals build accurate cash flow projections by analyzing historical financial data, simulating multiple business scenarios, and identifying potential budget variances before they occur.</p>
+									<div class="border-t border-ibm-gray-30 pt-3">
+										<p class="text-sm text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-sm text-ibm-gray-80">Runs scenario simulations projecting the combined impact of pricing changes and cost actions on margin recovery over 12 months.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column - Chatbot -->
+					<div>
+						<div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+							<div id="root" class="w-full h-[620px] overflow-hidden"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="mt-auto pt-4"></div>
+		</div>
+
+		<script>
+			function switchTab(tab) {
+				const tabs = ["overview", "data", "agents"];
+				tabs.forEach(function (t) {
+					var content = document.getElementById("content-" + t);
+					var btn = document.getElementById("tab-" + t);
+					if (content) content.classList.toggle("hidden", t !== tab);
+					if (btn) {
+						if (t === tab) {
+							btn.classList.add("font-semibold", "text-ibm-gray-100");
+							btn.classList.remove("font-medium", "text-ibm-gray-50");
+						} else {
+							btn.classList.add("font-medium", "text-ibm-gray-50");
+							btn.classList.remove("font-semibold", "text-ibm-gray-100");
+						}
+					}
+				});
+			}
+
+			function switchDataSource(source) {
+				var sources = ["margins", "cost", "pricing", "market", "suppliers"];
+				sources.forEach(function (s) {
+					var panel = document.getElementById("data-" + s);
+					var btn = document.getElementById("ds-" + s);
+					if (panel) panel.classList.toggle("hidden", s !== source);
+					if (btn) {
+						if (s === source) {
+							btn.classList.add("bg-ibm-gray-80", "text-white");
+							btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+						} else {
+							btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+							btn.classList.remove("bg-ibm-gray-80", "text-white");
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../assets/js/margin-compression-analysis.js"></script>
+	</body>
+</html>
