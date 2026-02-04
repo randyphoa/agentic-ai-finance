@@ -374,66 +374,66 @@
 							<div class="grid grid-cols-2 gap-3 flex-1">
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Invoice Processing</h3>
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Invoice Processing</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Extracts invoice data including vendor, amount, line items, payment terms, and early payment discounts via OCR.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "batch" or "INV-001"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Extracts invoice data including vendor, amount, line items, payment terms, and early payment discounts via OCR.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "batch", "INV-001", "pending"</p>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Extracted invoice data, line items, confidence score</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Extracted invoice data, line items, confidence score</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">PO Validation</h3>
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">PO Validation</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Validates invoices against POs to detect discrepancies, duplicates, and missing POs; checks contract compliance.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "all" or "INV-001"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Validates invoices against POs to detect discrepancies, duplicates, and missing POs; checks contract compliance.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "all", "INV-001", "flagged"</p>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Validation status, discrepancies, risk level, recommendation</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Validation status, discrepancies, risk, recommendation</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Supplier Vetting</h3>
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Supplier Vetting</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Evaluates supplier performance, ratings, and provides category-level analysis and recommendations.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">query</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "Apex Supply" or "raw materials"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Evaluates supplier performance, ratings, and provides category-level analysis and recommendations.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">query</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "Apex Supply", "raw materials"</p>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Ratings, scores, strengths, improvement areas</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Ratings, scores, strengths, improvement areas</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Workflow Optimization</h3>
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Workflow Optimization</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Routes validated invoices for payment, identifies early payment discounts, and optimizes batch processing.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">action</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "route_payments" or "optimize_batch"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Routes validated invoices for payment, identifies early payment discounts, and optimizes batch processing.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">action</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "route_payments", "optimize_batch"</p>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Routing summary, discount opportunities, savings</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Routing summary, discount opportunities, savings</p>
 									</div>
 								</div>
 							</div>

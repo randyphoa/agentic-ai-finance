@@ -411,66 +411,79 @@
 							<div class="grid grid-cols-2 gap-3 flex-1">
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Pricing Optimization</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Pricing Optimization</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Generates optimal price recommendations with price-volume curves, margin analysis, and sensitivity modeling.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">product_tier</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "Enterprise Pro"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Generates optimal price recommendations with price-volume curves, margin analysis, and sensitivity modeling.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">product_tier</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">target_segment</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">pricing_objective</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">region</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Recommended price, price-volume curve, sensitivity analysis</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Recommended price, price-volume curve, sensitivity</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Competitive Benchmarking</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Competitive Benchmarking</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Analyzes competitor pricing, market positioning, and regional dynamics to inform pricing strategy.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">product_category</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "enterprise_software"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Analyzes competitor pricing, market positioning, and regional dynamics to inform pricing strategy.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">product_category</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">region</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">competitors</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Competitor landscape, regional analysis, market dynamics</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Competitor landscape, regional analysis, dynamics</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Contract Risk Analysis</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Contract Risk Analysis</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Reviews contract clauses for risk, scores severity, and prioritizes renegotiation opportunities.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scope</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "top_10"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Reviews contract clauses for risk, scores severity, and prioritizes renegotiation opportunities.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scope</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">risk_tolerance</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">focus_areas</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Risk summary, high-risk findings, renegotiation priority</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Risk summary, high-risk findings, renegotiation list</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Revenue Impact Simulation</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Revenue Impact Simulation</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Models revenue impact of pricing changes with scenario projections, quarterly ramp, and sensitivity analysis.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">pricing_changes</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "enterprise_pro_launch"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Models revenue impact of pricing changes with scenario projections, quarterly ramp, and sensitivity analysis.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">pricing_changes</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_horizon</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">market_assumptions</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Incremental revenue, breakdown by initiative, quarterly ramp</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Incremental revenue, breakdown, quarterly ramp</p>
 									</div>
 								</div>
 							</div>

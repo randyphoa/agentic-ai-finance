@@ -471,66 +471,80 @@
 							<div class="grid grid-cols-2 gap-3 flex-1">
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Cash Flow Projection</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Cash Flow Projection</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Generates monthly cash flow forecasts with confidence intervals using historical data, AR/AP aging, and seasonal patterns.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "Q3 2025"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Generates monthly cash flow forecasts with confidence intervals using historical data, AR/AP aging, and seasonal patterns.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">business_units</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">include_confidence_intervals</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">known_changes</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Projections, assumptions, data sources</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Monthly projections, key assumptions, data sources</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Scenario Simulation</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Scenario Simulation</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Simulates what-if scenarios against baseline forecasts, comparing cash positions and identifying impacts.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scenario_description</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "delay CapEx by 30 days"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Simulates what-if scenarios against baseline forecasts, comparing cash positions and identifying impacts.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scenario_description</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">baseline_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">compare_metrics</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Baseline vs scenario comparison, impact analysis, recommendation</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Baseline vs scenario, impact analysis, recommendation</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Variance Analysis</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Variance Analysis</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Analyzes budget-to-forecast variances by category, identifies root causes, and recommends corrective actions.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "August 2025"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Analyzes budget-to-forecast variances by category, identifies root causes, and recommends corrective actions.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">cost_centers</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">accounts</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">variance_threshold</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Variance summary, breakdown by category, recommendations</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Variance summary, category breakdown, recommendations</p>
 									</div>
 								</div>
 								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
 									<div class="flex items-center gap-2 mb-2">
-										<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-										<h3 class="text-lg font-semibold text-ibm-gray-100">Risk Assessment</h3>
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Risk Assessment</h3>
 									</div>
-									<p class="text-base text-ibm-gray-80 mb-3 flex-1">Evaluates financial risks for a forecast period, scoring overall risk and identifying key risk factors with mitigation strategies.</p>
-									<div class="border-t border-ibm-gray-30 pt-3">
-										<p class="text-sm text-ibm-gray-50 mb-1">Input</p>
-										<code class="text-sm text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">forecast_period</code>
-										<span class="text-sm text-ibm-gray-50 ml-1">e.g., "Q3 2025"</span>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Evaluates financial risks for a forecast period, scoring overall risk and identifying key risk factors with mitigation strategies.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">forecast_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">risk_tolerance</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">focus_areas</code>
+										</div>
 									</div>
 									<div class="mt-2">
-										<p class="text-sm text-ibm-gray-50 mb-1">Output</p>
-										<p class="text-sm text-ibm-gray-80">Risk score (1–10), risk level, key risks, mitigations</p>
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Risk score (1–10), key risks, mitigation strategies</p>
 									</div>
 								</div>
 							</div>
