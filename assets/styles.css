@@ -2,10 +2,14 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
 body {
     font-family: 'IBM Plex Sans', sans-serif;
     background: white;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +24,7 @@ body {
     padding: 56px 8px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     zoom: 0.5;
     animation: fade-in 0.5s ease-out;
 }
