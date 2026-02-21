@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ERHFC8YG6Y');
+    </script>		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Period-End Orchestration</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../assets/tailwind-config.js"></script>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="../assets/js/common.js"></script>
+	</head>
+	<body>
+		<div class="slide">
+			<!-- Header -->
+			<div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+				<div>
+					<p class="text-ibm-gray-80 text-lg font-medium uppercase tracking-wider">Multi-Agent · O2C / P2P / R2R</p>
+					<h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Period-End Orchestration</h1>
+				</div>
+				<a href="../index.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+				</a>
+			</div>
+
+			<!-- Section Titles Row -->
+			<div class="grid grid-cols-2 gap-6 mb-2 items-end">
+				<div class="flex gap-0">
+					<button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+						Overview
+					</button>
+					<button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Data
+					</button>
+					<button id="tab-agents" onclick="switchTab('agents')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Agents
+					</button>
+				</div>
+
+				<div>
+					<h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="flex-1 flex flex-col gap-5 min-h-0">
+				<!-- Main Two Column Layout -->
+				<div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+					<!-- Left Column -->
+					<div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+						<!-- Overview Tab Content -->
+						<div id="content-overview" class="flex flex-col gap-4 flex-1">
+							<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+							<!-- Metrics -->
+							<div class="grid grid-cols-3 gap-3">
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">50%</p>
+									<p class="text-base font-medium text-ibm-gray-20">Faster close cycle</p>
+								</div>
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">60-70%</p>
+									<p class="text-base font-medium text-ibm-gray-20">Less manual close activities</p>
+								</div>
+								<div class="bg-ibm-gray-80 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">95%+</p>
+									<p class="text-base font-medium text-ibm-gray-20">First-time accuracy</p>
+								</div>
+							</div>
+
+							<!-- Key Capabilities -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+								<div class="flex-1 grid grid-cols-2 gap-3">
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Parallel Execution</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Four agents work simultaneously toward shared deadline</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Dependency Management</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Accounting waits for O2C and P2P completion signals</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Readiness Scorecard</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Real-time close progress visibility across all domains</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Exception Escalation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Agents handle routine; humans handle exceptions only</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Scenario -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+								<div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+									<!-- Persona -->
+									<div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+										<div class="w-10 h-10 bg-ibm-gray-80 rounded-full flex items-center justify-center flex-shrink-0">
+											<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+											</svg>
+										</div>
+										<div>
+											<p class="text-lg font-semibold text-ibm-gray-100">Rachel Torres, Controller</p>
+											<p class="text-base text-ibm-gray-80">Orchestrating month-end close across four parallel workstreams</p>
+										</div>
+									</div>
+									<div class="space-y-3">
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+											<p class="text-lg text-ibm-gray-80">O2C Agent finalizes <span class="text-ibm-gray-80 font-semibold">1,247 invoices</span> and flags 58 items for dispute resolution and credit memo approval</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+											<p class="text-lg text-ibm-gray-80">P2P Agent completes invoice processing and flags <span class="text-ibm-gray-80 font-semibold">$2.8M accruals</span> for received-not-invoiced items</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+											<p class="text-lg text-ibm-gray-80">Accounting Agent processes <span class="text-ibm-gray-80 font-semibold">318 journal entries</span>, flags 5 exceptions for human review</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-gray-80 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+											<p class="text-lg text-ibm-gray-80">Reporting Agent produces close readiness scorecard: <span class="text-ibm-gray-80 font-semibold">97% complete</span>, 5 items requiring human action</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Data Tab Content -->
+						<div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+							<!-- Data Sub-navigation -->
+							<div class="flex gap-2 flex-wrap">
+								<button onclick="switchDataSource('checklist')" id="ds-checklist" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-80 text-white font-medium">Close Checklist</button>
+								<button onclick="switchDataSource('prior')" id="ds-prior" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Prior Period</button>
+								<button onclick="switchDataSource('policies')" id="ds-policies" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Accounting Policies</button>
+								<button onclick="switchDataSource('materiality')" id="ds-materiality" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Materiality</button>
+								<button onclick="switchDataSource('intercompany')" id="ds-intercompany" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Intercompany</button>
+							</div>
+
+							<!-- Close Checklist -->
+							<div id="data-checklist" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">SLA Summary</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Phase</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Start</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">End</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Tasks</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Critical</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">O2C</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 1</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 2</td><td class="py-1.5 pr-3 text-ibm-gray-80">10</td><td class="py-1.5 text-ibm-gray-80">5</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">P2P</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 1</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 2</td><td class="py-1.5 pr-3 text-ibm-gray-80">10</td><td class="py-1.5 text-ibm-gray-80">4</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Accounting</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 3</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 4</td><td class="py-1.5 pr-3 text-ibm-gray-80">10</td><td class="py-1.5 text-ibm-gray-80">5</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Reporting</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 5</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 5</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">4</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Day 1</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Day 5</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">38</td><td class="py-1.5 font-semibold text-ibm-gray-100">18</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">O2C Tasks (Days 1-2)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Task ID</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Description</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">SLA (h)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Priority</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">O2C-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">Cut off sales transactions</td><td class="py-1.5 pr-3 text-ibm-gray-80">4</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">O2C-02</td><td class="py-1.5 pr-3 text-ibm-gray-80">Post final billing run</td><td class="py-1.5 pr-3 text-ibm-gray-80">4</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">O2C-05</td><td class="py-1.5 pr-3 text-ibm-gray-80">Reconcile cash receipts</td><td class="py-1.5 pr-3 text-ibm-gray-80">6</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">O2C-08</td><td class="py-1.5 pr-3 text-ibm-gray-80">Reconcile invoices to shipments</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">O2C-10</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sign off on AR subledger</td><td class="py-1.5 pr-3 text-ibm-gray-80">2</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">P2P Tasks (Days 1-2)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Task ID</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Description</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">SLA (h)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Priority</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">P2P-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">Cut off purchase orders</td><td class="py-1.5 pr-3 text-ibm-gray-80">4</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">P2P-02</td><td class="py-1.5 pr-3 text-ibm-gray-80">Process all vendor invoices in queue</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">P2P-05</td><td class="py-1.5 pr-3 text-ibm-gray-80">Identify received-not-invoiced accruals</td><td class="py-1.5 pr-3 text-ibm-gray-80">6</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">P2P-10</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sign off on AP subledger</td><td class="py-1.5 pr-3 text-ibm-gray-80">2</td><td class="py-1.5 text-ibm-gray-80 font-medium">Critical</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Prior Period -->
+							<div id="data-prior" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">September 2025 Key Metrics</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Metric</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Target</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Actual</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Status</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Close duration</td><td class="py-1.5 pr-3 text-ibm-gray-80">5 days</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">7 days</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Journal entries</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,500</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,521</td><td class="py-1.5 text-ibm-gray-80">Met</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">First-time accuracy</td><td class="py-1.5 pr-3 text-ibm-gray-80">95%</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">82%</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IC differences &gt; tol</td><td class="py-1.5 pr-3 text-ibm-gray-80">0</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">5</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Rework items</td><td class="py-1.5 pr-3 text-ibm-gray-80">&lt; 50</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">127</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Late accrual adjustments</td><td class="py-1.5 pr-3 text-ibm-gray-80">&lt; 10</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">23</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Audit adjustments</td><td class="py-1.5 pr-3 text-ibm-gray-80">&lt; 5</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">8</td><td class="py-1.5 text-ibm-gray-80 font-medium">Missed</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Close Timeline Variance</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Phase</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Planned End</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Actual End</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Variance (h)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">O2C</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 2, 17:00</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 3, 10:00</td><td class="py-1.5 text-ibm-gray-80 font-medium">+9</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">P2P</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 2, 17:00</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 3, 14:00</td><td class="py-1.5 text-ibm-gray-80 font-medium">+13</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Accounting</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 4, 17:00</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 5, 16:00</td><td class="py-1.5 text-ibm-gray-80 font-medium">+14</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Reporting</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 5, 17:00</td><td class="py-1.5 pr-3 text-ibm-gray-80">Day 7, 11:00</td><td class="py-1.5 text-ibm-gray-80 font-medium">+18</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">6-Month Trends</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Month</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Close Days</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Accuracy %</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">IC Diff</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Rework</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">April</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 pr-3 text-ibm-gray-80">78%</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">145</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">May</td><td class="py-1.5 pr-3 text-ibm-gray-80">7</td><td class="py-1.5 pr-3 text-ibm-gray-80">80%</td><td class="py-1.5 pr-3 text-ibm-gray-80">6</td><td class="py-1.5 text-ibm-gray-80">138</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">June</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">9</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">79%</td><td class="py-1.5 pr-3 text-ibm-gray-80">7</td><td class="py-1.5 text-ibm-gray-80 font-medium">152</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">July</td><td class="py-1.5 pr-3 text-ibm-gray-80">7</td><td class="py-1.5 pr-3 text-ibm-gray-80">83%</td><td class="py-1.5 pr-3 text-ibm-gray-80">4</td><td class="py-1.5 text-ibm-gray-80">121</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">August</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 pr-3 text-ibm-gray-80">81%</td><td class="py-1.5 pr-3 text-ibm-gray-80">5</td><td class="py-1.5 text-ibm-gray-80">134</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">September</td><td class="py-1.5 pr-3 text-ibm-gray-80">7</td><td class="py-1.5 pr-3 text-ibm-gray-80">82%</td><td class="py-1.5 pr-3 text-ibm-gray-80">5</td><td class="py-1.5 text-ibm-gray-80">127</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Average</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-80">7.7</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-80">80.5%</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">5.8</td><td class="py-1.5 font-semibold text-ibm-gray-80">136</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Accounting Policies -->
+							<div id="data-policies" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Revenue Recognition (IFRS 15 / ASC 606)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Scenario</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Timing</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Close Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Product shipments</td><td class="py-1.5 pr-3 text-ibm-gray-80">Upon delivery</td><td class="py-1.5 text-ibm-gray-80">Verify dates vs cutoff</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Software (perpetual)</td><td class="py-1.5 pr-3 text-ibm-gray-80">Point of delivery</td><td class="py-1.5 text-ibm-gray-80">Confirm acceptance</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Software (subscription)</td><td class="py-1.5 pr-3 text-ibm-gray-80">Ratably over term</td><td class="py-1.5 text-ibm-gray-80">Calculate monthly allocation</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Services (T&M)</td><td class="py-1.5 pr-3 text-ibm-gray-80">As rendered</td><td class="py-1.5 text-ibm-gray-80">Accrue unbilled hours</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Services (fixed fee)</td><td class="py-1.5 pr-3 text-ibm-gray-80">% completion</td><td class="py-1.5 text-ibm-gray-80">Update estimates</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Lease Portfolio (IFRS 16)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Count</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">ROU Asset ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Monthly Amort ($M)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Office space</td><td class="py-1.5 pr-3 text-ibm-gray-80">12</td><td class="py-1.5 pr-3 text-ibm-gray-80">45.2</td><td class="py-1.5 text-ibm-gray-80">1.26</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">34</td><td class="py-1.5 pr-3 text-ibm-gray-80">18.7</td><td class="py-1.5 text-ibm-gray-80">0.78</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Vehicles</td><td class="py-1.5 pr-3 text-ibm-gray-80">89</td><td class="py-1.5 pr-3 text-ibm-gray-80">4.3</td><td class="py-1.5 text-ibm-gray-80">0.36</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">IT infrastructure</td><td class="py-1.5 pr-3 text-ibm-gray-80">7</td><td class="py-1.5 pr-3 text-ibm-gray-80">8.1</td><td class="py-1.5 text-ibm-gray-80">0.45</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">142</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">76.3</td><td class="py-1.5 font-semibold text-ibm-gray-100">2.85</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Depreciation Schedules</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Asset Category</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Useful Life (Yrs)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Residual</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Monthly ($M)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Buildings</td><td class="py-1.5 pr-3 text-ibm-gray-80">25-40</td><td class="py-1.5 pr-3 text-ibm-gray-80">10%</td><td class="py-1.5 text-ibm-gray-80">0.42</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Plant and machinery</td><td class="py-1.5 pr-3 text-ibm-gray-80">10-15</td><td class="py-1.5 pr-3 text-ibm-gray-80">5%</td><td class="py-1.5 text-ibm-gray-80 font-medium">1.15</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IT equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">3-5</td><td class="py-1.5 pr-3 text-ibm-gray-80">0%</td><td class="py-1.5 text-ibm-gray-80 font-medium">0.87</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Furniture</td><td class="py-1.5 pr-3 text-ibm-gray-80">7-10</td><td class="py-1.5 pr-3 text-ibm-gray-80">5%</td><td class="py-1.5 text-ibm-gray-80">0.23</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td><td class="py-1.5 pr-3 text-ibm-gray-80"></td><td class="py-1.5 pr-3 text-ibm-gray-80"></td><td class="py-1.5 font-semibold text-ibm-gray-100">2.85</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Materiality -->
+							<div id="data-materiality" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Materiality Basis</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Metric</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Basis</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Total Revenue (12M)</td><td class="py-1.5 pr-3 text-ibm-gray-80">2,814.0</td><td class="py-1.5 text-ibm-gray-80">Primary benchmark</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Overall materiality</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">14.1</td><td class="py-1.5 text-ibm-gray-80">0.5% of revenue</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Performance materiality</td><td class="py-1.5 pr-3 text-ibm-gray-80">10.6</td><td class="py-1.5 text-ibm-gray-80">75% of overall</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Trivial threshold</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.7</td><td class="py-1.5 text-ibm-gray-80">5% of overall</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Journal Entry Approval Thresholds ($K)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Auto-Post</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Single Appr.</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Dual Appr.</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Recurring</td><td class="py-1.5 pr-3 text-ibm-gray-80">No limit</td><td class="py-1.5 pr-3 text-ibm-gray-80">N/A</td><td class="py-1.5 text-ibm-gray-80">N/A</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Standard</td><td class="py-1.5 pr-3 text-ibm-gray-80">500</td><td class="py-1.5 pr-3 text-ibm-gray-80">500-2,000</td><td class="py-1.5 text-ibm-gray-80">&gt; 2,000</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Manual</td><td class="py-1.5 pr-3 text-ibm-gray-80">100</td><td class="py-1.5 pr-3 text-ibm-gray-80">100-1,000</td><td class="py-1.5 text-ibm-gray-80 font-medium">&gt; 1,000</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Adjusting</td><td class="py-1.5 pr-3 text-ibm-gray-80">50</td><td class="py-1.5 pr-3 text-ibm-gray-80">50-500</td><td class="py-1.5 text-ibm-gray-80">&gt; 500</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Top-side</td><td class="py-1.5 pr-3 text-ibm-gray-80">N/A</td><td class="py-1.5 pr-3 text-ibm-gray-80">N/A</td><td class="py-1.5 text-ibm-gray-80 font-medium">Any amount</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Intercompany</td><td class="py-1.5 pr-3 text-ibm-gray-80">250</td><td class="py-1.5 pr-3 text-ibm-gray-80">250-1,000</td><td class="py-1.5 text-ibm-gray-80">&gt; 1,000</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Variance Thresholds (Period-over-Period)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Variance Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">%</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">$K</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue vs prior month</td><td class="py-1.5 pr-3 text-ibm-gray-80">5%</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,000</td><td class="py-1.5 text-ibm-gray-80">Commentary</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Revenue vs budget</td><td class="py-1.5 pr-3 text-ibm-gray-80">10%</td><td class="py-1.5 pr-3 text-ibm-gray-80">2,000</td><td class="py-1.5 text-ibm-gray-80 font-medium">Mgmt review</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">COGS vs prior month</td><td class="py-1.5 pr-3 text-ibm-gray-80">5%</td><td class="py-1.5 pr-3 text-ibm-gray-80">500</td><td class="py-1.5 text-ibm-gray-80">Commentary</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">OpEx vs budget</td><td class="py-1.5 pr-3 text-ibm-gray-80">15%</td><td class="py-1.5 pr-3 text-ibm-gray-80">500</td><td class="py-1.5 text-ibm-gray-80">Mgmt review</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Cash flow vs forecast</td><td class="py-1.5 pr-3 text-ibm-gray-80">15%</td><td class="py-1.5 pr-3 text-ibm-gray-80">2,000</td><td class="py-1.5 text-ibm-gray-80">Treasury review</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Intercompany -->
+							<div id="data-intercompany" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Outstanding Differences (Tolerance: $5K)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entity Pair</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Recv ($K)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Pay ($K)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Diff ($K)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Status</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / UK-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">3,420</td><td class="py-1.5 pr-3 text-ibm-gray-80">3,412</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">Within tol.</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">UK-01 / DE-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,890</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,878</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">12</td><td class="py-1.5 text-ibm-gray-80 font-medium">Over tol.</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">US-HQ / JP-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,560</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,542</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">18</td><td class="py-1.5 text-ibm-gray-80 font-medium">Over tol.</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">UK-01 / FR-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,240</td><td class="py-1.5 pr-3 text-ibm-gray-80">1,237</td><td class="py-1.5 pr-3 text-ibm-gray-80">3</td><td class="py-1.5 text-ibm-gray-80">Within tol.</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">JP-01 / AU-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">890</td><td class="py-1.5 pr-3 text-ibm-gray-80">884</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">6</td><td class="py-1.5 text-ibm-gray-80 font-medium">Over tol.</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">US-WEST / US-HQ</td><td class="py-1.5 pr-3 text-ibm-gray-80">980</td><td class="py-1.5 pr-3 text-ibm-gray-80">980</td><td class="py-1.5 pr-3 text-ibm-gray-80">0</td><td class="py-1.5 text-ibm-gray-80">Matched</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Eliminations Required</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entities</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Journal</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Revenue/COGS</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / UK-01</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">8.4</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue/COGS</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / DE-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">5.2</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue/COGS</td><td class="py-1.5 pr-3 text-ibm-gray-80">DE-01 / FR-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">3.8</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Mgmt fees</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / All subs</td><td class="py-1.5 pr-3 text-ibm-gray-80">4.8</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Royalties</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / All subs</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">6.2</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Unrealized P&L</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / UK-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.9</td><td class="py-1.5 text-ibm-gray-80">Adjusting</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Unrealized P&L</td><td class="py-1.5 pr-3 text-ibm-gray-80">DE-01 / FR-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.4</td><td class="py-1.5 text-ibm-gray-80">Adjusting</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Loan interest</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / JP-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">1.2</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Loan interest</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / AU-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.6</td><td class="py-1.5 text-ibm-gray-80">Recurring</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td><td class="py-1.5 pr-3 text-ibm-gray-80"></td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-80">31.5</td><td class="py-1.5 text-ibm-gray-80"></td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Open Issues for October Close</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Issue</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entities</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">$K</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Status</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-gray-80/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Timing diff on inventory</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / UK-01</td><td class="py-1.5 pr-3 text-ibm-gray-80 font-medium">340</td><td class="py-1.5 text-ibm-gray-80">Investigating</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Missing mgmt fee invoice</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / AU-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">125</td><td class="py-1.5 text-ibm-gray-80">Pending</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Disputed allocation</td><td class="py-1.5 pr-3 text-ibm-gray-80">DE-01 / FR-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">85</td><td class="py-1.5 text-ibm-gray-80 font-medium">Escalated</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">FX rate discrepancy</td><td class="py-1.5 pr-3 text-ibm-gray-80">US-HQ / JP-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">18</td><td class="py-1.5 text-ibm-gray-80">In progress</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Late inventory transfer</td><td class="py-1.5 pr-3 text-ibm-gray-80">JP-01 / AU-01</td><td class="py-1.5 pr-3 text-ibm-gray-80">6</td><td class="py-1.5 text-ibm-gray-80">Pending</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- Agents Tab Content -->
+						<div id="content-agents" class="flex flex-col gap-4 flex-1 hidden">
+							<div class="grid grid-cols-2 gap-3 flex-1">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Order-to-Cash Agent</h3>
+									</div>
+									<ul class="text-lg text-ibm-gray-80 mb-3 flex-1 list-disc list-inside space-y-1 pt-2">
+										<li>Assesses customer creditworthiness</li>
+										<li>Predicts payment timing</li>
+										<li>Manages collection strategies</li>
+										<li>Analyzes AR portfolio risk exposure</li>
+									</ul>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-base text-ibm-gray-80">Finalizes invoices, reconciles cash receipts, processes credit memos, and signs off on the AR subledger before handoff to accounting.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Procure-to-Pay Agent</h3>
+									</div>
+									<ul class="text-lg text-ibm-gray-80 mb-3 flex-1 list-disc list-inside space-y-1 pt-2">
+										<li>Processes supplier invoices</li>
+										<li>Validates against POs and contracts</li>
+										<li>Flags exceptions for human review</li>
+										<li>Optimizes payment workflows for discount capture</li>
+									</ul>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-base text-ibm-gray-80">Completes invoice processing, identifies received-not-invoiced accruals, resolves blocked invoices, and signs off on the AP subledger.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Accounting Automation Agent</h3>
+									</div>
+									<ul class="text-lg text-ibm-gray-80 mb-3 flex-1 list-disc list-inside space-y-1 pt-2">
+										<li>Automates journal entry creation and posting</li>
+										<li>Reviews contracts for risk</li>
+										<li>Classifies documents</li>
+										<li>Validates compliance against IFRS/GAAP</li>
+									</ul>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-base text-ibm-gray-80">Posts recurring, accrual, and adjusting journal entries, processes intercompany eliminations, and runs IFRS/GAAP validation checks after O2C and P2P complete.</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-gray-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Financial & Management Reporting</h3>
+									</div>
+									<ul class="text-lg text-ibm-gray-80 mb-3 flex-1 list-disc list-inside space-y-1 pt-2">
+										<li>Consolidates data across business units</li>
+										<li>Generates variance commentary</li>
+										<li>Produces executive reports and KPI dashboards</li>
+										<li>Automates reporting without manual intervention</li>
+									</ul>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Role in Workflow</p>
+										<p class="text-base text-ibm-gray-80">Generates financial statements, performs variance analysis, produces the close readiness scorecard, and distributes final reports to stakeholders.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column - Chatbot -->
+					<div>
+						<div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+							<div id="root" class="w-full h-[620px] overflow-hidden"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="mt-auto pt-4"></div>
+		</div>
+
+		<script>
+			function switchTab(tab) {
+				const tabs = ["overview", "data", "agents"];
+				tabs.forEach(function (t) {
+					var content = document.getElementById("content-" + t);
+					var btn = document.getElementById("tab-" + t);
+					if (content) content.classList.toggle("hidden", t !== tab);
+					if (btn) {
+						if (t === tab) {
+							btn.classList.add("font-semibold", "text-ibm-gray-100");
+							btn.classList.remove("font-medium", "text-ibm-gray-50");
+						} else {
+							btn.classList.add("font-medium", "text-ibm-gray-50");
+							btn.classList.remove("font-semibold", "text-ibm-gray-100");
+						}
+					}
+				});
+			}
+
+			function switchDataSource(source) {
+				var sources = ["checklist", "prior", "policies", "materiality", "intercompany"];
+				sources.forEach(function (s) {
+					var panel = document.getElementById("data-" + s);
+					var btn = document.getElementById("ds-" + s);
+					if (panel) panel.classList.toggle("hidden", s !== source);
+					if (btn) {
+						if (s === source) {
+							btn.classList.add("bg-ibm-gray-80", "text-white");
+							btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+						} else {
+							btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+							btn.classList.remove("bg-ibm-gray-80", "text-white");
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../assets/js/period-end-orchestration.js"></script>
+	</body>
+</html>

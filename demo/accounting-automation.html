@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ERHFC8YG6Y');
+    </script>		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accounting Automation Agent</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../assets/tailwind-config.js"></script>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="../assets/js/common.js"></script>
+	</head>
+	<body>
+		<div class="slide">
+			<!-- Header -->
+			<div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+				<div>
+					<p class="text-ibm-yellow-30 text-lg font-medium uppercase tracking-wider">Financial Planning & Analysis</p>
+					<h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Accounting Automation Agent</h1>
+				</div>
+				<a href="../index.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+				</a>
+			</div>
+
+			<!-- Section Titles Row -->
+			<div class="grid grid-cols-2 gap-6 mb-2 items-end">
+				<div class="flex gap-0">
+					<button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+						Overview
+					</button>
+					<button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Data
+					</button>
+					<button id="tab-tools" onclick="switchTab('tools')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Tools
+					</button>
+				</div>
+
+				<div>
+					<h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="flex-1 flex flex-col gap-5 min-h-0">
+				<!-- Main Two Column Layout -->
+				<div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+					<!-- Left Column -->
+					<div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+						<!-- Overview Tab Content -->
+						<div id="content-overview" class="flex flex-col gap-4 flex-1">
+							<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+							<!-- Metrics -->
+							<div class="grid grid-cols-3 gap-3">
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">96%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Anomaly detection accuracy</p>
+								</div>
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">80%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Less manual effort</p>
+								</div>
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">66%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Faster journal processing</p>
+								</div>
+							</div>
+
+							<!-- Key Capabilities -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+								<div class="flex-1 grid grid-cols-2 gap-3">
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Journal Automation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Automates creation and posting of journal entries using RPA</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Contract Review</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Analyzes contracts for risk indicators and recommends favorable clauses</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Document Classification</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Extracts and classifies accounting documents intelligently</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Compliance Validation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Validates entries against IFRS/GAAP standards</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Scenario -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+								<div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+									<!-- Persona -->
+									<div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+										<div class="w-10 h-10 bg-ibm-yellow-30 rounded-full flex items-center justify-center flex-shrink-0">
+											<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+											</svg>
+										</div>
+										<div>
+											<p class="text-lg font-semibold text-ibm-gray-100">Michelle Tan, Chief Accounting Officer</p>
+											<p class="text-base text-ibm-gray-80">Automating quarterly close workflows and compliance</p>
+										</div>
+									</div>
+									<div class="space-y-3">
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+											<p class="text-lg text-ibm-gray-80">October month-end close requires processing entries across <span class="text-ibm-yellow-30 font-semibold">18 cost centers</span></p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+											<p class="text-lg text-ibm-gray-80">1,247 entries processed at 99.7% auto-posting rate, 23 flagged for review</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+											<p class="text-lg text-ibm-gray-80">Vendor contract review identifies <span class="text-ibm-yellow-30 font-semibold">7 high-risk clauses</span> including unlimited liability</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+											<p class="text-lg text-ibm-gray-80">IFRS 16 validation of 342 lease entries finds <span class="text-ibm-yellow-30 font-semibold">4 exceptions</span> with corrective entries</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Data Tab Content -->
+						<div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+							<!-- Data Sub-navigation -->
+							<div class="flex gap-2 flex-wrap">
+								<button onclick="switchDataSource('coa')" id="ds-coa" class="px-3 py-1.5 text-sm rounded-full bg-ibm-yellow-30 text-white font-medium">Chart of Accounts</button>
+								<button onclick="switchDataSource('journal')" id="ds-journal" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Journal Entry Rules</button>
+								<button onclick="switchDataSource('contracts')" id="ds-contracts" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Contract Templates</button>
+								<button onclick="switchDataSource('standards')" id="ds-standards" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Accounting Standards</button>
+							</div>
+
+							<!-- Chart of Accounts -->
+							<div id="data-coa" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Account Structure</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Code</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Account Name</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Type</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Normal Balance</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">1000</td><td class="py-1.5 pr-3 text-ibm-gray-80">Cash and Cash Equivalents</td><td class="py-1.5 pr-3 text-ibm-gray-80">Asset</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">1100</td><td class="py-1.5 pr-3 text-ibm-gray-80">Accounts Receivable</td><td class="py-1.5 pr-3 text-ibm-gray-80">Asset</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">1500</td><td class="py-1.5 pr-3 text-ibm-gray-80">Property, Plant & Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">Asset</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">1600</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Right-of-Use Assets</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Asset</td><td class="py-1.5 font-medium text-ibm-gray-100">Debit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">2000</td><td class="py-1.5 pr-3 text-ibm-gray-80">Accounts Payable</td><td class="py-1.5 pr-3 text-ibm-gray-80">Liability</td><td class="py-1.5 text-ibm-gray-80">Credit</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">2200</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Current Portion of Lease Liability</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Liability</td><td class="py-1.5 font-medium text-ibm-gray-100">Credit</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">2600</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Lease Liability - Non-Current</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Liability</td><td class="py-1.5 font-medium text-ibm-gray-100">Credit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">4000</td><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue - Product Sales</td><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue</td><td class="py-1.5 text-ibm-gray-80">Credit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">5000</td><td class="py-1.5 pr-3 text-ibm-gray-80">Cost of Goods Sold</td><td class="py-1.5 pr-3 text-ibm-gray-80">Expense</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">6300</td><td class="py-1.5 pr-3 text-ibm-gray-80">Depreciation Expense</td><td class="py-1.5 pr-3 text-ibm-gray-80">Expense</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">7010</td><td class="py-1.5 pr-3 text-ibm-gray-80">Interest on Lease Liabilities</td><td class="py-1.5 pr-3 text-ibm-gray-80">Expense</td><td class="py-1.5 text-ibm-gray-80">Debit</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Cost Center Hierarchy</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Cost Center</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Name</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Department</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Region</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">CC-100</td><td class="py-1.5 pr-3 text-ibm-gray-80">Corporate Headquarters</td><td class="py-1.5 pr-3 text-ibm-gray-80">Corporate</td><td class="py-1.5 text-ibm-gray-80">North America</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">CC-110</td><td class="py-1.5 pr-3 text-ibm-gray-80">Finance & Accounting</td><td class="py-1.5 pr-3 text-ibm-gray-80">Finance</td><td class="py-1.5 text-ibm-gray-80">North America</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">CC-200</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sales - North America</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sales</td><td class="py-1.5 text-ibm-gray-80">North America</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">CC-210</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sales - Europe</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sales</td><td class="py-1.5 text-ibm-gray-80">Europe</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">CC-400</td><td class="py-1.5 pr-3 text-ibm-gray-80">Manufacturing - Plant 1</td><td class="py-1.5 pr-3 text-ibm-gray-80">Operations</td><td class="py-1.5 text-ibm-gray-80">North America</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">CC-800</td><td class="py-1.5 pr-3 text-ibm-gray-80">Legal & Compliance</td><td class="py-1.5 pr-3 text-ibm-gray-80">Legal</td><td class="py-1.5 text-ibm-gray-80">North America</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Account Approval Matrix</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Transaction Amount</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Approval Required</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">< $5,000</td><td class="py-1.5 text-ibm-gray-80">Automated approval</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">$5,000 - $25,000</td><td class="py-1.5 text-ibm-gray-80">Department Manager</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">$25,000 - $100,000</td><td class="py-1.5 text-ibm-gray-80">Finance Director</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">$100,000 - $500,000</td><td class="py-1.5 text-ibm-gray-80">VP Finance</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">> $500,000</td><td class="py-1.5 text-ibm-gray-80">CFO / CAO</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Journal Entry Rules -->
+							<div id="data-journal" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Standard Recurring Entries - Monthly</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entry ID</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Description</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Debit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Credit</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Amount</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">RE-001</td><td class="py-1.5 pr-3 text-ibm-gray-80">Depreciation - PP&E</td><td class="py-1.5 pr-3 text-ibm-gray-80">6300</td><td class="py-1.5 pr-3 text-ibm-gray-80">1510</td><td class="py-1.5 text-ibm-gray-80">$485,000</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">RE-002</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Depreciation - ROU Assets</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">6310</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">1610</td><td class="py-1.5 font-medium text-ibm-gray-100">$312,000</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">RE-003</td><td class="py-1.5 pr-3 text-ibm-gray-80">Amortization - Intangibles</td><td class="py-1.5 pr-3 text-ibm-gray-80">6300</td><td class="py-1.5 pr-3 text-ibm-gray-80">1710</td><td class="py-1.5 text-ibm-gray-80">$128,000</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">RE-006</td><td class="py-1.5 pr-3 text-ibm-gray-80">Accrued Salaries</td><td class="py-1.5 pr-3 text-ibm-gray-80">6000</td><td class="py-1.5 pr-3 text-ibm-gray-80">2110</td><td class="py-1.5 text-ibm-gray-80">$3,200,000</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">RE-008</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Interest on Lease Liabilities</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">7010</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">2120</td><td class="py-1.5 font-medium text-ibm-gray-100">$187,000</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">RE-010</td><td class="py-1.5 pr-3 text-ibm-gray-80">Lease Liability Reduction</td><td class="py-1.5 pr-3 text-ibm-gray-80">2200</td><td class="py-1.5 pr-3 text-ibm-gray-80">1000</td><td class="py-1.5 text-ibm-gray-80">$238,000</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Month-End Accrual Entries</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entry ID</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Description</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Basis</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Auto-Post</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">AC-001</td><td class="py-1.5 pr-3 text-ibm-gray-80">Revenue Accrual - Services</td><td class="py-1.5 pr-3 text-ibm-gray-80">Completion %</td><td class="py-1.5 text-ibm-yellow-30 font-medium">No - Review Required</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">AC-002</td><td class="py-1.5 pr-3 text-ibm-gray-80">COGS Accrual</td><td class="py-1.5 pr-3 text-ibm-gray-80">Inventory Movement</td><td class="py-1.5 text-ibm-gray-80">Yes</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">AC-005</td><td class="py-1.5 pr-3 text-ibm-gray-80">Tax Provision</td><td class="py-1.5 pr-3 text-ibm-gray-80">Effective Rate</td><td class="py-1.5 text-ibm-yellow-30 font-medium">No - Review Required</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">AC-006</td><td class="py-1.5 pr-3 text-ibm-gray-80">FX Revaluation</td><td class="py-1.5 pr-3 text-ibm-gray-80">Spot Rate</td><td class="py-1.5 text-ibm-gray-80">Yes</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Approval Thresholds</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Entry Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Threshold</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Approval</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">SLA</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Recurring</td><td class="py-1.5 pr-3 text-ibm-gray-80">< $500,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">Auto-approved</td><td class="py-1.5 text-ibm-gray-80">Immediate</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Recurring</td><td class="py-1.5 pr-3 text-ibm-gray-80">>= $500,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">CAO approval</td><td class="py-1.5 text-ibm-gray-80">2 business days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Adjusting</td><td class="py-1.5 pr-3 text-ibm-gray-80">> $250,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">CAO approval</td><td class="py-1.5 text-ibm-gray-80">2 business days</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Manual</td><td class="py-1.5 pr-3 text-ibm-gray-80">Any amount</td><td class="py-1.5 pr-3 text-ibm-gray-80">Finance Director + CAO</td><td class="py-1.5 text-ibm-gray-80">2 business days</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Month-End Close Schedule</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Day</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Activity</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Responsible</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Day 1</td><td class="py-1.5 pr-3 text-ibm-gray-80">Close sub-ledgers (AR, AP, Inventory)</td><td class="py-1.5 text-ibm-gray-80">Sub-ledger teams</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Day 2</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Process recurring journal entries</td><td class="py-1.5 font-medium text-ibm-gray-100">Automation / RPA</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Day 3</td><td class="py-1.5 pr-3 text-ibm-gray-80">Process accrual entries</td><td class="py-1.5 text-ibm-gray-80">Accounting team</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Day 5</td><td class="py-1.5 pr-3 text-ibm-gray-80">Review flagged entries, manual adjustments</td><td class="py-1.5 text-ibm-gray-80">Senior Accountants</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Day 7</td><td class="py-1.5 pr-3 text-ibm-gray-80">Final approvals and period close</td><td class="py-1.5 text-ibm-gray-80">CAO</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Contract Templates -->
+							<div id="data-contracts" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Liability and Indemnification Clauses</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Clause Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Standard Language</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Risk if Absent</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Limitation of Liability</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Capped at 12 months of fees</td><td class="py-1.5 text-ibm-yellow-30 font-medium">High</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Mutual Indemnification</td><td class="py-1.5 pr-3 text-ibm-gray-80">Each party indemnifies for breaches</td><td class="py-1.5 text-ibm-gray-80">Medium</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Consequential Damages</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Exclusion of consequential damages</td><td class="py-1.5 text-ibm-yellow-30 font-medium">High</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">IP Indemnification</td><td class="py-1.5 pr-3 text-ibm-gray-80">Vendor indemnifies for IP infringement</td><td class="py-1.5 text-ibm-gray-80">Medium</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Risk Indicator Matrix</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Risk Indicator</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Severity</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Recommended Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Unlimited liability</td><td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">High</td><td class="py-1.5 font-medium text-ibm-gray-100">Negotiate cap at 12-24 months fees</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">No termination for convenience</td><td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">High</td><td class="py-1.5 font-medium text-ibm-gray-100">Add 90-day termination clause</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Auto-renewal > 60-day notice</td><td class="py-1.5 pr-3 text-ibm-gray-80">Medium</td><td class="py-1.5 text-ibm-gray-80">Reduce to 60-day notice period</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">No data protection clause</td><td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">High</td><td class="py-1.5 font-medium text-ibm-gray-100">Add GDPR/CCPA compliant clause</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Price escalation > CPI+3%</td><td class="py-1.5 pr-3 text-ibm-gray-80">Medium</td><td class="py-1.5 text-ibm-gray-80">Cap at CPI+2% annually</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Assignment without consent</td><td class="py-1.5 pr-3 text-ibm-gray-80">Medium</td><td class="py-1.5 text-ibm-gray-80">Require written consent</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Vendor Risk Scoring</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Score Range</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Risk Level</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Review Required</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">0-3</td><td class="py-1.5 pr-3 text-ibm-gray-80">Low</td><td class="py-1.5 text-ibm-gray-80">Standard review</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">4-6</td><td class="py-1.5 pr-3 text-ibm-gray-80">Medium</td><td class="py-1.5 text-ibm-gray-80">Finance Director review</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">7-8</td><td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">High</td><td class="py-1.5 font-medium text-ibm-gray-100">Legal and CAO review</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">9-10</td><td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">Critical</td><td class="py-1.5 text-ibm-gray-80">Executive committee review</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Accounting Standards -->
+							<div id="data-standards" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">IFRS 16 — Leases: Key Requirements</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Requirement</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Standard</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Detail</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Recognition</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IFRS 16.22</td><td class="py-1.5 font-medium text-ibm-gray-100">Recognize ROU asset and lease liability at commencement</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Initial - ROU</td><td class="py-1.5 pr-3 text-ibm-gray-80">IFRS 16.23-25</td><td class="py-1.5 text-ibm-gray-80">Cost = liability + direct costs + prepaid - incentives + restoration</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Initial - Liability</td><td class="py-1.5 pr-3 text-ibm-gray-80">IFRS 16.26-27</td><td class="py-1.5 text-ibm-gray-80">PV of lease payments using IBR or implicit rate</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Subsequent - ROU</td><td class="py-1.5 pr-3 text-ibm-gray-80">IFRS 16.29-33</td><td class="py-1.5 text-ibm-gray-80">Depreciate over shorter of lease term or useful life</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Modifications</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">IFRS 16.44-46</td><td class="py-1.5 font-medium text-ibm-gray-100">Remeasure liability with revised rate; adjust ROU asset</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Short-term</td><td class="py-1.5 pr-3 text-ibm-gray-80">IFRS 16.5</td><td class="py-1.5 text-ibm-gray-80">Leases ≤ 12 months: expense straight-line (optional)</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Common IFRS 16 Exceptions</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Exception Type</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Description</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Corrective Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Missing ROU Recognition</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">New lease not on balance sheet</td><td class="py-1.5 font-medium text-ibm-gray-100">Create ROU asset and lease liability entries</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Incorrect Discount Rate</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Wrong IBR or implicit rate applied</td><td class="py-1.5 font-medium text-ibm-gray-100">Recalculate liability with correct rate</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Modification Not Reflected</td><td class="py-1.5 pr-3 text-ibm-gray-80">Terms changed but not remeasured</td><td class="py-1.5 text-ibm-gray-80">Remeasure liability and adjust ROU</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Incentive Misclassification</td><td class="py-1.5 pr-3 text-ibm-gray-80">Lease incentive booked as revenue</td><td class="py-1.5 text-ibm-gray-80">Reclassify as ROU cost reduction</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Variable Payment Error</td><td class="py-1.5 pr-3 text-ibm-gray-80">Variable payments in liability</td><td class="py-1.5 text-ibm-gray-80">Remove; expense as incurred</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">IFRS 16 vs ASC 842 Comparison</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Aspect</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">IFRS 16</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">ASC 842</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Lessee Classification</td><td class="py-1.5 pr-3 text-ibm-gray-80">Single model (all on BS)</td><td class="py-1.5 text-ibm-gray-80">Dual model (operating vs. finance)</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Operating Lease P&L</td><td class="py-1.5 pr-3 text-ibm-gray-80">Depreciation + interest</td><td class="py-1.5 text-ibm-gray-80">Single lease expense (straight-line)</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Short-term Threshold</td><td class="py-1.5 pr-3 text-ibm-gray-80">≤ 12 months</td><td class="py-1.5 text-ibm-gray-80">≤ 12 months</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Low-value Exemption</td><td class="py-1.5 pr-3 text-ibm-gray-80">≤ $5,000</td><td class="py-1.5 text-ibm-gray-80">Not available</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- Tools Tab Content -->
+						<div id="content-tools" class="flex flex-col gap-4 flex-1 hidden">
+							<div class="grid grid-cols-2 gap-3 flex-1">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Journal Automation</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Processes journal entries for an accounting period, auto-posting recurring and accrual entries and flagging items requiring manual review.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">cost_centers</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">entry_types</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Processing summary, financial totals, flagged entries</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Contract Review</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Analyzes vendor contracts for risk indicators, flags high-risk clauses, and recommends favorable alternatives.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">contract_references</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">review_focus</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">risk_threshold</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Risk assessment, flagged clauses, recommendations</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Document Classification</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Classifies accounting documents, extracts key terms, and determines appropriate accounting treatment.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">document_references</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">classification_context</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">extract_key_terms</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Classification, extracted terms, accounting treatment</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Compliance Validation</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Validates journal entries against IFRS/GAAP standards, identifies exceptions, and generates corrective entries.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">standard</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scope</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Validation summary, exceptions, corrective entries</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column - Chatbot -->
+					<div>
+						<div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+							<div id="root" class="w-full h-[620px] overflow-hidden"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="mt-auto pt-4"></div>
+		</div>
+
+		<script>
+			function switchTab(tab) {
+				const tabs = ["overview", "data", "tools"];
+				tabs.forEach(function (t) {
+					var content = document.getElementById("content-" + t);
+					var btn = document.getElementById("tab-" + t);
+					if (content) content.classList.toggle("hidden", t !== tab);
+					if (btn) {
+						if (t === tab) {
+							btn.classList.add("font-semibold", "text-ibm-gray-100");
+							btn.classList.remove("font-medium", "text-ibm-gray-50");
+						} else {
+							btn.classList.add("font-medium", "text-ibm-gray-50");
+							btn.classList.remove("font-semibold", "text-ibm-gray-100");
+						}
+					}
+				});
+			}
+
+			function switchDataSource(source) {
+				var sources = ["coa", "journal", "contracts", "standards"];
+				sources.forEach(function (s) {
+					var panel = document.getElementById("data-" + s);
+					var btn = document.getElementById("ds-" + s);
+					if (panel) panel.classList.toggle("hidden", s !== source);
+					if (btn) {
+						if (s === source) {
+							btn.classList.add("bg-ibm-yellow-30", "text-white");
+							btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+						} else {
+							btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+							btn.classList.remove("bg-ibm-yellow-30", "text-white");
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../assets/js/accounting-automation.js"></script>
+	</body>
+</html>

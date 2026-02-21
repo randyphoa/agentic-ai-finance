@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ERHFC8YG6Y');
+    </script>		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Financial &amp; Management Reporting Agent</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../assets/tailwind-config.js"></script>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="../assets/js/common.js"></script>
+	</head>
+	<body>
+		<div class="slide">
+			<!-- Header -->
+			<div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+				<div>
+					<p class="text-ibm-yellow-30 text-lg font-medium uppercase tracking-wider">Financial Planning & Analysis</p>
+					<h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Financial & Management Reporting Agent</h1>
+				</div>
+				<a href="../index.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+				</a>
+			</div>
+
+			<!-- Section Titles Row -->
+			<div class="grid grid-cols-2 gap-6 mb-2 items-end">
+				<div class="flex gap-0">
+					<button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+						Overview
+					</button>
+					<button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Data
+					</button>
+					<button id="tab-tools" onclick="switchTab('tools')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Tools
+					</button>
+				</div>
+
+				<div>
+					<h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="flex-1 flex flex-col gap-5 min-h-0">
+				<!-- Main Two Column Layout -->
+				<div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+					<!-- Left Column -->
+					<div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+						<!-- Overview Tab Content -->
+						<div id="content-overview" class="flex flex-col gap-4 flex-1">
+							<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+							<!-- Metrics -->
+							<div class="grid grid-cols-3 gap-3">
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">50%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Faster report generation</p>
+								</div>
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">50%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Fewer forecasting errors</p>
+								</div>
+								<div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-black">30%</p>
+									<p class="text-base font-medium text-ibm-gray-80">Faster forecast delivery</p>
+								</div>
+							</div>
+
+							<!-- Key Capabilities -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+								<div class="flex-1 grid grid-cols-2 gap-3">
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Report Generation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Generates integrated financial and management reports</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Data Consolidation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Consolidates data across business units with intercompany elimination</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Variance Commentary</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">AI-powered commentary explaining deviations from plan</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+											</svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Executive Dashboard</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Board-ready KPI dashboards with status and trends</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Scenario -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+								<div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+									<!-- Persona -->
+									<div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+										<div class="w-10 h-10 bg-ibm-yellow-30 rounded-full flex items-center justify-center flex-shrink-0">
+											<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+											</svg>
+										</div>
+										<div>
+											<p class="text-lg font-semibold text-ibm-gray-100">David Park, VP of Financial Reporting</p>
+											<p class="text-base text-ibm-gray-80">Preparing executive-ready October monthly report for the board</p>
+										</div>
+									</div>
+									<div class="space-y-3">
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+											<p class="text-lg text-ibm-gray-80">October monthly financial report needed for the board meeting across five business units</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+											<p class="text-lg text-ibm-gray-80">Consolidated report shows <span class="text-ibm-yellow-30 font-semibold">$187.3M revenue</span> at 103% of plan with APAC shortfall flagged</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+											<p class="text-lg text-ibm-gray-80">Executive dashboard built with <span class="text-ibm-yellow-30 font-semibold">5 KPIs</span>, all green except APAC revenue at amber</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+											<p class="text-lg text-ibm-gray-80">AI commentary explains Cloud margin improvement to <span class="text-ibm-yellow-30 font-semibold">26.8%</span> from cost savings and mix shift</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Data Tab Content -->
+						<div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+							<!-- Pill sub-navigation -->
+							<div class="flex gap-2 flex-wrap">
+								<button onclick="switchDataSource('bu-financials')" id="ds-bu-financials"
+									class="px-3 py-1.5 text-sm rounded-full bg-ibm-yellow-30 text-white font-medium">
+									BU Financials
+								</button>
+								<button onclick="switchDataSource('budget-plan')" id="ds-budget-plan"
+									class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">
+									Budget Plan
+								</button>
+								<button onclick="switchDataSource('prior-period')" id="ds-prior-period"
+									class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">
+									Prior Period
+								</button>
+								<button onclick="switchDataSource('kpi-definitions')" id="ds-kpi-definitions"
+									class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">
+									KPI Definitions
+								</button>
+							</div>
+
+							<!-- BU Financials Panel -->
+							<div id="data-bu-financials" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+								<!-- Revenue by Business Unit -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Revenue by Business Unit — October 2025</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Actual ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Plan ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Variance</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Var %</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">72.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">70.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+2.4</td>
+												<td class="py-1.5 text-ibm-gray-80">+3.4%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">38.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">37.5</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+0.6</td>
+												<td class="py-1.5 text-ibm-gray-80">+1.6%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">24.3</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">27.5</td>
+												<td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">-3.2</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">-11.6%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">34.8</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">33.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+1.8</td>
+												<td class="py-1.5 text-ibm-gray-80">+5.5%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">17.7</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">17.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+0.7</td>
+												<td class="py-1.5 text-ibm-gray-80">+4.1%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">187.3</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">185.0</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">+2.3</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">+1.2%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Operating Expenses -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Operating Expenses by Business Unit</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Actual ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Plan ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Variance</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Margin %</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">54.6</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">54.3</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">-0.3</td>
+												<td class="py-1.5 text-ibm-gray-80">24.6%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">30.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">29.6</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">-0.5</td>
+												<td class="py-1.5 text-ibm-gray-80">21.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">19.8</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">20.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+0.6</td>
+												<td class="py-1.5 text-ibm-gray-80">18.5%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">25.5</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">25.9</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">+0.4</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">26.8%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">14.3</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">13.9</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">-0.4</td>
+												<td class="py-1.5 text-ibm-gray-80">19.2%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">144.3</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">144.1</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">-0.2</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">22.9%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Intercompany Eliminations -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Intercompany Eliminations</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Transaction</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">From</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">To</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud Platform License</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">2.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 text-ibm-gray-80">Americas</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud Platform License</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">1.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 text-ibm-gray-80">EMEA</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Shared Services Allocation</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">0.8</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 text-ibm-gray-80">Americas</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Technology Licensing</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">0.6</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 text-ibm-gray-80">APAC</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total Eliminations</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">4.9</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80"></td>
+												<td class="py-1.5 text-ibm-gray-80"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Cash Flow Summary -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Cash Flow Summary</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Op. Cash Flow ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">CapEx ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">FCF ($M)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">16.2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">3.8</td>
+												<td class="py-1.5 text-ibm-gray-80">12.4</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">7.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">1.9</td>
+												<td class="py-1.5 text-ibm-gray-80">5.5</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">4.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">1.2</td>
+												<td class="py-1.5 text-ibm-gray-80">2.9</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">8.6</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">2.4</td>
+												<td class="py-1.5 text-ibm-gray-80">6.2</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">5.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">0.9</td>
+												<td class="py-1.5 text-ibm-gray-80">4.2</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">41.4</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">10.2</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">31.2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Budget Plan Panel -->
+							<div id="data-budget-plan" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<!-- Annual Budget -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Annual Budget by Business Unit — FY2025</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Revenue ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">OpEx ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Target Margin</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">840.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">651.0</td>
+												<td class="py-1.5 text-ibm-gray-80">22.5%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">450.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">355.5</td>
+												<td class="py-1.5 text-ibm-gray-80">21.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">310.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">254.2</td>
+												<td class="py-1.5 text-ibm-gray-80">18.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">400.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">304.0</td>
+												<td class="py-1.5 text-ibm-gray-80">24.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">205.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">168.1</td>
+												<td class="py-1.5 text-ibm-gray-80">18.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">2,205.0</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">1,732.8</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">21.4%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Quarterly Plan -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Quarterly Plan Summary</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Quarter</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Revenue ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">OpEx ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Margin %</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">CapEx ($M)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Q1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">513.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">403.2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.4%</td>
+												<td class="py-1.5 text-ibm-gray-80">28.0</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Q2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">548.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">430.7</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.4%</td>
+												<td class="py-1.5 text-ibm-gray-80">32.0</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Q3</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">530.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">416.5</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.4%</td>
+												<td class="py-1.5 text-ibm-gray-80">30.0</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Q4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">614.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">482.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.4%</td>
+												<td class="py-1.5 text-ibm-gray-80">35.0</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Investment Priorities -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Investment Priorities</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Priority</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Allocation ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Business Unit</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud Platform v3.0</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">18.5</td>
+												<td class="py-1.5 text-ibm-gray-80">Cloud</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC Market Expansion</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">12.0</td>
+												<td class="py-1.5 text-ibm-gray-80">APAC</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">AI/ML Capabilities</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">8.5</td>
+												<td class="py-1.5 text-ibm-gray-80">Enterprise</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Sales Enablement</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">6.0</td>
+												<td class="py-1.5 text-ibm-gray-80">Americas</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Data Center Modernization</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">15.0</td>
+												<td class="py-1.5 text-ibm-gray-80">Cloud</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Key Assumptions -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Key Budget Assumptions</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Assumption</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Value</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Overall revenue growth</td>
+												<td class="py-1.5 text-ibm-gray-80">11% YoY</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Cloud growth target</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">25% YoY</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">APAC growth target</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">15% YoY</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Headcount increase</td>
+												<td class="py-1.5 text-ibm-gray-80">6% net new hires</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">FX: EUR/USD</td>
+												<td class="py-1.5 text-ibm-gray-80">1.08</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Prior Period Panel -->
+							<div id="data-prior-period" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<!-- Prior Year October -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Prior Year — October 2024 Actuals</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Revenue ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">OpEx ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Op. Income ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Margin %</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">65.8</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">51.2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">14.6</td>
+												<td class="py-1.5 text-ibm-gray-80">22.2%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">34.2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">27.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">7.1</td>
+												<td class="py-1.5 text-ibm-gray-80">20.8%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">22.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">18.5</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">3.6</td>
+												<td class="py-1.5 text-ibm-gray-80">16.3%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">27.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">20.9</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">6.5</td>
+												<td class="py-1.5 text-ibm-gray-80">23.4%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">16.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">13.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">2.7</td>
+												<td class="py-1.5 text-ibm-gray-80">16.8%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">165.6</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">131.1</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">34.5</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">20.8%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- YoY Growth -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Year-over-Year Growth — October</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Oct 2024 ($M)</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Oct 2025 ($M)</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">YoY Growth</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">65.8</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">72.4</td>
+												<td class="py-1.5 text-ibm-gray-80">+10.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">34.2</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">38.1</td>
+												<td class="py-1.5 text-ibm-gray-80">+11.4%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">22.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">24.3</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">+10.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">27.4</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">34.8</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">+27.0%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">16.1</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">17.7</td>
+												<td class="py-1.5 text-ibm-gray-80">+9.9%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">165.6</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">187.3</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">+13.1%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- YoY Margin Comparison -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Year-over-Year Margin Comparison</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Business Unit</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Oct 2024</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Oct 2025</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Change (bps)</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Americas</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">22.2%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">24.6%</td>
+												<td class="py-1.5 text-ibm-gray-80">+240</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EMEA</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">20.8%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.0%</td>
+												<td class="py-1.5 text-ibm-gray-80">+20</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">APAC</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">16.3%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">18.5%</td>
+												<td class="py-1.5 text-ibm-gray-80">+220</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-yellow-30/10">
+												<td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Cloud</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">23.4%</td>
+												<td class="py-1.5 pr-3 text-ibm-yellow-30 font-medium">26.8%</td>
+												<td class="py-1.5 text-ibm-yellow-30 font-medium">+340</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Enterprise</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">16.8%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">19.2%</td>
+												<td class="py-1.5 text-ibm-gray-80">+240</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">20.8%</td>
+												<td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">22.9%</td>
+												<td class="py-1.5 font-semibold text-ibm-gray-100">+210</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- KPI Definitions Panel -->
+							<div id="data-kpi-definitions" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<!-- Primary KPIs -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Primary Financial KPIs</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">KPI</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Target</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Green</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amber</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Red</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Total Revenue</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Per AOP</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; 98%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">95-98%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 95%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Operating Margin</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">21.4%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; target or improving</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Within 100bps</td>
+												<td class="py-1.5 text-ibm-gray-80">&gt; 100bps below</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Free Cash Flow</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">$28M/mo</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; 100%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">90-100%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 90%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Customer Retention</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">93%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; 93%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">90-93%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 90%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Cloud ARR Growth</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">25% YoY</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; 25%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">20-25%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 20%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Secondary KPIs -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Secondary KPIs</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">KPI</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Target</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Green</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amber</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Red</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Revenue per Employee</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">$245K</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; $240K</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">$220-240K</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; $220K</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">DSO</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">42 days</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&le; 42 days</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">42-50 days</td>
+												<td class="py-1.5 text-ibm-gray-80">&gt; 50 days</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Budget Variance</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&pm; 3%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Within &pm; 3%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&pm; 3-5%</td>
+												<td class="py-1.5 text-ibm-gray-80">&gt; &pm; 5%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">CapEx Utilization</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">85-100%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">85-100%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">70-85%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 70%</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">EBITDA Margin</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">28.5%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">&ge; 28%</td>
+												<td class="py-1.5 pr-3 text-ibm-gray-80">26-28%</td>
+												<td class="py-1.5 text-ibm-gray-80">&lt; 26%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Dashboard Standards -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Board Report Format</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Standard</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Requirement</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Executive summary</td>
+												<td class="py-1.5 text-ibm-gray-80">Max 5 primary KPIs</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Each KPI shows</td>
+												<td class="py-1.5 text-ibm-gray-80">Actual, Target, Variance, RAG, Trend</td>
+											</tr>
+											<tr class="border-b border-ibm-gray-30">
+												<td class="py-1.5 pr-3 text-ibm-gray-80">Amber/Red KPIs</td>
+												<td class="py-1.5 text-ibm-gray-80">AI-generated commentary required</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- Tools Tab Content -->
+						<div id="content-tools" class="flex flex-col gap-4 flex-1 hidden">
+							<div class="grid grid-cols-2 gap-3 flex-1">
+								<!-- Report Generation -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+										</svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Report Generation</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Generates formatted financial reports with P&L, comparisons, and highlights.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">report_type</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">business_units</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">include_commentary</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Complete financial report with data sources</p>
+									</div>
+								</div>
+
+								<!-- Data Consolidation -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+										</svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Data Consolidation</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Consolidates financial data with business unit breakdown and intercompany adjustments.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">business_units</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">consolidation_level</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">include_intercompany</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Consolidated financials, eliminations, FX adjustments</p>
+									</div>
+								</div>
+
+								<!-- Variance Commentary -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+										</svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Variance Commentary</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">AI-generated variance analysis with contributing factors and executive commentary.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">metric_or_unit</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">comparison_basis</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">detail_level</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Headline variance, factors, forward commentary</p>
+									</div>
+								</div>
+
+								<!-- Executive Dashboard -->
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+										</svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Executive Dashboard</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Generates executive KPI dashboard with RAG status, trends, and narrative summary.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">time_period</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">kpi_count</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">audience</code>
+											<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">include_trends</code>
+										</div>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">KPI entries, RAG status, alerts, exec narrative</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column - Chatbot -->
+					<div>
+						<div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+							<div id="root" class="w-full h-[620px] overflow-hidden"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="mt-auto pt-4"></div>
+		</div>
+
+		<script>
+			function switchTab(tab) {
+				var tabs = ["overview", "data", "tools"];
+				tabs.forEach(function (t) {
+					var content = document.getElementById("content-" + t);
+					var btn = document.getElementById("tab-" + t);
+					if (content) content.classList.toggle("hidden", t !== tab);
+					if (btn) {
+						if (t === tab) {
+							btn.classList.add("font-semibold", "text-ibm-gray-100");
+							btn.classList.remove("font-medium", "text-ibm-gray-50");
+						} else {
+							btn.classList.add("font-medium", "text-ibm-gray-50");
+							btn.classList.remove("font-semibold", "text-ibm-gray-100");
+						}
+					}
+				});
+			}
+
+			function switchDataSource(source) {
+				var sources = ["bu-financials", "budget-plan", "prior-period", "kpi-definitions"];
+				sources.forEach(function (s) {
+					var panel = document.getElementById("data-" + s);
+					var btn = document.getElementById("ds-" + s);
+					if (panel) panel.classList.toggle("hidden", s !== source);
+					if (btn) {
+						if (s === source) {
+							btn.classList.add("bg-ibm-yellow-30", "text-white");
+							btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+						} else {
+							btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+							btn.classList.remove("bg-ibm-yellow-30", "text-white");
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../assets/js/financial-reporting.js"></script>
+	</body>
+</html>

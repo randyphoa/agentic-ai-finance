@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ERHFC8YG6Y');
+    </script>		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Procure-to-Pay Agent</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="../assets/tailwind-config.js"></script>
+		<link rel="stylesheet" href="../assets/styles.css" />
+		<script src="../assets/js/common.js"></script>
+	</head>
+	<body>
+		<div class="slide">
+			<!-- Header -->
+			<div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+				<div>
+					<p class="text-ibm-magenta-60 text-lg font-medium uppercase tracking-wider">Procure-to-Pay</p>
+					<h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Procure-to-Pay Agent</h1>
+				</div>
+				<a href="../index.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+				</a>
+			</div>
+
+			<!-- Section Titles Row -->
+			<div class="grid grid-cols-2 gap-6 mb-2 items-end">
+				<div class="flex gap-0">
+					<button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+						Overview
+					</button>
+					<button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Data
+					</button>
+					<button id="tab-tools" onclick="switchTab('tools')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+						Tools
+					</button>
+				</div>
+
+				<div>
+					<h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="flex-1 flex flex-col gap-5 min-h-0">
+				<!-- Main Two Column Layout -->
+				<div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+					<!-- Left Column -->
+					<div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+						<!-- Overview Tab Content -->
+						<div id="content-overview" class="flex flex-col gap-4 flex-1">
+							<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+							<!-- Metrics -->
+							<div class="grid grid-cols-3 gap-3">
+								<div class="bg-ibm-magenta-60 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">25%</p>
+									<p class="text-base font-medium text-ibm-magenta-20">Lower invoice cost</p>
+								</div>
+								<div class="bg-ibm-magenta-60 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">32%</p>
+									<p class="text-base font-medium text-ibm-magenta-20">Faster approval cycle</p>
+								</div>
+								<div class="bg-ibm-magenta-60 px-6 py-4 rounded-lg">
+									<p class="text-4xl font-light text-white">36%</p>
+									<p class="text-base font-medium text-ibm-magenta-20">Compliance improvement</p>
+								</div>
+							</div>
+
+							<!-- Key Capabilities -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+								<div class="flex-1 grid grid-cols-2 gap-3">
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Supplier Vetting</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Evaluates suppliers based on quality, price, and capacity</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Invoice Processing</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">OCR extracts data and validates against contracts</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">PO Validation</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Validates POs against contract terms and inventory</p>
+									</div>
+									<div class="bg-ibm-gray-10 p-4 rounded-lg">
+										<div class="flex items-center gap-2 mb-1">
+											<svg class="w-5 h-5 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+											<p class="text-lg font-semibold text-ibm-gray-100">Workflow Optimization</p>
+										</div>
+										<p class="text-lg text-ibm-gray-80">Routes approvals intelligently, eliminates bottlenecks</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Scenario -->
+							<div class="flex-1 flex flex-col">
+								<h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+								<div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+									<!-- Persona -->
+									<div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+										<div class="w-10 h-10 bg-ibm-magenta-60 rounded-full flex items-center justify-center flex-shrink-0">
+											<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+											</svg>
+										</div>
+										<div>
+											<p class="text-lg font-semibold text-ibm-gray-100">Siti Aminah, Procurement Manager</p>
+											<p class="text-base text-ibm-gray-80">Managing supplier relationships and invoice processing</p>
+										</div>
+									</div>
+									<div class="space-y-3">
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-magenta-60 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+											<p class="text-lg text-ibm-gray-80">50 supplier invoices received with a payment run scheduled for the next day</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-magenta-60 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+											<p class="text-lg text-ibm-gray-80">47 invoices validated against POs; 3 flagged including a duplicate and a missing PO</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-magenta-60 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+											<p class="text-lg text-ibm-gray-80">Exception details reviewed: PO overcharge, blocked duplicate ($3,450), and retroactive PO needed</p>
+										</div>
+										<div class="flex gap-3">
+											<span class="flex-shrink-0 w-7 h-7 bg-ibm-magenta-60 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+											<p class="text-lg text-ibm-gray-80">12 invoices prioritized for immediate approval to capture <span class="text-ibm-magenta-60 font-semibold">$12,000</span> in early payment discounts</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Data Tab Content -->
+						<div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+							<!-- Data Sub-navigation -->
+							<div class="flex gap-2 flex-wrap">
+								<button onclick="switchDataSource('vendors')" id="ds-vendors" class="px-3 py-1.5 text-sm rounded-full bg-ibm-magenta-60 text-white font-medium">Vendor Master</button>
+								<button onclick="switchDataSource('pos')" id="ds-pos" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Purchase Orders</button>
+								<button onclick="switchDataSource('contracts')" id="ds-contracts" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Supplier Contracts</button>
+								<button onclick="switchDataSource('policies')" id="ds-policies" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Approval Policies</button>
+							</div>
+
+							<!-- Vendor Master Data -->
+							<div id="data-vendors" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-1">Vendor Summary – 10 Active Suppliers</h3>
+									<p class="text-sm text-ibm-gray-50 mb-3">YTD Total Spend: $2.43M | As of October 2024</p>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Vendor</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Rating</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">YTD Spend</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">On-Time %</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Quality</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">A</td><td class="py-1.5 pr-3 text-ibm-gray-80">$385K</td><td class="py-1.5 pr-3 text-ibm-gray-80">96%</td><td class="py-1.5 text-ibm-gray-80">4.5</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-gray-80">A</td><td class="py-1.5 pr-3 text-ibm-gray-80">$215K</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-magenta-60 font-medium">4.8</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Global Logistics LLC</td><td class="py-1.5 pr-3 text-ibm-gray-80">B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$125K</td><td class="py-1.5 pr-3 text-ibm-gray-80">94%</td><td class="py-1.5 text-ibm-gray-80">4.2</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Office Essentials Corp.</td><td class="py-1.5 pr-3 text-ibm-gray-80">A-</td><td class="py-1.5 pr-3 text-ibm-gray-80">$68K</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-gray-80">4.3</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Maintenance</td><td class="py-1.5 pr-3 text-ibm-gray-80">B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$52K</td><td class="py-1.5 pr-3 text-ibm-magenta-60 font-medium">89%</td><td class="py-1.5 text-ibm-gray-80">4.4</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">A</td><td class="py-1.5 pr-3 text-ibm-magenta-60 font-medium">$1.25M</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-gray-80">4.7</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">SafetyFirst Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">A-</td><td class="py-1.5 pr-3 text-ibm-gray-80">$45K</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-gray-80">4.6</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">ChemSource Industries</td><td class="py-1.5 pr-3 text-ibm-gray-80">B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$95K</td><td class="py-1.5 pr-3 text-ibm-gray-80">95%</td><td class="py-1.5 text-ibm-gray-80">4.3</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PackRight Solutions</td><td class="py-1.5 pr-3 text-ibm-gray-80">A-</td><td class="py-1.5 pr-3 text-ibm-gray-80">$78K</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-gray-80">4.4</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Tools Direct</td><td class="py-1.5 pr-3 text-ibm-gray-80">A</td><td class="py-1.5 pr-3 text-ibm-gray-80">$112K</td><td class="py-1.5 pr-3 text-ibm-gray-80">100%</td><td class="py-1.5 text-ibm-gray-80">4.5</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Early Payment Discounts Captured (YTD)</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Vendor</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Discounts</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Invoices</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Avg Payment</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-magenta-60 font-medium">$22,500</td><td class="py-1.5 pr-3 text-ibm-gray-80">6</td><td class="py-1.5 text-ibm-gray-80">45 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4,620</td><td class="py-1.5 pr-3 text-ibm-gray-80">12</td><td class="py-1.5 text-ibm-gray-80">22 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2,150</td><td class="py-1.5 pr-3 text-ibm-gray-80">5</td><td class="py-1.5 text-ibm-gray-80">35 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Tools Direct</td><td class="py-1.5 pr-3 text-ibm-gray-80">$1,680</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">21 days</td></tr>
+											<tr><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Total</td><td class="py-1.5 pr-3 font-semibold text-ibm-magenta-60">$34,955</td><td class="py-1.5 pr-3 font-semibold text-ibm-gray-100">57</td><td class="py-1.5 text-ibm-gray-80"></td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Purchase Orders -->
+							<div id="data-pos" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-1">Active Purchase Orders – October 2024</h3>
+									<p class="text-sm text-ibm-gray-50 mb-3">14 POs | Total: $284,620</p>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">PO #</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Status</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">PO-2024-1001</td><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">$7,100</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Rush fee not on PO</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">PO-2024-1002</td><td class="py-1.5 pr-3 text-ibm-gray-80">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-magenta-60 font-medium">$3,450</td><td class="py-1.5 text-ibm-magenta-60 font-medium">PAID – duplicate risk</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1003</td><td class="py-1.5 pr-3 text-ibm-gray-80">Office Essentials</td><td class="py-1.5 pr-3 text-ibm-gray-80">$2,850</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1004</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">$42,500</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1005</td><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Maintenance</td><td class="py-1.5 pr-3 text-ibm-gray-80">$3,200</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1006</td><td class="py-1.5 pr-3 text-ibm-gray-80">SafetyFirst Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4,680</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1007</td><td class="py-1.5 pr-3 text-ibm-gray-80">ChemSource Industries</td><td class="py-1.5 pr-3 text-ibm-gray-80">$5,890</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1008</td><td class="py-1.5 pr-3 text-ibm-gray-80">PackRight Solutions</td><td class="py-1.5 pr-3 text-ibm-gray-80">$6,750</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1009</td><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Tools Direct</td><td class="py-1.5 pr-3 text-ibm-gray-80">$8,450</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1010</td><td class="py-1.5 pr-3 text-ibm-gray-80">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-gray-80">$18,750</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1011</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">$156,000</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1012</td><td class="py-1.5 pr-3 text-ibm-gray-80">Global Logistics LLC</td><td class="py-1.5 pr-3 text-ibm-gray-80">$4,500</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1013</td><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">$12,500</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">PO-2024-1014</td><td class="py-1.5 pr-3 text-ibm-gray-80">Office Essentials</td><td class="py-1.5 pr-3 text-ibm-gray-80">$8,500</td><td class="py-1.5 text-ibm-gray-80">Approved</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Missing PO – Emergency Shipment</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Detail</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Supplier</td><td class="py-1.5 text-ibm-gray-80">Global Logistics LLC</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Service Date</td><td class="py-1.5 text-ibm-gray-80">October 15, 2024</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Amount</td><td class="py-1.5 text-ibm-magenta-60 font-medium">$2,800</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Authorization</td><td class="py-1.5 text-ibm-gray-80">Verbal – Sarah Chen, Ops Director</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">PO Status</td><td class="py-1.5 text-ibm-magenta-60 font-medium">NOT CREATED – retroactive PO required</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Supplier Contracts -->
+							<div id="data-contracts" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Active Contracts – Payment Terms & Discounts</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Terms</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Early Discount</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">2% / 10 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-gray-80">Electronic Components</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 45</td><td class="py-1.5 text-ibm-gray-80">2% / 15 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Global Logistics LLC</td><td class="py-1.5 pr-3 text-ibm-gray-80">Freight & Shipping</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">1.5% / 7 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Office Essentials Corp.</td><td class="py-1.5 pr-3 text-ibm-gray-80">Office Supplies</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">2% / 10 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Precision Maintenance</td><td class="py-1.5 pr-3 text-ibm-gray-80">Facility Maintenance</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 45</td><td class="py-1.5 text-ibm-gray-80">2.5% / 14 days</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 60</td><td class="py-1.5 text-ibm-magenta-60 font-medium">3% / 20 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">SafetyFirst Equipment</td><td class="py-1.5 pr-3 text-ibm-gray-80">Safety & PPE</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">2% / 10 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">ChemSource Industries</td><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Chemicals</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 45</td><td class="py-1.5 text-ibm-gray-80">2% / 12 days</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">PackRight Solutions</td><td class="py-1.5 pr-3 text-ibm-gray-80">Packaging</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">1.5% / 10 days</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Tools Direct</td><td class="py-1.5 pr-3 text-ibm-gray-80">Hand & Power Tools</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net 30</td><td class="py-1.5 text-ibm-gray-80">2% / 10 days</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Volume Discount Thresholds</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Threshold</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Discount</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Apex Supply Co.</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$10,000</td><td class="py-1.5 text-ibm-gray-80">5%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">TechParts Inc.</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$25,000</td><td class="py-1.5 text-ibm-gray-80">8%</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Office Essentials Corp.</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$5,000</td><td class="py-1.5 text-ibm-gray-80">3%</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Sterling Raw Materials</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$100,000</td><td class="py-1.5 text-ibm-magenta-60 font-medium">10%</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Industrial Tools Direct</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$15,000</td><td class="py-1.5 text-ibm-gray-80">5%</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Key Contract Notes</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Supplier</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Note</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Apex Supply Co.</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Rush delivery $1,100 requires PO amendment before shipment</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">TechParts Inc.</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Duplicate invoice protection required</td></tr>
+											<tr><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Global Logistics LLC</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Emergency shipments: verbal auth OK, PO within 48 hours</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- Approval Policies -->
+							<div id="data-policies" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">PO Approval Thresholds</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Tier</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount</th>
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Approver</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">SLA</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 1</td><td class="py-1.5 pr-3 text-ibm-gray-80">Up to $5K</td><td class="py-1.5 pr-3 text-ibm-gray-80">Dept Manager</td><td class="py-1.5 text-ibm-gray-80">24 hrs</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 2</td><td class="py-1.5 pr-3 text-ibm-gray-80">$5K–$25K</td><td class="py-1.5 pr-3 text-ibm-gray-80">Director</td><td class="py-1.5 text-ibm-gray-80">48 hrs</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 3</td><td class="py-1.5 pr-3 text-ibm-gray-80">$25K–$100K</td><td class="py-1.5 pr-3 text-ibm-gray-80">VP</td><td class="py-1.5 text-ibm-gray-80">72 hrs</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 4</td><td class="py-1.5 pr-3 text-ibm-gray-80">&gt;$100K</td><td class="py-1.5 pr-3 text-ibm-gray-80">CFO / CEO</td><td class="py-1.5 text-ibm-gray-80">5 days</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Invoice Payment Variance Rules</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Condition</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Action</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Matched, no discrepancy</td><td class="py-1.5 text-ibm-gray-80">Auto-approved</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Variance &lt;5% and &lt;$500</td><td class="py-1.5 text-ibm-gray-80">Dept Manager approval</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Variance 5–15% or $500–$2K</td><td class="py-1.5 text-ibm-gray-80">Director approval</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Variance &gt;15% or &gt;$2K</td><td class="py-1.5 text-ibm-gray-80">VP approval</td></tr>
+											<tr class="border-b border-ibm-gray-30 bg-ibm-magenta-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">No matching PO</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Retroactive PO + tier approval</td></tr>
+											<tr><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Duplicate invoice</td><td class="py-1.5 text-ibm-magenta-60 font-medium">Auto-blocked – Finance review</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Early Payment Discount Authorization</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Discount Amount</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Authorization</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Under $1,000</td><td class="py-1.5 text-ibm-gray-80">Auto-approved if validated</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">$1,000–$5,000</td><td class="py-1.5 text-ibm-gray-80">Dept Manager approval</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Over $5,000</td><td class="py-1.5 text-ibm-gray-80">Director approval</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg">
+									<h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Three-Way Match Requirements</h3>
+									<table class="w-full text-left text-sm">
+										<thead><tr class="border-b-2 border-ibm-gray-30">
+											<th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Type</th>
+											<th class="py-1.5 font-semibold text-ibm-gray-100">Match Required</th>
+										</tr></thead>
+										<tbody>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Standard</td><td class="py-1.5 text-ibm-gray-80">PO + Receiving Report + Invoice</td></tr>
+											<tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Services &lt;$500</td><td class="py-1.5 text-ibm-gray-80">PO + Invoice (two-way)</td></tr>
+											<tr><td class="py-1.5 pr-3 text-ibm-gray-80">Utility bills</td><td class="py-1.5 text-ibm-gray-80">Budget approval + Invoice (two-way)</td></tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<!-- Tools Tab Content -->
+						<div id="content-tools" class="flex flex-col gap-4 flex-1 hidden">
+							<div class="grid grid-cols-2 gap-3 flex-1">
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Invoice Processing</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Extracts invoice data including vendor, amount, line items, payment terms, and early payment discounts via OCR.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "batch", "INV-001", "pending"</p>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Extracted invoice data, line items, confidence score</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">PO Validation</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Validates invoices against POs to detect discrepancies, duplicates, and missing POs; checks contract compliance.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">invoice_id</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "all", "INV-001", "flagged"</p>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Validation status, discrepancies, risk, recommendation</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Supplier Vetting</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Evaluates supplier performance, ratings, and provides category-level analysis and recommendations.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">query</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "Apex Supply", "raw materials"</p>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Ratings, scores, strengths, improvement areas</p>
+									</div>
+								</div>
+								<div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+									<div class="flex items-center gap-2 mb-2">
+										<svg class="w-6 h-6 text-ibm-magenta-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+										<h3 class="text-xl font-semibold text-ibm-gray-100">Workflow Optimization</h3>
+									</div>
+									<p class="text-lg text-ibm-gray-80 mb-3 flex-1">Routes validated invoices for payment, identifies early payment discounts, and optimizes batch processing.</p>
+									<div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+										<p class="text-base text-ibm-gray-50 mb-1">Input</p>
+										<code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">action</code>
+										<p class="text-base text-ibm-gray-50 mt-1">e.g., "route_payments", "optimize_batch"</p>
+									</div>
+									<div class="mt-2">
+										<p class="text-base text-ibm-gray-50 mb-1">Output</p>
+										<p class="text-base text-ibm-gray-80">Routing summary, discount opportunities, savings</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column - Chatbot -->
+					<div>
+						<div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+							<div id="root" class="w-full h-[620px] overflow-hidden"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<div class="mt-auto pt-4"></div>
+		</div>
+
+		<script>
+			function switchTab(tab) {
+				const tabs = ["overview", "data", "tools"];
+				tabs.forEach(function (t) {
+					var content = document.getElementById("content-" + t);
+					var btn = document.getElementById("tab-" + t);
+					if (content) content.classList.toggle("hidden", t !== tab);
+					if (btn) {
+						if (t === tab) {
+							btn.classList.add("font-semibold", "text-ibm-gray-100");
+							btn.classList.remove("font-medium", "text-ibm-gray-50");
+						} else {
+							btn.classList.add("font-medium", "text-ibm-gray-50");
+							btn.classList.remove("font-semibold", "text-ibm-gray-100");
+						}
+					}
+				});
+			}
+
+			function switchDataSource(source) {
+				var sources = ["vendors", "pos", "contracts", "policies"];
+				sources.forEach(function (s) {
+					var panel = document.getElementById("data-" + s);
+					var btn = document.getElementById("ds-" + s);
+					if (panel) panel.classList.toggle("hidden", s !== source);
+					if (btn) {
+						if (s === source) {
+							btn.classList.add("bg-ibm-magenta-60", "text-white");
+							btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+						} else {
+							btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+							btn.classList.remove("bg-ibm-magenta-60", "text-white");
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../assets/js/procure-to-pay.js"></script>
+	</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ERHFC8YG6Y');
+    </script>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-to-Cash Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../assets/js/common.js"></script>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header -->
+        <div class="mb-4 pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+            <div>
+                <p class="text-ibm-teal-60 text-lg font-medium uppercase tracking-wider">Order-to-Cash</p>
+                <h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Order-to-Cash Agent</h1>
+            </div>
+            <a href="../index.html" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+            </a>
+        </div>
+
+        <!-- Section Titles Row -->
+        <div class="grid grid-cols-2 gap-6 mb-2 items-end">
+            <div class="flex gap-0">
+                <button id="tab-overview" onclick="switchTab('overview')" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">
+                    Overview
+                </button>
+                <button id="tab-data" onclick="switchTab('data')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+                    Data
+                </button>
+                <button id="tab-tools" onclick="switchTab('tools')" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">
+                    Tools
+                </button>
+            </div>
+
+            <div>
+                <h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col gap-5 min-h-0">
+            <!-- Main Two Column Layout -->
+            <div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+                <!-- Left Column -->
+                <div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-hidden">
+                    <!-- Overview Tab Content -->
+                    <div id="content-overview" class="flex flex-col gap-4 flex-1">
+                        <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+                        <!-- Metrics -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-ibm-teal-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">32%</p>
+                                <p class="text-base font-medium text-ibm-teal-20">Lower days sales outstanding</p>
+                            </div>
+                            <div class="bg-ibm-teal-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">43%</p>
+                                <p class="text-base font-medium text-ibm-teal-20">Bad debt reduction</p>
+                            </div>
+                            <div class="bg-ibm-teal-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">28%</p>
+                                <p class="text-base font-medium text-ibm-teal-20">Faster cycle time</p>
+                            </div>
+                        </div>
+
+                        <!-- Key Capabilities -->
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+                            <div class="flex-1 grid grid-cols-2 gap-3">
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Order Management</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Extracts order data, checks compliance, initiates fulfillment</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Credit Assessment</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Assesses creditworthiness using ML models</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Collections Management</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Predicts payment behavior and optimizes strategies</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Payment Prediction</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Forecasts payment timing and recommends actions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scenario -->
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+                            <div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+                                <!-- Persona -->
+                                <div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+                                    <div class="w-10 h-10 bg-ibm-teal-60 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Wei Ming Lim, Credit Manager</p>
+                                        <p class="text-base text-ibm-gray-80">Managing customer credit decisions and collections strategy</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-teal-60 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+                                        <p class="text-lg text-ibm-gray-80">$450K order received from GlobalTech, which has shown recent payment delays</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-teal-60 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+                                        <p class="text-lg text-ibm-gray-80">Credit score dropped from A to B-, but delays correlate with ERP migration, not financial distress</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-teal-60 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+                                        <p class="text-lg text-ibm-gray-80">Modified terms recommended: 50% upfront, reduced credit limit, Net-30 with <span class="text-ibm-teal-60 font-semibold">78% on-time probability</span></p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-teal-60 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+                                        <p class="text-lg text-ibm-gray-80">Collection strategy created with day-by-day actions, contact preferences, and escalation triggers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tab Content -->
+                    <div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <!-- Data Sub-navigation -->
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="switchDataSource('payment')" id="ds-payment" class="px-3 py-1.5 text-sm rounded-full bg-ibm-teal-60 text-white font-medium">Payment History</button>
+                            <button onclick="switchDataSource('credit')" id="ds-credit" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Credit Policy</button>
+                            <button onclick="switchDataSource('contacts')" id="ds-contacts" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Contact Directory</button>
+                            <button onclick="switchDataSource('benchmarks')" id="ds-benchmarks" class="px-3 py-1.5 text-sm rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Industry Benchmarks</button>
+                        </div>
+
+                        <!-- Payment History -->
+                        <div id="data-payment" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-1">GlobalTech Solutions (CUST-001)</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Credit Rating: B- (downgraded from A) | Limit: $500K | Exposure: $180K</p>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Invoice</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Amount</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Days Late</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Notes</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2024-0156</td><td class="py-1.5 pr-3 text-ibm-gray-80">$85,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">Pre-ERP migration</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2024-0203</td><td class="py-1.5 pr-3 text-ibm-gray-80">$62,500</td><td class="py-1.5 pr-3 text-ibm-gray-80">8</td><td class="py-1.5 text-ibm-gray-80">Pre-ERP migration</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">INV-2024-0287</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$95,000</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">15</td><td class="py-1.5 font-medium text-ibm-gray-100">ERP migration started</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">INV-2024-0345</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$78,000</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">21</td><td class="py-1.5 font-medium text-ibm-gray-100">ERP migration ongoing</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">INV-2024-0412</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$112,000</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">25</td><td class="py-1.5 font-medium text-ibm-gray-100">ERP migration ongoing</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">INV-2024-0478</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$68,500</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">26</td><td class="py-1.5 font-medium text-ibm-gray-100">ERP migration ongoing</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2024-0534</td><td class="py-1.5 pr-3 text-ibm-gray-80">$91,200</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">23</td><td class="py-1.5 text-ibm-gray-80">ERP migration ongoing</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2024-0612</td><td class="py-1.5 pr-3 text-ibm-gray-80">$74,800</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">21</td><td class="py-1.5 text-ibm-gray-80">Nearing completion</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2024-0745</td><td class="py-1.5 pr-3 text-ibm-gray-80">$88,000</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">21</td><td class="py-1.5 text-ibm-gray-80">Current</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2025-0012</td><td class="py-1.5 pr-3 text-ibm-gray-80">$92,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">-</td><td class="py-1.5 text-ibm-teal-60 font-medium">Outstanding</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">INV-2025-0045</td><td class="py-1.5 pr-3 text-ibm-gray-80">$88,000</td><td class="py-1.5 pr-3 text-ibm-gray-80">-</td><td class="py-1.5 text-ibm-teal-60 font-medium">Outstanding</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Customer Portfolio Summary</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Customer</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Rating</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Exposure</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Avg Days Late</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Trend</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">GlobalTech Solutions</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">B-</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$180K</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">23</td><td class="py-1.5 text-ibm-teal-60 font-medium">ERP migration</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Acme Corporation</td><td class="py-1.5 pr-3 text-ibm-gray-80">B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$180K</td><td class="py-1.5 pr-3 text-ibm-gray-80">5</td><td class="py-1.5 text-ibm-gray-80">Stable</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pinnacle Industries</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">C+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$320K</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">39</td><td class="py-1.5 text-ibm-teal-60 font-medium">Worsening</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">MedTech Partners</td><td class="py-1.5 pr-3 text-ibm-gray-80">A-</td><td class="py-1.5 pr-3 text-ibm-gray-80">$425K</td><td class="py-1.5 pr-3 text-ibm-gray-80">-1.5</td><td class="py-1.5 text-ibm-gray-80">Excellent</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Stellar Logistics</td><td class="py-1.5 pr-3 text-ibm-gray-80">B</td><td class="py-1.5 pr-3 text-ibm-gray-80">$275K</td><td class="py-1.5 pr-3 text-ibm-gray-80">12</td><td class="py-1.5 text-ibm-gray-80">Stable</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Summit Manufacturing</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">B-</td><td class="py-1.5 pr-3 text-ibm-gray-80">$285K</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">22</td><td class="py-1.5 text-ibm-teal-60 font-medium">Deteriorating</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Retail Group</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">C</td><td class="py-1.5 pr-3 text-ibm-gray-80">$198K</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">42</td><td class="py-1.5 text-ibm-teal-60 font-medium">High risk</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Evergreen Healthcare</td><td class="py-1.5 pr-3 text-ibm-gray-80">A</td><td class="py-1.5 pr-3 text-ibm-gray-80">$380K</td><td class="py-1.5 pr-3 text-ibm-gray-80">-0.75</td><td class="py-1.5 text-ibm-gray-80">Excellent</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">DataStream Analytics</td><td class="py-1.5 pr-3 text-ibm-gray-80">B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$145K</td><td class="py-1.5 pr-3 text-ibm-gray-80">4</td><td class="py-1.5 text-ibm-gray-80">Stable</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Coastal Distributors</td><td class="py-1.5 pr-3 text-ibm-gray-80">B</td><td class="py-1.5 pr-3 text-ibm-gray-80">$165K</td><td class="py-1.5 pr-3 text-ibm-gray-80">9</td><td class="py-1.5 text-ibm-gray-80">Stable</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Credit Policy -->
+                        <div id="data-credit" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Customer Tier Classification</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Tier</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Rating</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Credit Limit</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Terms</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Review</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 1 - Premium</td><td class="py-1.5 pr-3 text-ibm-gray-80">A or higher</td><td class="py-1.5 pr-3 text-ibm-gray-80">$500K-$1M</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net-45</td><td class="py-1.5 text-ibm-gray-80">Annual</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 2 - Standard</td><td class="py-1.5 pr-3 text-ibm-gray-80">B to B+</td><td class="py-1.5 pr-3 text-ibm-gray-80">$100K-$500K</td><td class="py-1.5 pr-3 text-ibm-gray-80">Net-30</td><td class="py-1.5 text-ibm-gray-80">Semi-annual</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Tier 3 - Monitored</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">B- to C+</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">$25K-$100K</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Net-15 / 50% upfront</td><td class="py-1.5 font-medium text-ibm-gray-100">Quarterly</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Tier 4 - High Risk</td><td class="py-1.5 pr-3 text-ibm-gray-80">C or below</td><td class="py-1.5 pr-3 text-ibm-gray-80">$0-$25K</td><td class="py-1.5 pr-3 text-ibm-gray-80">CIA / Letter of Credit</td><td class="py-1.5 text-ibm-gray-80">Monthly</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Order Approval Decision Matrix</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Condition</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Action / Reviewer</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Within limit, no overdue, B+ or higher</td><td class="py-1.5 text-ibm-gray-80">Auto-approve</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Exceeds limit by &lt;25%</td><td class="py-1.5 text-ibm-gray-80">Credit Analyst</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Exceeds limit by 25-50%</td><td class="py-1.5 text-ibm-gray-80">Credit Manager</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Exceeds limit by &gt;50%</td><td class="py-1.5 text-ibm-gray-80">CFO</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Credit rating below B</td><td class="py-1.5 text-ibm-teal-60 font-medium">Credit Manager</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Any overdue balance &gt;30 days</td><td class="py-1.5 text-ibm-gray-80">Credit Manager</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Conditional Approval Options</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Risk Factor</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Recommended Modification</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Recent credit downgrade</td><td class="py-1.5 font-medium text-ibm-gray-100">Reduce terms by 15 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Industry sector stress</td><td class="py-1.5 text-ibm-gray-80">Require 25% upfront</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Customer ERP/system migration</td><td class="py-1.5 font-medium text-ibm-gray-100">Offer progress billing</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Seasonal business</td><td class="py-1.5 text-ibm-gray-80">Align terms with selling season</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Large single order (&gt;50% of limit)</td><td class="py-1.5 text-ibm-gray-80">Split into multiple shipments</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Collections Escalation Timeline</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Days Past Due</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Action</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Owner</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">1-5 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Automated reminder email</td><td class="py-1.5 text-ibm-gray-80">System</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">6-15 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Personal follow-up call to AP</td><td class="py-1.5 text-ibm-gray-80">Collections Specialist</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">16-25 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Escalation to Controller</td><td class="py-1.5 text-ibm-gray-80">Collections Supervisor</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">26-35 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">CFO-to-CFO communication</td><td class="py-1.5 text-ibm-gray-80">Credit Manager</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">36-45 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Formal demand letter</td><td class="py-1.5 text-ibm-gray-80">Credit Manager</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">46-60 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Credit hold on new orders</td><td class="py-1.5 text-ibm-gray-80">Automatic</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">91+ days</td><td class="py-1.5 pr-3 text-ibm-gray-80">Legal action consideration</td><td class="py-1.5 text-ibm-gray-80">CFO approval</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Contact Directory -->
+                        <div id="data-contacts" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-1">GlobalTech Solutions - Key Contacts</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Account Status: Active - Monitored | ERP migration in progress</p>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Name</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Title</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Contact</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Notes</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Sarah Chen</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">AP Manager</td><td class="py-1.5 pr-3 text-ibm-gray-80">Email, Tue 10am-12pm</td><td class="py-1.5 text-ibm-teal-60 font-medium">Primary AP contact during ERP transition</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Marcus Johnson</td><td class="py-1.5 pr-3 text-ibm-gray-80">AP Specialist</td><td class="py-1.5 pr-3 text-ibm-gray-80">Phone, Mon-Wed AM</td><td class="py-1.5 text-ibm-gray-80">Routine inquiries</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Jennifer Walsh</td><td class="py-1.5 pr-3 text-ibm-gray-80">Controller</td><td class="py-1.5 pr-3 text-ibm-gray-80">Email, 24hr response</td><td class="py-1.5 text-ibm-gray-80">Escalation for disputes</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Robert Kim</td><td class="py-1.5 pr-3 text-ibm-gray-80">CFO</td><td class="py-1.5 pr-3 text-ibm-gray-80">Via Controller</td><td class="py-1.5 text-ibm-gray-80">CFO-level escalation only</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Escalation Paths - All Customers</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Customer</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">AP Contact</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">1st Escalation</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Final Escalation</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">GlobalTech Solutions</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Sarah Chen</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Jennifer Walsh</td><td class="py-1.5 font-medium text-ibm-gray-100">Robert Kim (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Acme Corporation</td><td class="py-1.5 pr-3 text-ibm-gray-80">Patricia Williams</td><td class="py-1.5 pr-3 text-ibm-gray-80">Michael Torres</td><td class="py-1.5 text-ibm-gray-80">Linda Chang (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pinnacle Industries</td><td class="py-1.5 pr-3 text-ibm-gray-80">Nancy Garcia</td><td class="py-1.5 pr-3 text-ibm-gray-80">Richard Baker</td><td class="py-1.5 text-ibm-gray-80">Thomas Anderson (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">MedTech Partners</td><td class="py-1.5 pr-3 text-ibm-gray-80">Elizabeth Murray</td><td class="py-1.5 pr-3 text-ibm-gray-80">Susan Palmer</td><td class="py-1.5 text-ibm-gray-80">Andrew Mitchell (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Stellar Logistics</td><td class="py-1.5 pr-3 text-ibm-gray-80">Michelle Brown</td><td class="py-1.5 pr-3 text-ibm-gray-80">Karen White</td><td class="py-1.5 text-ibm-gray-80">Steven Thompson (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Summit Manufacturing</td><td class="py-1.5 pr-3 text-ibm-gray-80">Carol Henderson</td><td class="py-1.5 pr-3 text-ibm-gray-80">Gregory Adams</td><td class="py-1.5 text-ibm-gray-80">Barbara Nelson (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Retail Group</td><td class="py-1.5 pr-3 text-ibm-gray-80">Stephanie Martin</td><td class="py-1.5 pr-3 text-ibm-gray-80">Janet Robinson</td><td class="py-1.5 text-ibm-gray-80">William Clark (CFO)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Evergreen Healthcare</td><td class="py-1.5 pr-3 text-ibm-gray-80">Laura Thompson</td><td class="py-1.5 pr-3 text-ibm-gray-80">Catherine Lewis</td><td class="py-1.5 text-ibm-gray-80">Robert Hughes (CFO)</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Coastal Distributors</td><td class="py-1.5 pr-3 text-ibm-gray-80">Sandra Kim</td><td class="py-1.5 pr-3 text-ibm-gray-80">Frank Miller</td><td class="py-1.5 text-ibm-gray-80">Helen Carter (CFO)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Communication Preferences</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Customer</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Best Method</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Best Time</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Avoid</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">GlobalTech Solutions</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Email</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Tue 10am-12pm</td><td class="py-1.5 font-medium text-ibm-gray-100">Friday afternoons</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Acme Corporation</td><td class="py-1.5 pr-3 text-ibm-gray-80">Phone</td><td class="py-1.5 pr-3 text-ibm-gray-80">Thu 2pm-4pm</td><td class="py-1.5 text-ibm-gray-80">Monday mornings</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pinnacle Industries</td><td class="py-1.5 pr-3 text-ibm-gray-80">Email/Phone</td><td class="py-1.5 pr-3 text-ibm-gray-80">Mornings</td><td class="py-1.5 text-ibm-gray-80">Fridays</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">MedTech Partners</td><td class="py-1.5 pr-3 text-ibm-gray-80">Email</td><td class="py-1.5 pr-3 text-ibm-gray-80">Anytime</td><td class="py-1.5 text-ibm-gray-80">N/A</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Pacific Retail Group</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">Certified mail</td><td class="py-1.5 pr-3 text-ibm-gray-80">N/A</td><td class="py-1.5 text-ibm-teal-60 font-medium">Email (rarely checked)</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Coastal Distributors</td><td class="py-1.5 pr-3 text-ibm-gray-80">Phone</td><td class="py-1.5 pr-3 text-ibm-gray-80">Mon-Wed</td><td class="py-1.5 text-ibm-gray-80">Thu/Fri</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Industry Benchmarks -->
+                        <div id="data-benchmarks" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-1">Technology Sector - Software/SaaS</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">GlobalTech Solutions operates in this sector</p>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Metric</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Benchmark</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Top Quartile</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Bottom Quartile</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Average Days to Pay</td><td class="py-1.5 pr-3 text-ibm-gray-80">32 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">22 days</td><td class="py-1.5 text-ibm-gray-80">48 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">DSO</td><td class="py-1.5 pr-3 text-ibm-gray-80">38 days</td><td class="py-1.5 pr-3 text-ibm-gray-80">28 days</td><td class="py-1.5 text-ibm-gray-80">55 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">On-Time Payment Rate</td><td class="py-1.5 pr-3 text-ibm-gray-80">72%</td><td class="py-1.5 pr-3 text-ibm-gray-80">88%</td><td class="py-1.5 text-ibm-gray-80">52%</td></tr>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Avg Days Past Due</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">8 days</td><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">3 days</td><td class="py-1.5 text-ibm-teal-60 font-medium">18 days</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Bad Debt Rate</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.8%</td><td class="py-1.5 pr-3 text-ibm-gray-80">0.3%</td><td class="py-1.5 text-ibm-gray-80">2.1%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Best-Paying Industries (On-Time Rate)</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Industry</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">On-Time %</th>
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Avg Days Past Due</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Bad Debt Rate</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Healthcare/Hospitals</td><td class="py-1.5 pr-3 text-ibm-gray-80">75%</td><td class="py-1.5 pr-3 text-ibm-gray-80">6 days</td><td class="py-1.5 text-ibm-gray-80">0.6%</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Software/SaaS</td><td class="py-1.5 pr-3 text-ibm-gray-80">72%</td><td class="py-1.5 pr-3 text-ibm-gray-80">8 days</td><td class="py-1.5 text-ibm-gray-80">0.8%</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">General Manufacturing</td><td class="py-1.5 pr-3 text-ibm-gray-80">62%</td><td class="py-1.5 pr-3 text-ibm-gray-80">15 days</td><td class="py-1.5 text-ibm-gray-80">1.4%</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Retail</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">55%</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">18 days</td><td class="py-1.5 text-ibm-teal-60 font-medium">1.8%</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Construction</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">48%</td><td class="py-1.5 pr-3 text-ibm-teal-60 font-medium">25 days</td><td class="py-1.5 text-ibm-teal-60 font-medium">2.2%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">ERP Migration Impact</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Factor</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Benchmark / Guideline</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30 bg-ibm-teal-60/10"><td class="py-1.5 pr-3 font-medium text-ibm-gray-100">Expected payment delay</td><td class="py-1.5 text-ibm-teal-60 font-medium">15-25 additional days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Grace period before escalation</td><td class="py-1.5 text-ibm-gray-80">Up to 15 additional days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Post-migration monitoring</td><td class="py-1.5 text-ibm-gray-80">90-day period with weekly check-ins</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Recommended terms modification</td><td class="py-1.5 text-ibm-gray-80">Consider progress billing during transition</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-base font-semibold text-ibm-gray-100 mb-3">Recession Impact on DSO by Industry</h3>
+                                <table class="w-full text-left text-sm">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Industry</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Typical DSO Increase</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Technology</td><td class="py-1.5 text-ibm-gray-80">+8-12 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Healthcare</td><td class="py-1.5 text-ibm-gray-80">+5-8 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Manufacturing</td><td class="py-1.5 text-ibm-gray-80">+15-25 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Construction</td><td class="py-1.5 text-ibm-teal-60 font-medium">+25-40 days</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Retail</td><td class="py-1.5 text-ibm-teal-60 font-medium">+18-28 days</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Transportation</td><td class="py-1.5 text-ibm-gray-80">+10-15 days</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Tab Content -->
+                    <div id="content-tools" class="flex flex-col gap-4 flex-1 hidden">
+                        <div class="grid grid-cols-2 gap-3 flex-1">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">Credit Assessment</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Evaluates customer creditworthiness including score, rating, risk factors, exposure analysis, and payment history metrics.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">customer_name</code>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded ml-1">order_amount</code>
+                                    <p class="text-base text-ibm-gray-50 mt-1">e.g., "GlobalTech", $450,000</p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Credit score, risk factors, exposure, recommendations</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">Payment Prediction</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Predicts payment dates with probability metrics, optimal contact windows, and improvement potential through early outreach or discounts.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">customer_name</code>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded ml-1">invoice_amount</code>
+                                    <p class="text-base text-ibm-gray-50 mt-1">e.g., "GlobalTech", $450,000</p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Predicted date, probability, contact window, actions</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">Collections Management</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Generates collection strategies with day-by-day action plans, contact information, escalation paths, and early payment tips.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">customer_name</code>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded ml-1">account_status</code>
+                                    <p class="text-base text-ibm-gray-50 mt-1">e.g., "GlobalTech", "overdue"</p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Action plan, contacts, escalation, collection notes</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-teal-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">Portfolio Risk Analysis</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Analyzes AR portfolio risk distribution, concentration risks, high-risk accounts, emerging patterns, and bad debt reserve adequacy.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">analysis_type</code>
+                                    <p class="text-base text-ibm-gray-50 mt-1">e.g., "summary", "high_risk", "all"</p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Risk distribution, concentration, recommendations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Chatbot -->
+                <div>
+                    <div class="p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden" id="chatbot-container">
+                        <div id="root" class="w-full h-[620px] overflow-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-auto pt-4">
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const tabs = ["overview", "data", "tools"];
+            tabs.forEach(function (t) {
+                var content = document.getElementById("content-" + t);
+                var btn = document.getElementById("tab-" + t);
+                if (content) content.classList.toggle("hidden", t !== tab);
+                if (btn) {
+                    if (t === tab) {
+                        btn.classList.add("font-semibold", "text-ibm-gray-100");
+                        btn.classList.remove("font-medium", "text-ibm-gray-50");
+                    } else {
+                        btn.classList.add("font-medium", "text-ibm-gray-50");
+                        btn.classList.remove("font-semibold", "text-ibm-gray-100");
+                    }
+                }
+            });
+        }
+
+        function switchDataSource(source) {
+            var sources = ["payment", "credit", "contacts", "benchmarks"];
+            sources.forEach(function (s) {
+                var panel = document.getElementById("data-" + s);
+                var btn = document.getElementById("ds-" + s);
+                if (panel) panel.classList.toggle("hidden", s !== source);
+                if (btn) {
+                    if (s === source) {
+                        btn.classList.add("bg-ibm-teal-60", "text-white");
+                        btn.classList.remove("bg-ibm-gray-20", "text-ibm-gray-80");
+                    } else {
+                        btn.classList.add("bg-ibm-gray-20", "text-ibm-gray-80");
+                        btn.classList.remove("bg-ibm-teal-60", "text-white");
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="../assets/js/order-to-cash.js"></script>
+</body>
+</html>
