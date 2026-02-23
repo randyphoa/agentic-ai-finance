@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    background: white;
+    padding: 56px 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    zoom: 0.5;
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (min-width: 1200px) { .slide { zoom: 0.6; } }
+@media (min-width: 1400px) { .slide { zoom: 0.7; } }
+@media (min-width: 1600px) { .slide { zoom: 0.85; } }
+@media (min-width: 2200px) { .slide { zoom: 1; } }
+
+/* Counter zoom for webchat to maintain readable font size */
+#chatbot-container { zoom: 1.2; }
+
+/* Hide webchat header title */
+.wxoLiteHeaderTitle.custom-avatar-title { display: none !important; }
+
+/* View Transitions API - Enable cross-document transitions */
+@view-transition {
+    navigation: auto;
+}
+
+/* Slide transition name for the main content */
+.slide {
+    view-transition-name: slide;
+}
+
+/* Default fade transition */
+::view-transition-old(slide),
+::view-transition-new(slide) {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Forward navigation (right arrow) - slide left */
+html[data-transition="forward"]::view-transition-old(slide) {
+    animation: slide-out-left 1s ease-in-out;
+}
+
+html[data-transition="forward"]::view-transition-new(slide) {
+    animation: slide-in-right 1s ease-in-out;
+}
+
+/* Back navigation (left arrow) - slide right */
+html[data-transition="back"]::view-transition-old(slide) {
+    animation: slide-out-right 1s ease-in-out;
+}
+
+html[data-transition="back"]::view-transition-new(slide) {
+    animation: slide-in-left 1s ease-in-out;
+}
+
+@keyframes slide-out-left {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-50px); }
+}
+
+@keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-out-right {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(50px); }
+}
+
+@keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
