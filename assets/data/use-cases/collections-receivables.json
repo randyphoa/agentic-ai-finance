@@ -1,0 +1,57 @@
+{
+  "id": "collections-receivables",
+  "name": "Collections & Receivables",
+  "type": "specialist",
+  "category": "Order-to-Cash",
+  "persona": { "id": "ar-manager", "title": "AR Manager", "fullTitle": "Accounts Receivable Manager" },
+  "scenario": {
+    "summary": "Month-end AR review — Continental, Pacific Dynamics past due",
+    "situation": "End of month. The AR Manager reviews the outstanding receivables portfolio — $38M in open invoices across ~2,500 customers. DSO has crept up from 34 to 41 days over the past two quarters. The CFO flagged this in the last leadership meeting. Two accounts are particularly concerning: Continental Mfg AG (EUR 890K, 22 days past due) and Pacific Dynamics ($415K, 31 days past due with no communication). Meanwhile, Apex Heavy Equipment ($780K) is due today and historically pays 5-7 days late.",
+    "dataInputs": [
+      "AR aging report",
+      "Customer payment history (24 months)",
+      "Credit ratings",
+      "Customer communication logs",
+      "Order pipeline data",
+      "Industry benchmarks (median DSO 27 days)",
+      "Economic indicators by region"
+    ],
+    "agentSteps": [
+      "Builds a risk-scored collection priority queue across all open invoices — by payment probability based on historical behavior, credit profile, and external signals",
+      "Continental Mfg AG: flags as high risk — payment history shows deterioration (avg 15 days late to 22 days late over 6 months), recommends immediate outreach with escalation to their CFO and tightening credit terms",
+      "Pacific Dynamics: flags as critical — 31 days overdue with no payment activity or communication, credit rating dropped from B to B-, recommends hold on pending $180K order and initiating formal collection",
+      "Apex Heavy Equipment: predicts payment will arrive by day 5 based on historical pattern (87% of payments land between day 32-37), auto-schedules reminder",
+      "Titan Automotive: healthy — current, consistent payer, no action needed",
+      "Generates a DSO improvement plan: if Continental and Pacific Dynamics are resolved, DSO drops from 41 to 36 days"
+    ],
+    "expectedOutput": "Risk-scored collection queue with recommended actions per account, predicted payment dates for current invoices, DSO impact analysis, auto-generated outreach emails (draft) for high-risk accounts"
+  },
+  "stats": [
+    { "value": "43%", "label": "Lower uncollectable balances", "source": "Benchmarking" },
+    { "value": "28%", "label": "Faster invoice-to-payment cycle", "source": "Benchmarking" },
+    { "value": "32%", "label": "Lower DSO", "source": "Benchmarking" },
+    { "value": "29%", "label": "DSO reduction by 2027", "source": "Data Story" },
+    { "value": "33%", "label": "AR cycle time reduction by 2027", "source": "Data Story" }
+  ],
+  "benchmarks": { "uncollectableBalances": "0.69% of revenue", "cycleTime": "15 days", "dso": "27 days", "source": "Benchmarking" },
+  "adoption": { "traditionalAI": "21%", "genAI": "16%", "source": "Benchmarking" },
+  "feedsInto": ["cash-flow-liquidity", "journal-entry-reconciliation"],
+  "receivesFrom": [],
+  "data": {
+    "invoicesAR": [
+      { "customer": "Titan Automotive", "invoice": "AR-4401", "amount": "$2.1M", "dueDate": "15 days out", "status": "Current", "daysPastDue": null },
+      { "customer": "Continental Mfg AG", "invoice": "AR-4388", "amount": "EUR 890K", "dueDate": "Overdue", "status": "Past due", "daysPastDue": 22 },
+      { "customer": "Pacific Dynamics", "invoice": "AR-4372", "amount": "$415K", "dueDate": "Overdue", "status": "Past due", "daysPastDue": 31 },
+      { "customer": "Apex Heavy Equipment", "invoice": "AR-4395", "amount": "$780K", "dueDate": "Due today", "status": "At risk", "daysPastDue": 0 },
+      { "customer": "Nordic Energy", "invoice": "AR-4390", "amount": "EUR 1.3M", "dueDate": "8 days out", "status": "Current", "daysPastDue": null }
+    ],
+    "customers": [
+      { "customer": "Titan Automotive Group", "region": "Americas", "segment": "Automotive OEM", "annualRevenue": "$142M", "creditRating": "A", "paymentTerms": "Net-45", "dso": "38 days" },
+      { "customer": "Nordic Energy Solutions", "region": "Europe", "segment": "Energy", "annualRevenue": "$89M", "creditRating": "A-", "paymentTerms": "Net-60", "dso": "52 days" },
+      { "customer": "Apex Heavy Equipment", "region": "Americas", "segment": "Heavy Equipment", "annualRevenue": "$67M", "creditRating": "B+", "paymentTerms": "Net-30", "dso": "41 days" },
+      { "customer": "Sakura Precision Co.", "region": "APAC", "segment": "Aerospace", "annualRevenue": "$54M", "creditRating": "A", "paymentTerms": "Net-45", "dso": "33 days" },
+      { "customer": "Continental Mfg AG", "region": "Europe", "segment": "Industrial", "annualRevenue": "$48M", "creditRating": "B", "paymentTerms": "Net-60", "dso": "71 days" },
+      { "customer": "Pacific Dynamics Ltd", "region": "APAC", "segment": "Automotive", "annualRevenue": "$36M", "creditRating": "B-", "paymentTerms": "Net-30", "dso": "62 days" }
+    ]
+  }
+}

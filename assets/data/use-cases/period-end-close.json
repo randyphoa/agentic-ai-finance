@@ -1,0 +1,39 @@
+{
+  "id": "period-end-close",
+  "name": "Period-End Close",
+  "type": "supervisor",
+  "category": "Supervisor Agent",
+  "persona": { "id": "controller", "title": "Controller", "fullTitle": "Corporate Controller" },
+  "scenario": {
+    "summary": "Orchestrating November close — Journal Entry, Anomaly Detection, Reporting",
+    "situation": "November month-end close, day 1 morning. The Controller launches the close process. Meridian's close typically takes 6 business days across 6 entities — the target is 4 days. The supervisor coordinates three specialist agents in sequence, handling dependencies and escalating blockers. Last quarter, a missed intercompany elimination delayed the close by 1 day.",
+    "dataInputs": [
+      "Close calendar and deadlines",
+      "Entity-level trial balances",
+      "Materiality thresholds ($50K)",
+      "Prior close cycle times"
+    ],
+    "agentSteps": [
+      "Step 1 — Journal Entry & Reconciliation runs first: processes all 1,200 entries, reconciles sub-ledgers, generates intercompany eliminations. Outputs: reconciled trial balances for all 6 entities",
+      "Gate check: Supervisor validates that all entities have reconciled trial balances. JE-9005 (JPY 12M FX entry) is above threshold — supervisor routes to Controller for approval",
+      "Step 2 — Anomaly Detection scans the reconciled entries: finds manual JE-9010 ($1.2M, no docs) and escalates. Controller reviews, confirms it's a valid accrual, attaches documentation. Supervisor clears the block",
+      "Step 3 — Financial Reporting generates the close package once steps 1 and 2 are clear: pulls the reconciled, validated data and produces the full reporting package",
+      "Close status dashboard: Supervisor maintains a real-time view — entity-by-entity progress, open items, blockers, estimated completion time"
+    ],
+    "expectedOutput": "Close completed in 4 business days (vs. 6 typical). All entities reconciled, anomalies reviewed, reporting package delivered on day 4. Controller intervened on 2 items (JE-9005 and JE-9010) — everything else was touchless."
+  },
+  "stats": [
+    { "value": "23%", "label": "Enhancement in touchless continuous close by 2027", "source": "Data Story" },
+    { "value": "67%", "label": "Of CFOs plan to outsource financial close optimization", "source": "Data Story" }
+  ],
+  "orchestrates": ["journal-entry-reconciliation", "anomaly-detection", "financial-reporting"],
+  "feedsInto": [],
+  "receivesFrom": ["anomaly-detection", "tax-compliance"],
+  "data": {
+    "handoffFlow": [
+      { "step": 1, "agent": "journal-entry-reconciliation", "action": "Process 1,200 entries, reconcile sub-ledgers, generate intercompany eliminations", "output": "Reconciled trial balances for all 6 entities" },
+      { "step": 2, "agent": "anomaly-detection", "action": "Scan reconciled entries for exceptions", "output": "Anomaly report with flags — JE-9010 escalated" },
+      { "step": 3, "agent": "financial-reporting", "action": "Generate close package from reconciled, validated data", "output": "Full monthly reporting package" }
+    ]
+  }
+}

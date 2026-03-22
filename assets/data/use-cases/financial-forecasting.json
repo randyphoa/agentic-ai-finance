@@ -1,0 +1,47 @@
+{
+  "id": "financial-forecasting",
+  "name": "Financial Forecasting",
+  "type": "specialist",
+  "category": "Financial Planning & Analysis",
+  "persona": { "id": "cfo", "title": "CFO", "fullTitle": "Chief Financial Officer" },
+  "scenario": {
+    "summary": "Q4 forecast revision — raw material spike, customer order delays",
+    "situation": "It's mid-November. The CFO is preparing the Q4 forecast update for the board. Raw steel prices spiked 8% in October due to supply chain disruptions, and two major automotive customers have signaled potential order delays. The original Q4 forecast ($1.32B revenue, 35.2% gross margin) needs to be revised — fast. The annual budget cycle for FY next year also kicks off in two weeks.",
+    "dataInputs": [
+      "Q1–Q3 actuals",
+      "Q4 forecast v1",
+      "Raw material price feeds (steel, alloys, composites)",
+      "Customer order pipeline from CRM",
+      "Macroeconomic indicators (industrial production index, PMI)",
+      "Historical seasonality patterns",
+      "FX rates"
+    ],
+    "agentSteps": [
+      "Ingests the raw material price spike and models its impact on COGS across all three divisions",
+      "Cross-references customer order pipeline against historical patterns — identifies that Titan Automotive's Q4 orders are tracking 6% below plan, and Pacific Dynamics has gone quiet",
+      "Runs scenario analysis: base case, downside (order delays materialize + material costs stay elevated), upside (orders recover in December)",
+      "Auto-generates Q4 forecast v2: revenue adjusted to $1.28B (down 3%), COGS to $872M (up 2%), gross margin compressed to 31.9%",
+      "Flags the margin compression as a board-level alert and drafts a variance commentary"
+    ],
+    "expectedOutput": "Revised Q4 forecast with three scenarios, variance analysis vs. v1 and vs. budget, margin impact breakdown by division, auto-generated narrative summary for the board deck"
+  },
+  "stats": [
+    { "value": "25%", "label": "Lower planning cost", "source": "Benchmarking" },
+    { "value": "33%", "label": "Faster budget cycles", "source": "Benchmarking" },
+    { "value": "4%", "label": "More accurate forecasts", "source": "Benchmarking" },
+    { "value": "57%", "label": "Lower sales forecast errors", "source": "6 Power Moves" },
+    { "value": "24%", "label": "Forecast accuracy improvement by 2027", "source": "Data Story" }
+  ],
+  "adoption": { "traditionalAI": "26%", "genAI": "17%", "source": "Benchmarking" },
+  "feedsInto": ["cash-flow-liquidity", "financial-reporting"],
+  "receivesFrom": ["financial-reporting", "variance-analysis"],
+  "data": {
+    "forecasts": [
+      { "metric": "Revenue", "fyBudget": "$4.8B", "q3Actual": "$1.15B", "q4ForecastV1": "$1.32B", "q4ForecastV2": "$1.28B (down, auto adjusted)" },
+      { "metric": "COGS", "fyBudget": "$3.1B", "q3Actual": "$740M", "q4ForecastV1": "$855M", "q4ForecastV2": "$872M (up, raw material spike)" },
+      { "metric": "Gross margin", "fyBudget": "35.4%", "q3Actual": "35.7%", "q4ForecastV1": "35.2%", "q4ForecastV2": "31.9%" },
+      { "metric": "SG&A", "fyBudget": "$720M", "q3Actual": "$178M", "q4ForecastV1": "$185M", "q4ForecastV2": "$183M" },
+      { "metric": "Operating income", "fyBudget": "$980M", "q3Actual": "$232M", "q4ForecastV1": "$280M", "q4ForecastV2": "$225M" }
+    ]
+  }
+}

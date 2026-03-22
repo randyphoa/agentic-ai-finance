@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variance Analysis</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ERHFC8YG6Y');
+</script>
+
+    <script>
+      (function () {
+        var docEl = document.documentElement;
+        var viewportW = docEl.clientWidth || window.innerWidth;
+        var viewportH = docEl.clientHeight || window.innerHeight;
+        var scale = Math.min(viewportW / 1920, viewportH / 1080, 1);
+        docEl.style.setProperty('--slide-scale', String(scale));
+      })();
+    </script>
+  <script type="module" crossorigin src="../assets/slide-init-DXqwTYPx.js"></script>
+  <script type="module" crossorigin src="../assets/demo-ChwEgeC0.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/slide-init-BsNoyUCc.css">
+  <link rel="stylesheet" crossorigin href="../assets/demo-DmPcx8Gd.css">
+</head>
+<body data-use-case="variance-analysis">
+    <div class="slide">
+        <!-- Header -->
+        <div class="pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+            <div>
+                <p class="text-ibm-yellow-30 text-lg font-medium uppercase tracking-wider">Financial Planning &amp; Analysis</p>
+                <h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Variance Analysis Agent</h1>
+            </div>
+            <a href="../" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+            </a>
+        </div>
+
+<!-- Content container — consistent spacing from header -->
+<div class="flex-1 min-h-0 flex flex-col mt-8">
+        <!-- Section Titles Row -->
+        <div class="grid grid-cols-2 gap-6 mb-2 items-end">
+            <div class="flex gap-0">
+                <button id="tab-overview" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">Overview</button>
+                <button id="tab-data" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Data</button>
+                <button id="tab-tools" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Tools</button>
+            </div>
+            <div>
+                <h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col gap-5 min-h-0">
+            <div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+                <!-- Left Column -->
+                <div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-y-auto">
+                    <!-- Overview Tab Content -->
+                    <div id="content-overview" class="flex flex-col gap-4 flex-1">
+                        <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-black">61%</p>
+                                <p class="text-base font-medium text-ibm-gray-80">Less time on data gathering</p>
+                            </div>
+                            <div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-black">33%</p>
+                                <p class="text-base font-medium text-ibm-gray-80">Faster budget cycles</p>
+                            </div>
+                            <div class="bg-ibm-yellow-30 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-black">30%</p>
+                                <p class="text-base font-medium text-ibm-gray-80">FTEs redeployed to analysis</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+                            <div class="flex-1 grid grid-cols-2 gap-3">
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Variance Decomposition</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Breaks variances into price, volume, and mix components</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Margin Bridge</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Builds visual margin walk from plan to actual</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Trend Analysis</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Identifies structural vs. timing variances</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-yellow-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Management Commentary</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Auto-generates variance narratives for leadership</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+                            <div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+                                <div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+                                    <div class="w-10 h-10 bg-ibm-yellow-30 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Aisha Binti Yusof, Senior FP&amp;A Analyst</p>
+                                        <p class="text-base text-ibm-gray-80">YTD revenue S$47M below plan — root cause analysis needed</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Precision Assemblies: S$30M below plan — 70% volume (ASEAN automotive delays), 30% price (China discounting), trend deteriorating</p>
+                                        <button onclick="copyQuestion(this, 'Break down the Precision Assemblies shortfall — is it volume, price, or mix?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Semiconductor Components: S$15M gap, but S$10M is timing — orders slipped from Q3 into Q4, not structural</p>
+                                        <button onclick="copyQuestion(this, 'Is the Semiconductor Components gap structural or will it reverse in Q4?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-yellow-30 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Specialty Materials: revenue on plan, but margin collapsed 3.2pp (33.0% → 29.8%) — 2.4pp commodity spike, 0.8pp mix shift building for three months</p>
+                                        <button onclick="copyQuestion(this, 'What\'s driving the 3.2pp margin collapse in Specialty Materials?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tab Content -->
+                    <div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <!-- Data Sub-navigation -->
+                        <div class="flex gap-2 flex-wrap">
+                            <button id="ds-actuals" class="px-3 py-1.5 text-base rounded-full bg-ibm-blue text-white font-medium">Actuals</button>
+                            <button id="ds-budgets" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Budgets & Forecasts</button>
+                            <button id="ds-costcenters" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Cost Centers</button>
+                            <button id="ds-kpis" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">KPIs & Targets</button>
+                        </div>
+
+                        <!-- Actuals -->
+                        <div id="data-actuals" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Actual Financial Results — 156,420 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Monthly and quarterly actual results by account, cost center, and business unit for variance comparison</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Code</td><td class="py-1.5 text-ibm-gray-80">GL account number (revenue, COGS, OpEx, CapEx)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Period</td><td class="py-1.5 text-ibm-gray-80">Fiscal month or quarter (e.g., Jan 2025, Q1 FY2025)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Business Unit</td><td class="py-1.5 text-ibm-gray-80">Reporting segment or division</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Actual Amount</td><td class="py-1.5 text-ibm-gray-80">Recorded financial result in reporting currency</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-3">Variance Categories</h3>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Category</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Volume</td><td class="py-1.5 text-ibm-gray-80">Differences driven by quantity sold or produced</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Price / Rate</td><td class="py-1.5 text-ibm-gray-80">Differences driven by pricing or cost rate changes</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Mix</td><td class="py-1.5 text-ibm-gray-80">Differences from product or channel mix shifts</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Budgets & Forecasts -->
+                        <div id="data-budgets" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Budgets & Forecasts — 42,860 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Approved budget plans and rolling forecasts by account, period, and business unit for comparison against actuals</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Plan Type</td><td class="py-1.5 text-ibm-gray-80">Annual Budget, Rolling Forecast, Latest Estimate</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Code</td><td class="py-1.5 text-ibm-gray-80">GL account mapped to the budget line</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Period</td><td class="py-1.5 text-ibm-gray-80">Budget period with version tracking</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Planned Amount</td><td class="py-1.5 text-ibm-gray-80">Approved or forecasted amount in reporting currency</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Cost Centers -->
+                        <div id="data-costcenters" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Cost Center Data — 12,480 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Departmental spending with budget owners, allocation hierarchies, and headcount drivers</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Cost Center</td><td class="py-1.5 text-ibm-gray-80">Department code and name (e.g., CC-4200 Engineering)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Budget Owner</td><td class="py-1.5 text-ibm-gray-80">Responsible manager for the cost center</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Expense Category</td><td class="py-1.5 text-ibm-gray-80">Personnel, Travel, Technology, Facilities, Professional Services</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Headcount</td><td class="py-1.5 text-ibm-gray-80">Planned vs. actual FTE count driving personnel costs</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- KPIs & Targets -->
+                        <div id="data-kpis" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">KPI Targets — 5,640 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Key performance indicator targets and actuals used for variance monitoring and executive dashboards</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">KPI Name</td><td class="py-1.5 text-ibm-gray-80">Metric identifier (e.g., Gross Margin %, Revenue Growth, OpEx Ratio)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Target Value</td><td class="py-1.5 text-ibm-gray-80">Board-approved or management target</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Actual Value</td><td class="py-1.5 text-ibm-gray-80">Current period performance</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Variance</td><td class="py-1.5 text-ibm-gray-80">Absolute and percentage deviation from target</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Tab Content -->
+                    <div id="content-tools" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <div class="flex-1 overflow-y-auto min-h-0">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">compute_variance</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Calculate variances between actuals and budget or forecast for any combination of accounts, periods, and business units.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">account_code</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">business_unit</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">plan_type</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Variance report with absolute and percentage deviations, favorable/unfavorable classification</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M14 7h7m0 0v7"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">decompose_drivers</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Break down variances into volume, price, mix, and timing components to identify root causes of deviations.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">variance_id</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">decomposition_type</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">granularity</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Driver waterfall with quantified impact of each component on total variance</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">rank_cost_centers</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Rank cost centers by variance severity, identify repeat offenders, and surface departments requiring management attention.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">threshold_pct</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">sort_by</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">limit</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Ranked list of cost centers with variance amounts, trends, and budget owner details</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">search_variances</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Query and filter variance records by account, period, magnitude, and classification for detailed investigation.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">account_code</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">min_variance</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">classification</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Filtered variance records with amounts, percentages, and root cause classifications</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">assess_forecast_accuracy</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Measure forecast accuracy over multiple periods, detect systematic bias, and recommend calibration adjustments.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">line_item</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">lookback_quarters</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">business_unit</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Accuracy metrics (MAPE, bias), trend analysis, and model improvement recommendations</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">generate_variance_report</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Produce a structured variance commentary report for management review with narratives, charts, and action items.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">scope</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">audience</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Executive variance summary with key drivers, corrective actions, and updated outlook</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column — Chatbot -->
+                <div class="flex flex-col min-h-0">
+                    <div class="flex-1 flex flex-col p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden min-h-0" id="chatbot-container">
+                        <div id="root" class="w-full flex-1 min-h-0 overflow-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+    </div>
+</body>
+</html>

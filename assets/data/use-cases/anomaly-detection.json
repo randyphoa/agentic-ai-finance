@@ -1,0 +1,47 @@
+{
+  "id": "anomaly-detection",
+  "name": "Anomaly Detection",
+  "type": "specialist",
+  "category": "Cross-Process Monitoring",
+  "persona": { "id": "internal-auditor", "title": "Internal Auditor", "fullTitle": "Internal Audit Manager" },
+  "scenario": {
+    "summary": "Weekly scan — 6 flagged anomalies across AP, AR, GL, and intercompany",
+    "situation": "Continuous monitoring mode. The Internal Auditor reviews the weekly anomaly report. The system scans all transactions across AP, AR, GL, and intercompany — looking for patterns that rules-based systems miss. This week, the agent flagged 6 items across 3 entities. The auditor needs to triage: which are real risks, which are false positives, and which need immediate escalation.",
+    "dataInputs": [
+      "Full transaction log across all processes and entities",
+      "Vendor master data",
+      "Employee access logs",
+      "Historical transaction patterns (12 months)",
+      "Benford's law distribution analysis",
+      "Peer benchmarks",
+      "Known fraud patterns database"
+    ],
+    "agentSteps": [
+      "Scans 42,000 transactions from the past week across all entities and processes",
+      "Critical (95%): INV-88206 — duplicate invoice from GlobalSteel, same PO, same amount, 2 days apart. Vendor has had 3 duplicate submissions in the past 12 months (pattern, not accident)",
+      "High (88%): Vendor 8832 — new vendor onboarded in Houston with a $95K invoice, no vendor approval workflow completed, bank account in a different state than registered address. Recommends hold and vendor verification",
+      "High (82%): Manual JE-9010 — $1.2M manual journal entry posted Nov 29 with no supporting documentation, posting user doesn't normally create entries of this size. Recommends immediate review",
+      "Medium (71%): JE-9005 — JPY 12M FX revaluation is 3x historical average. Confirmed as legitimate but unusual. Recommends hedge review",
+      "Low (45%): AR-4372 — Pacific Dynamics 31 days overdue, payment silence combined with credit downgrade triggers risk alert",
+      "Low (32%): Unusual spike in Summit Logistics invoices (12 in November vs. average of 8). Likely seasonal but flagged for awareness"
+    ],
+    "expectedOutput": "Weekly anomaly report with 6 flagged items, confidence scores, evidence trails, and recommended actions. 2 items recommended for immediate escalation (vendor 8832, JE-9010), 1 confirmed by another agent (duplicate invoice), 3 for monitoring."
+  },
+  "stats": [
+    { "value": "114%", "label": "More leaders use advanced analytics for fraud/waste/abuse", "source": "2016 Report" },
+    { "value": "153%", "label": "More leaders include fraud detection in analytics CoE", "source": "2016 Report" },
+    { "value": "147%", "label": "More leaders use advanced analytics for enterprise risk management", "source": "2016 Report" }
+  ],
+  "feedsInto": ["period-end-close", "risk-performance"],
+  "receivesFrom": [],
+  "data": {
+    "transactionLog": [
+      { "transaction": "PO-22180 > INV-88201", "type": "AP", "entity": "1000", "amount": "$342K", "timestamp": "Nov 12", "flag": "Clean" },
+      { "transaction": "PO-22180 > INV-88206", "type": "AP", "entity": "1000", "amount": "$342K", "timestamp": "Nov 14", "flag": "Duplicate PO reference" },
+      { "transaction": "AR-4372 payment", "type": "AR", "entity": "3000", "amount": "$415K", "timestamp": null, "flag": "31 days overdue, no payment activity" },
+      { "transaction": "JE-9005", "type": "GL", "entity": "3000", "amount": "JPY 12M", "timestamp": "Nov 30", "flag": "FX entry 3x historical average" },
+      { "transaction": "Manual JE-9010", "type": "GL", "entity": "2100", "amount": "$1.2M", "timestamp": "Nov 29", "flag": "Manual entry, no supporting docs" },
+      { "transaction": "Vendor 8832 new", "type": "AP", "entity": "1100", "amount": "$95K", "timestamp": "Nov 28", "flag": "New vendor, no approval trail" }
+    ]
+  }
+}

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal Entry & Reconciliation</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ERHFC8YG6Y');
+</script>
+
+    <script>
+      (function () {
+        var docEl = document.documentElement;
+        var viewportW = docEl.clientWidth || window.innerWidth;
+        var viewportH = docEl.clientHeight || window.innerHeight;
+        var scale = Math.min(viewportW / 1920, viewportH / 1080, 1);
+        docEl.style.setProperty('--slide-scale', String(scale));
+      })();
+    </script>
+  <script type="module" crossorigin src="../assets/slide-init-DXqwTYPx.js"></script>
+  <script type="module" crossorigin src="../assets/demo-ChwEgeC0.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/slide-init-BsNoyUCc.css">
+  <link rel="stylesheet" crossorigin href="../assets/demo-DmPcx8Gd.css">
+</head>
+<body data-use-case="journal-entry-reconciliation">
+    <div class="slide">
+        <!-- Header -->
+        <div class="pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+            <div>
+                <p class="text-ibm-orange-60 text-lg font-medium uppercase tracking-wider">Record-to-Report</p>
+                <h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Journal Entry &amp; Reconciliation Agent</h1>
+            </div>
+            <a href="../" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+            </a>
+        </div>
+
+<!-- Content container — consistent spacing from header -->
+<div class="flex-1 min-h-0 flex flex-col mt-8">
+        <!-- Section Titles Row -->
+        <div class="grid grid-cols-2 gap-6 mb-2 items-end">
+            <div class="flex gap-0">
+                <button id="tab-overview" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">Overview</button>
+                <button id="tab-data" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Data</button>
+                <button id="tab-tools" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Tools</button>
+            </div>
+            <div>
+                <h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col gap-5 min-h-0">
+            <div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+                <!-- Left Column -->
+                <div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-y-auto">
+                    <!-- Overview Tab Content -->
+                    <div id="content-overview" class="flex flex-col gap-4 flex-1">
+                        <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-ibm-orange-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">31%</p>
+                                <p class="text-base font-medium text-white">Lower journal entry cost</p>
+                            </div>
+                            <div class="bg-ibm-orange-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">33%</p>
+                                <p class="text-base font-medium text-white">Faster monthly close cycle</p>
+                            </div>
+                            <div class="bg-ibm-orange-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">66%</p>
+                                <p class="text-base font-medium text-white">Faster journal entry processing</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+                            <div class="flex-1 grid grid-cols-2 gap-3">
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-orange-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Entry Triage</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Classifies entries as recurring, validated, or flagged</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-orange-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Sub-Ledger Reconciliation</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Auto-reconciles AP, AR, inventory, and fixed assets</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-orange-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Anomaly Detection</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Identifies FX anomalies, misclassifications, and SOD violations</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-orange-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">IC Matching</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Resolves intercompany timing differences</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+                            <div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+                                <div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+                                    <div class="w-10 h-10 bg-ibm-orange-60 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Wei Lin Chen, Corporate Controller</p>
+                                        <p class="text-base text-ibm-gray-80">Month-end triage of 1,200 journal entries across 6 entities</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-orange-60 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Day 1 of November close — 1,200 entries across 6 entities need triage by day 4</p>
+                                        <button onclick="copyQuestion(this, 'Triage all 1,200 journal entries — what needs my attention?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-orange-60 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">JE-9005 — ¥15M FX revaluation, 3x historical average. Unhedged CNY receivable from Shanghai</p>
+                                        <button onclick="copyQuestion(this, 'Investigate the ¥15M FX revaluation — is the entry correct?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-orange-60 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">S$16K posted to CC-310 instead of CC-300 — manual input error, below S$65K materiality threshold</p>
+                                        <button onclick="copyQuestion(this, 'Check cost center assignments for misclassifications')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-orange-60 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Day 1 tasks complete by end of day — a full day ahead of typical pace</p>
+                                        <button onclick="copyQuestion(this, 'How are we tracking against the close timeline?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tab Content -->
+                    <div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <!-- Data Sub-navigation -->
+                        <div class="flex gap-2 flex-wrap">
+                            <button id="ds-journal-entries" class="px-3 py-1.5 text-base rounded-full bg-ibm-blue text-white font-medium">Journal Entries</button>
+                            <button id="ds-bank-statements" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Bank Statements</button>
+                            <button id="ds-subledger" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Subledger Data</button>
+                            <button id="ds-chart-of-accounts" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Chart of Accounts</button>
+                        </div>
+
+                        <!-- Journal Entries -->
+                        <div id="data-journal-entries" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Journal Entries &mdash; 284,510 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">General ledger journal entries including manual, automated, recurring, and adjusting entries across all company codes</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Journal ID</td><td class="py-1.5 text-ibm-gray-80">Unique identifier for the journal entry batch</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Posting Date</td><td class="py-1.5 text-ibm-gray-80">Date the entry was posted to the general ledger</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account</td><td class="py-1.5 text-ibm-gray-80">GL account number and description</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Debit / Credit</td><td class="py-1.5 text-ibm-gray-80">Entry amount and direction (debit or credit)</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Entry Type</td><td class="py-1.5 text-ibm-gray-80">Manual, Recurring, Reversing, Adjusting, System-generated</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Bank Statements -->
+                        <div id="data-bank-statements" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Bank Statements &mdash; 1,247,830 Transactions</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Electronic bank statement feeds (BAI2/MT940) covering all operating, payroll, and treasury accounts</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Transaction Date</td><td class="py-1.5 text-ibm-gray-80">Value date of the bank transaction</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Amount</td><td class="py-1.5 text-ibm-gray-80">Transaction amount with currency code</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Reference</td><td class="py-1.5 text-ibm-gray-80">Bank reference number, check number, or wire ID</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Counterparty</td><td class="py-1.5 text-ibm-gray-80">Payer or payee name and account details</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Subledger Data -->
+                        <div id="data-subledger" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Subledger Data &mdash; 892,140 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Detailed transaction records from accounts payable, accounts receivable, and fixed asset subledgers</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Subledger Type</td><td class="py-1.5 text-ibm-gray-80">AP, AR, Fixed Assets, Inventory</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Document Number</td><td class="py-1.5 text-ibm-gray-80">Source document reference (invoice, receipt, asset tag)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">GL Account</td><td class="py-1.5 text-ibm-gray-80">Corresponding general ledger control account</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Balance</td><td class="py-1.5 text-ibm-gray-80">Running subledger balance for reconciliation to GL</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Chart of Accounts -->
+                        <div id="data-chart-of-accounts" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Chart of Accounts &mdash; 4,280 Accounts</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Master chart of accounts with hierarchical structure, account types, and posting rules</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Number</td><td class="py-1.5 text-ibm-gray-80">GL account code (e.g., 1010, 4200, 5300)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Name</td><td class="py-1.5 text-ibm-gray-80">Descriptive name (e.g., Cash &mdash; Operating, Revenue &mdash; Services)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Type</td><td class="py-1.5 text-ibm-gray-80">Asset, Liability, Equity, Revenue, Expense</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Normal Balance</td><td class="py-1.5 text-ibm-gray-80">Expected balance direction (Debit or Credit)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Tab Content -->
+                    <div id="content-tools" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <div class="flex-1 overflow-y-auto min-h-0">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">create_journal_entry</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Create and post journal entries with debit/credit lines, supporting documents, and approval routing.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">entry_type</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">posting_date</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">line_items</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">description</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">company_code</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Posted journal entry with ID, balanced line items, and audit trail</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">reconcile_accounts</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Compare subledger balances to GL control accounts and identify discrepancies requiring investigation.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">account_number</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">period</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">subledger_type</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">tolerance</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Reconciliation report with matched items, variances, and unresolved differences</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">match_bank_items</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Match bank statement transactions to GL cash entries using amount, date, and reference-based rules.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">bank_account</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">statement_date</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">match_tolerance</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_window</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Matched pairs, unmatched bank items, and unmatched GL entries with suggested actions</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">search_gl_entries</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Search the general ledger by account, date range, amount, posting user, or description keyword.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">account</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_from</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_to</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">amount_min</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">keyword</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">GL entries with posting date, account, amount, user, and document reference</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">clear_suspense</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Identify and clear suspense account items by tracing to source transactions and reclassifying to correct accounts.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">suspense_account</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">age_days</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">amount_threshold</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Clearing entries with original source, proposed target account, and reclassification justification</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">validate_postings</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Validate journal entries against posting rules, ensuring balanced debits/credits, valid accounts, and proper authorization.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">journal_id</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">validation_rules</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">check_authorization</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Validation results with pass/fail status, error details, and remediation suggestions</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column — Chatbot -->
+                <div class="flex flex-col min-h-0">
+                    <div class="flex-1 flex flex-col p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden min-h-0" id="chatbot-container">
+                        <div id="root" class="w-full flex-1 min-h-0 overflow-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+    </div>
+</body>
+</html>

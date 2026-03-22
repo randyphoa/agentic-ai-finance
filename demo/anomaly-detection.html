@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anomaly Detection</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERHFC8YG6Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ERHFC8YG6Y');
+</script>
+
+    <script>
+      (function () {
+        var docEl = document.documentElement;
+        var viewportW = docEl.clientWidth || window.innerWidth;
+        var viewportH = docEl.clientHeight || window.innerHeight;
+        var scale = Math.min(viewportW / 1920, viewportH / 1080, 1);
+        docEl.style.setProperty('--slide-scale', String(scale));
+      })();
+    </script>
+  <script type="module" crossorigin src="../assets/slide-init-DXqwTYPx.js"></script>
+  <script type="module" crossorigin src="../assets/demo-ChwEgeC0.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/slide-init-BsNoyUCc.css">
+  <link rel="stylesheet" crossorigin href="../assets/demo-DmPcx8Gd.css">
+</head>
+<body data-use-case="anomaly-detection">
+    <div class="slide">
+        <!-- Header -->
+        <div class="pb-8 border-b border-ibm-gray-30 flex items-start justify-between">
+            <div>
+                <p class="text-ibm-red-60 text-lg font-medium uppercase tracking-wider">Audit &amp; Compliance</p>
+                <h1 class="text-6xl font-semibold text-ibm-gray-100 mt-3">Anomaly Detection Agent</h1>
+            </div>
+            <a href="../" class="text-ibm-gray-50 hover:text-ibm-gray-100 transition-colors mt-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"></path></svg>
+            </a>
+        </div>
+
+<!-- Content container — consistent spacing from header -->
+<div class="flex-1 min-h-0 flex flex-col mt-8">
+        <!-- Section Titles Row -->
+        <div class="grid grid-cols-2 gap-6 mb-2 items-end">
+            <div class="flex gap-0">
+                <button id="tab-overview" class="px-4 py-2 text-base text-ibm-gray-100 uppercase tracking-wider font-semibold">Overview</button>
+                <button id="tab-data" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Data</button>
+                <button id="tab-tools" class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium hover:text-ibm-gray-80">Tools</button>
+            </div>
+            <div>
+                <h2 class="px-4 py-2 text-base text-ibm-gray-50 uppercase tracking-wider font-medium">Try the Agent</h2>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col gap-5 min-h-0">
+            <div class="flex-1 grid grid-cols-2 gap-6 min-h-0">
+                <!-- Left Column -->
+                <div class="flex flex-col gap-4 border-t border-ibm-gray-30 pt-4 min-h-0 overflow-y-auto">
+                    <!-- Overview Tab Content -->
+                    <div id="content-overview" class="flex flex-col gap-4 flex-1">
+                        <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium">AI Impact</h2>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="bg-ibm-red-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">50%</p>
+                                <p class="text-base font-medium text-white">More fraud detected</p>
+                            </div>
+                            <div class="bg-ibm-red-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">33%</p>
+                                <p class="text-base font-medium text-white">Fewer duplicate payments</p>
+                            </div>
+                            <div class="bg-ibm-red-60 px-6 py-4 rounded-lg">
+                                <p class="text-4xl font-light text-white">20%</p>
+                                <p class="text-base font-medium text-white">Faster error resolution</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Key Capabilities</h2>
+                            <div class="flex-1 grid grid-cols-2 gap-3">
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-red-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Transaction Scanning</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Scans GL entries for duplicates, outliers, and unusual patterns</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-red-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Expense Screening</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Checks claims against policy thresholds and detects split transactions</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-red-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Vendor Profiling</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Monitors payment frequency, escalation, and new vendor flags</p>
+                                </div>
+                                <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <svg class="w-5 h-5 text-ibm-red-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                        </svg>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Alert Generation</p>
+                                    </div>
+                                    <p class="text-lg text-ibm-gray-80">Produces severity-ranked alerts with supporting evidence</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col">
+                            <h2 class="text-base text-ibm-gray-50 uppercase tracking-wider font-medium mb-3">Scenario</h2>
+                            <div class="bg-ibm-gray-10 px-6 py-4 rounded-lg flex-1">
+                                <div class="flex items-center gap-3 mb-4 pb-4 border-b border-ibm-gray-30">
+                                    <div class="w-10 h-10 bg-ibm-red-60 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-ibm-gray-100">Karen Lim, Internal Audit Manager</p>
+                                        <p class="text-base text-ibm-gray-80">Reviewing 42,000 transactions for anomalies and control violations</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-red-60 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">42,000 November transactions scanned — 6 flags across 3 confidence levels</p>
+                                        <button onclick="copyQuestion(this, 'Scan all November transactions for anomalies — what did you find?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-red-60 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Baowu Steel INV-88206 — S$445K duplicate, same PO. Third in 12 months: April, August, November</p>
+                                        <button onclick="copyQuestion(this, 'Show me the Baowu duplicate pattern — is this data entry or something systemic?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-red-60 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">Vendor 8832, Johor Bahru — S$123K, no approval trail, bank in KL but address in Johor</p>
+                                        <button onclick="copyQuestion(this, 'Investigate Vendor 8832 — run full verification before releasing payment')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-red-60 text-white rounded-full flex items-center justify-center text-sm font-medium">4</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">JE-9016 — S$1.6M manual entry, no supporting docs, same user created and approved</p>
+                                        <button onclick="copyQuestion(this, 'What are the segregation-of-duties issues with JE-9016?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex gap-3 items-start">
+                                        <span class="flex-shrink-0 w-7 h-7 bg-ibm-red-60 text-white rounded-full flex items-center justify-center text-sm font-medium">5</span>
+                                        <p class="text-lg text-ibm-gray-80 flex-1">3 lower-confidence flags: ¥15M FX reval (confirmed), Thai Precision overdue (actioned), Kerry Logistics volume (seasonal)</p>
+                                        <button onclick="copyQuestion(this, 'Which flags are real risks and which are false positives?')" class="flex-shrink-0 p-1 text-ibm-gray-30 hover:text-ibm-blue-60 transition-colors" title="Copy question">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="2" />
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tab Content -->
+                    <div id="content-data" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <!-- Data Sub-navigation -->
+                        <div class="flex gap-2 flex-wrap">
+                            <button id="ds-transactions" class="px-3 py-1.5 text-base rounded-full bg-ibm-blue text-white font-medium">Transaction Ledger</button>
+                            <button id="ds-expenses" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Expense Reports</button>
+                            <button id="ds-vendors" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Vendor Payments</button>
+                            <button id="ds-auditlogs" class="px-3 py-1.5 text-base rounded-full bg-ibm-gray-20 text-ibm-gray-80 font-medium hover:bg-ibm-gray-30">Audit Logs</button>
+                        </div>
+
+                        <!-- Transaction Ledger -->
+                        <div id="data-transactions" class="flex-1 overflow-y-auto min-h-0 space-y-4">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">General Ledger Transactions — 1,245,800 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Complete journal entry and sub-ledger transaction records across all entities and cost centers</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Transaction ID</td><td class="py-1.5 text-ibm-gray-80">Unique identifier for each ledger entry</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Account Code</td><td class="py-1.5 text-ibm-gray-80">GL account number (e.g., 4100-Revenue, 5200-COGS)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Amount</td><td class="py-1.5 text-ibm-gray-80">Debit or credit amount in local and reporting currency</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Posting Date</td><td class="py-1.5 text-ibm-gray-80">Date and time the entry was recorded in the ledger</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-3">Entry Types</h3>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Type</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Automated</td><td class="py-1.5 text-ibm-gray-80">System-generated entries from sub-ledgers (AP, AR, Payroll)</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Manual</td><td class="py-1.5 text-ibm-gray-80">User-initiated adjustments and reclassifications</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Reversing</td><td class="py-1.5 text-ibm-gray-80">Entries that reverse a prior period accrual or correction</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Expense Reports -->
+                        <div id="data-expenses" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Expense Reports — 87,430 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Employee-submitted expense claims with receipts, approvals, and policy compliance flags</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Employee ID</td><td class="py-1.5 text-ibm-gray-80">Submitting employee identifier and department</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Expense Category</td><td class="py-1.5 text-ibm-gray-80">Travel, Meals, Lodging, Transportation, Supplies</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Claim Amount</td><td class="py-1.5 text-ibm-gray-80">Submitted amount with currency and receipt attachment</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Approval Status</td><td class="py-1.5 text-ibm-gray-80">Pending, Approved, Rejected, Under Review</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Vendor Payments -->
+                        <div id="data-vendors" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Vendor Payment Records — 342,150 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">Accounts payable disbursements to vendors with invoice matching and payment method details</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Vendor ID</td><td class="py-1.5 text-ibm-gray-80">Unique vendor identifier with master data reference</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Invoice Number</td><td class="py-1.5 text-ibm-gray-80">Matched invoice reference and PO linkage</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Payment Amount</td><td class="py-1.5 text-ibm-gray-80">Disbursement amount, currency, and payment date</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Payment Method</td><td class="py-1.5 text-ibm-gray-80">Wire, ACH, Check, Virtual Card</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Audit Logs -->
+                        <div id="data-auditlogs" class="flex-1 overflow-y-auto min-h-0 space-y-4 hidden">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-ibm-gray-100 mb-1">Audit Trail Logs — 2,180,600 Records</h3>
+                                <p class="text-sm text-ibm-gray-50 mb-3">System-level audit trail capturing user actions, data modifications, and access events across financial systems</p>
+                                <table class="w-full text-left text-lg">
+                                    <thead><tr class="border-b-2 border-ibm-gray-30">
+                                        <th class="py-1.5 pr-3 font-semibold text-ibm-gray-100">Field</th>
+                                        <th class="py-1.5 font-semibold text-ibm-gray-100">Description</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">User ID</td><td class="py-1.5 text-ibm-gray-80">Authenticated user performing the action</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Action Type</td><td class="py-1.5 text-ibm-gray-80">Create, Update, Delete, Approve, Post, Reverse</td></tr>
+                                        <tr class="border-b border-ibm-gray-30"><td class="py-1.5 pr-3 text-ibm-gray-80">Timestamp</td><td class="py-1.5 text-ibm-gray-80">UTC date and time of the action</td></tr>
+                                        <tr><td class="py-1.5 pr-3 text-ibm-gray-80">Affected Record</td><td class="py-1.5 text-ibm-gray-80">Reference to the modified transaction or master data record</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Tab Content -->
+                    <div id="content-tools" class="flex flex-col gap-3 flex-1 min-h-0 hidden">
+                        <div class="flex-1 overflow-y-auto min-h-0">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">scan_transactions</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Scan general ledger transactions for unusual patterns, duplicate entries, and statistical outliers across accounts and periods.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">account_code</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_range</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">entity</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">threshold</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Flagged transactions with anomaly scores, pattern classifications, and supporting evidence</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8M14 7h7m0 0v7"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">detect_outliers</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Apply statistical and ML-based outlier detection to identify transactions that deviate significantly from historical baselines.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">dataset</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">method</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">sensitivity</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">baseline_period</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Outlier records with z-scores, deviation magnitude, and historical comparison</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">flag_expenses</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Screen employee expense claims against corporate policy, detect duplicates, split transactions, and policy violations.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">employee_id</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">department</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_range</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">policy_rules</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Flagged expense items with violation type, risk score, and recommended action</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">analyze_patterns</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Identify recurring behavioral patterns in vendor payments, including frequency spikes, amount escalation, and timing anomalies.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">vendor_id</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">lookback_months</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">pattern_type</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Pattern analysis with trend visualization, frequency distributions, and risk indicators</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">search_audit_logs</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Query audit trail records by user, action type, time window, and affected data to support investigation workflows.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">user_id</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">action_type</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">date_range</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">record_ref</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Filtered audit log entries with user actions, timestamps, and change details</p>
+                                </div>
+                            </div>
+                            <div class="bg-ibm-gray-10 p-4 rounded-lg flex flex-col">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-6 h-6 text-ibm-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                                    <h3 class="text-xl font-semibold text-ibm-gray-100">generate_alerts</h3>
+                                </div>
+                                <p class="text-lg text-ibm-gray-80 mb-3 flex-1">Produce prioritized anomaly alerts with severity ratings, consolidate findings, and route to appropriate reviewers.</p>
+                                <div class="border-t border-ibm-gray-30 pt-3 mt-auto">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Input</p>
+                                    <div class="flex flex-wrap gap-1 min-h-[70px] items-start">
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">findings</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">severity_threshold</code>
+                                        <code class="text-base text-ibm-gray-80 bg-ibm-gray-20 px-2 py-1 rounded">recipient_group</code>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-base text-ibm-gray-50 mb-1">Output</p>
+                                    <p class="text-base text-ibm-gray-80">Structured alert report with severity ranking, evidence summary, and recommended actions</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column — Chatbot -->
+                <div class="flex flex-col min-h-0">
+                    <div class="flex-1 flex flex-col p-4 rounded-lg border border-ibm-gray-30 bg-white overflow-hidden min-h-0" id="chatbot-container">
+                        <div id="root" class="w-full flex-1 min-h-0 overflow-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+    </div>
+</body>
+</html>

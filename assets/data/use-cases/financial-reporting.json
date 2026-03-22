@@ -1,0 +1,45 @@
+{
+  "id": "financial-reporting",
+  "name": "Financial Reporting",
+  "type": "specialist",
+  "category": "Record-to-Report",
+  "persona": { "id": "controller", "title": "Controller", "fullTitle": "Corporate Controller" },
+  "scenario": {
+    "summary": "November close package — P&L, margin analysis, board deck",
+    "situation": "November close is wrapping up. The Controller needs to produce the monthly reporting package by business day 5: consolidated P&L, balance sheet, and cash flow statement across all 6 entities, plus divisional margin analysis, variance commentary, and a management summary. Last month, the team spent 2.5 days assembling the data and formatting the reports. The CFO also needs a board-ready executive summary with Q4 outlook for an upcoming board call.",
+    "dataInputs": [
+      "Consolidated trial balance (post-close)",
+      "Sub-ledger summaries",
+      "Budget and forecast data",
+      "Prior period actuals (for trend analysis)",
+      "KPI definitions",
+      "Reporting templates",
+      "Q4 forecast v2 from Financial Forecasting agent"
+    ],
+    "agentSteps": [
+      "Pulls consolidated trial balance and automatically generates the standard reporting package: P&L by entity and consolidated, balance sheet, cash flow statement — formatted to Meridian's templates",
+      "Generates divisional margin analysis: Precision Components (37.2% margin, flat), Automation Systems (34.1%, down 180bps — Munich labor costs), Specialty Materials (29.8%, down 310bps — raw material spike). Flags Specialty Materials margin as below threshold",
+      "Auto-generates variance commentary: November revenue of $398M came in 2.1% below budget, primarily driven by a $6.2M shortfall in Automation Systems due to delayed European orders",
+      "Pulls Q4 forecast v2 from the Financial Forecasting agent and integrates the margin compression alert into the management summary",
+      "Produces a board-ready executive summary: 2-page document with key metrics, traffic-light status indicators, and forward-looking risks. Highlights the gross margin compression from 35.2% to 31.9% as the top concern",
+      "Generates all reports in 18 minutes vs. the typical 2.5 days of manual assembly"
+    ],
+    "expectedOutput": "Full monthly reporting package (P&L, BS, CF), divisional margin analysis with variance commentary, management summary, board-ready executive summary — all auto-generated and formatted"
+  },
+  "stats": [
+    { "value": "53%", "label": "Already use AI for financial analysis and reporting", "source": "Data Story" },
+    { "value": "29%", "label": "Expect touchless financial analysis/reporting by 2027", "source": "Data Story" },
+    { "value": "61%", "label": "Of performance mgmt time spent on data gathering — eliminated", "source": "6 Power Moves" }
+  ],
+  "feedsInto": ["risk-performance", "financial-forecasting"],
+  "receivesFrom": ["journal-entry-reconciliation", "financial-forecasting"],
+  "data": {
+    "forecasts": [
+      { "metric": "Revenue", "fyBudget": "$4.8B", "q3Actual": "$1.15B", "q4ForecastV1": "$1.32B", "q4ForecastV2": "$1.28B (down, auto adjusted)" },
+      { "metric": "COGS", "fyBudget": "$3.1B", "q3Actual": "$740M", "q4ForecastV1": "$855M", "q4ForecastV2": "$872M (up, raw material spike)" },
+      { "metric": "Gross margin", "fyBudget": "35.4%", "q3Actual": "35.7%", "q4ForecastV1": "35.2%", "q4ForecastV2": "31.9%" },
+      { "metric": "SG&A", "fyBudget": "$720M", "q3Actual": "$178M", "q4ForecastV1": "$185M", "q4ForecastV2": "$183M" },
+      { "metric": "Operating income", "fyBudget": "$980M", "q3Actual": "$232M", "q4ForecastV1": "$280M", "q4ForecastV2": "$225M" }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "procurement-sourcing",
+  "name": "Procurement & Sourcing",
+  "type": "specialist",
+  "category": "Procure-to-Pay",
+  "persona": { "id": "procurement-manager", "title": "Procurement Mgr", "fullTitle": "Procurement & Sourcing Manager" },
+  "scenario": {
+    "summary": "Q4 supplier contract renewal cycle — 12 contracts, spend analytics, vendor evaluation",
+    "situation": "It's November, and 12 major supplier contracts are up for renewal by year-end. The Procurement Manager needs to evaluate each contract against spend analytics, vendor performance data, and market benchmarks. Spend analytics has flagged $2.3M in potential consolidation savings across overlapping categories. Three vendors — Summit Logistics, Pacific Fasteners, and Midwest Tooling — are underperforming on delivery metrics. Meanwhile, the raw material spike is creating urgency around renegotiating steel and alloy supply agreements with GlobalSteel and Rheinmetall.",
+    "dataInputs": [
+      "12 expiring supplier contracts with terms and pricing",
+      "3-year spend analytics by category and vendor",
+      "Vendor scorecards (quality, delivery, price, responsiveness)",
+      "Market benchmark pricing for key categories",
+      "Purchase order history and volume trends",
+      "AP payment data and early-pay discount utilization",
+      "Commodity price forecasts (steel, alloys, composites)"
+    ],
+    "agentSteps": [
+      "Analyzes $1.2B annual addressable spend across 12 expiring contracts — categorizes by strategic importance and renewal urgency",
+      "Runs spend consolidation analysis: identifies 3 categories where dual-sourcing can be consolidated to primary supplier — $2.3M projected savings",
+      "Generates vendor scorecards combining quality (PPM defect rates), delivery (on-time %), price competitiveness, and payment terms",
+      "Flags 3 underperforming vendors: Summit Logistics (82% on-time vs. 95% SLA), Pacific Fasteners (rising defect rate), Midwest Tooling (15% price premium vs. market)",
+      "Models renegotiation scenarios for GlobalSteel and Rheinmetall: volume commitment increases in exchange for price caps and extended terms",
+      "Calculates total cost of ownership (TCO) including logistics, quality costs, and payment term optimization — identifies $890K in hidden costs",
+      "Generates contract renewal recommendations with prioritized negotiation strategies and projected savings by vendor"
+    ],
+    "expectedOutput": "Contract renewal package: 12 vendor evaluations with scorecards, 3 consolidation opportunities ($2.3M), renegotiation strategies for top 5 suppliers, TCO analysis, and projected annual savings of $3.8M"
+  },
+  "stats": [
+    { "value": "19%", "label": "Lower cost per purchase order", "source": "Modernize P2P" },
+    { "value": "52%", "label": "Lower ordering cost", "source": "Modernize P2P" },
+    { "value": "50%", "label": "More fraud detection in procurement", "source": "Modernize P2P" },
+    { "value": "22%", "label": "More certified/preferred vendors", "source": "Modernize P2P" }
+  ],
+  "adoption": { "traditionalAI": "30%", "genAI": "17%", "source": "Benchmarking" },
+  "feedsInto": ["invoice-ap-processing", "cash-flow-liquidity"],
+  "receivesFrom": [],
+  "data": {
+    "contracts": [
+      { "supplier": "GlobalSteel Corp", "category": "Raw Materials — Steel", "annualSpend": "$185M", "expiryDate": "2024-12-31", "performanceScore": "92/100", "recommendation": "Renew — negotiate volume discount + price cap for Q1" },
+      { "supplier": "Rheinmetall Alloys GmbH", "category": "Raw Materials — Alloys", "annualSpend": "$92M", "expiryDate": "2024-12-15", "performanceScore": "88/100", "recommendation": "Renew — extend to 2-year term for price stability" },
+      { "supplier": "Shenzhen Precision Parts", "category": "Contract Manufacturing", "annualSpend": "$78M", "expiryDate": "2025-01-31", "performanceScore": "85/100", "recommendation": "Renew with quality improvement clause — PPM trending up" },
+      { "supplier": "Summit Logistics Inc.", "category": "Freight & Logistics", "annualSpend": "$45M", "expiryDate": "2024-12-31", "performanceScore": "71/100", "recommendation": "Issue corrective action — 82% on-time vs. 95% SLA, consider backup carrier" },
+      { "supplier": "Pacific Fasteners Ltd", "category": "Components", "annualSpend": "$28M", "expiryDate": "2024-12-31", "performanceScore": "68/100", "recommendation": "Consolidate into KuboTech contract — $1.1M savings, better quality" },
+      { "supplier": "Midwest Tooling Co.", "category": "MRO & Tooling", "annualSpend": "$22M", "expiryDate": "2025-01-15", "performanceScore": "74/100", "recommendation": "Renegotiate — 15% price premium vs. market benchmark" },
+      { "supplier": "KuboTech Industries", "category": "MRO & Tooling", "annualSpend": "$28M", "expiryDate": "2025-02-28", "performanceScore": "91/100", "recommendation": "Expand scope — absorb Pacific Fasteners volume for consolidation discount" },
+      { "supplier": "DataForge IT Solutions", "category": "IT Services", "annualSpend": "$12M", "expiryDate": "2024-12-31", "performanceScore": "94/100", "recommendation": "Renew as-is — strong performance, competitive pricing" },
+      { "supplier": "EuroLogistik AG", "category": "Freight & Logistics (EU)", "annualSpend": "$18M", "expiryDate": "2025-01-31", "performanceScore": "89/100", "recommendation": "Renew — consider as Summit Logistics backup for Americas" },
+      { "supplier": "Apex Industrial Coatings", "category": "Specialty Chemicals", "annualSpend": "$15M", "expiryDate": "2024-12-15", "performanceScore": "86/100", "recommendation": "Renew with price escalation cap tied to commodity index" },
+      { "supplier": "Sterling Packaging", "category": "Packaging Materials", "annualSpend": "$8M", "expiryDate": "2024-12-31", "performanceScore": "90/100", "recommendation": "Consolidate with Apex order for volume discount — $0.4M savings" },
+      { "supplier": "Canton Electronics (Shanghai)", "category": "Electronic Components", "annualSpend": "$35M", "expiryDate": "2025-01-31", "performanceScore": "83/100", "recommendation": "Renew — add dual-source clause for supply chain resilience" }
+    ]
+  }
+}

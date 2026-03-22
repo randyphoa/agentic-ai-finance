@@ -1,0 +1,56 @@
+{
+  "id": "risk-performance",
+  "name": "Risk & Performance",
+  "type": "supervisor",
+  "category": "Supervisor Agent",
+  "persona": { "id": "cfo", "title": "CFO", "fullTitle": "Chief Financial Officer" },
+  "scenario": {
+    "summary": "Board prep — consolidated risk briefing across all processes",
+    "situation": "Board meeting in 10 days. The CFO needs a consolidated view of enterprise risk and performance. Multiple signals are converging: raw material cost spike compressing margins, two customer accounts deteriorating, an unusual FX exposure in APAC, and the anomaly detection system flagged a new vendor and a manual journal entry. The CFO needs to walk into the board meeting with a clear picture of where the risks are, how they're connected, and what's being done about them.",
+    "dataInputs": [
+      "Anomaly detection weekly report",
+      "Q4 forecast v2 and scenario analysis",
+      "Current financial position and close results",
+      "Customer concentration data",
+      "FX exposure by currency"
+    ],
+    "agentSteps": [
+      "Step 1 — Anomaly Detection provides the current risk landscape: 2 critical flags (duplicate invoice pattern at GlobalSteel, unapproved new vendor in Houston), 1 high flag (manual JE with no docs), plus cross-process risk signals",
+      "Step 2 — Financial Forecasting provides the forward-looking exposure: Q4 forecast v2 shows gross margin compressing from 35.2% to 31.9%. Models the impact if raw material costs stay elevated through Q1 — operating income drops 18%",
+      "Step 3 — Financial Reporting provides the consolidated risk dashboard: pulls together the anomaly flags, forecast scenarios, and current financial position. Traffic-light indicators across 5 risk categories",
+      "Synthesis: Unified risk briefing — top risk is margin compression (330bps hit, $47M impact if sustained), with 4 action items for procurement, sales, treasury, and internal audit"
+    ],
+    "expectedOutput": "Board-ready risk briefing with consolidated risk dashboard, top 5 risks ranked by financial impact, recommended actions with owners, and positive signals. Auto-generated — CFO reviews and edits, doesn't build from scratch."
+  },
+  "stats": [
+    { "value": "78%", "label": "Expect AI agents with orchestration to manage global business services by 2027", "source": "Data Story" },
+    { "value": "55%", "label": "Already use AI for fixed asset and risk management", "source": "Data Story" },
+    { "value": "147%", "label": "More leaders use advanced analytics for enterprise risk management", "source": "2016 Report" }
+  ],
+  "orchestrates": ["anomaly-detection", "financial-forecasting", "financial-reporting"],
+  "feedsInto": [],
+  "receivesFrom": ["anomaly-detection", "cash-flow-liquidity", "financial-reporting", "tax-compliance"],
+  "data": {
+    "riskDashboard": {
+      "topRisk": { "category": "Margin compression", "impact": "330bps hit to gross margin, $47M to operating income if sustained through Q1" },
+      "riskCategories": [
+        { "category": "Operational", "status": "yellow", "detail": "AP anomalies — duplicate invoice pattern, unapproved vendor" },
+        { "category": "Financial", "status": "red", "detail": "Margin compression — 35.2% to 31.9% gross margin" },
+        { "category": "Credit", "status": "yellow", "detail": "2 customers deteriorating — Continental Mfg AG, Pacific Dynamics" },
+        { "category": "Compliance", "status": "green", "detail": "No material compliance issues" },
+        { "category": "FX", "status": "yellow", "detail": "Unhedged JPY exposure — 3x historical average" }
+      ],
+      "actionItems": [
+        "Procurement to renegotiate steel contracts or activate alternate suppliers",
+        "Sales to engage Titan and Apex on Q1 order commitments to de-risk revenue",
+        "Treasury to hedge the JPY exposure",
+        "Internal audit to investigate the Houston vendor onboarding gap"
+      ],
+      "positiveSignals": [
+        "Close process running 2 days ahead of schedule",
+        "Collections on track for 4 of top 6 customers",
+        "Capex fundable without credit facility"
+      ]
+    }
+  }
+}
