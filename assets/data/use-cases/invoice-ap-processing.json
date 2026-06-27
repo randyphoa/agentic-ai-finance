@@ -1,0 +1,58 @@
+{
+  "id": "invoice-ap-processing",
+  "name": "Invoice & AP Processing",
+  "type": "specialist",
+  "category": "Procure-to-Pay",
+  "persona": { "id": "ap-manager", "title": "AP Manager", "fullTitle": "Accounts Payable Manager" },
+  "scenario": {
+    "summary": "Monday batch — 847 invoices, duplicates, FX, missing POs",
+    "situation": "Monday morning. A batch of 847 supplier invoices from the past week needs processing. The AP team of 6 handles ~3,200 invoices per month across all entities. The manager needs to clear this batch by Wednesday — two team members are out this week. The batch includes invoices from GlobalSteel (high volume, usually clean), Shenzhen Precision (frequent price variances due to FX), and a handful of new vendors that Houston onboarded last month.",
+    "dataInputs": [
+      "Incoming invoice batch (PDFs, EDI, email attachments)",
+      "Purchase orders",
+      "Goods receipts",
+      "Vendor master data",
+      "Contract terms",
+      "Approval thresholds",
+      "Historical invoice data for pattern matching"
+    ],
+    "agentSteps": [
+      "Extracts invoice data from mixed formats (PDF, EDI, email) using OCR and document understanding",
+      "Performs 3-way matching (invoice, PO, goods receipt) — auto-matches 612 of 847 invoices (72%)",
+      "Flags INV-88202 (Shenzhen): price variance of +3.2% vs. PO — determines 2.1% is FX-driven and 1.1% is a genuine price increase, routes to manager with context",
+      "Flags INV-88203 (Summit Logistics): no PO on file, searches for matching contracts or blanket POs, finds none — routes to Houston procurement for PO creation",
+      "Catches INV-88206 (GlobalSteel): duplicate of INV-88201 — same PO, same amount, same vendor, 2 days apart. Blocks payment and alerts the manager",
+      "Auto-approves INV-88205 (DataForge): below $15K threshold, clean match, recurring vendor",
+      "Handles INV-88204 (Rheinmetall): converts EUR 67,300 at current ECB rate, applies to correct GL entity (2000)"
+    ],
+    "expectedOutput": "612 invoices auto-processed, 4 flagged for human review with context and recommended actions, 1 duplicate blocked, processing time reduced from 3 days to same-day for clean invoices"
+  },
+  "stats": [
+    { "value": "25%", "label": "Lower AP cost per invoice", "source": "Benchmarking" },
+    { "value": "32%", "label": "Faster invoice-to-approval cycle", "source": "Benchmarking" },
+    { "value": "3%", "label": "More accurate POs (first-time error-free)", "source": "Benchmarking" },
+    { "value": "35%", "label": "AP cycle time improvement by 2027", "source": "Data Story" }
+  ],
+  "benchmarks": { "apCostPerInvoice": "$5.00", "cycleTime": "25 days", "errorFreeRate": "95%", "source": "Benchmarking" },
+  "adoption": { "traditionalAI": "30%", "genAI": "17%", "source": "Benchmarking" },
+  "feedsInto": ["cash-flow-liquidity", "journal-entry-reconciliation"],
+  "receivesFrom": [],
+  "data": {
+    "invoicesAP": [
+      { "invoice": "INV-88201", "supplier": "GlobalSteel Corp", "amount": "$342,000", "poMatch": "3-way match", "status": "Pending approval", "issue": "Clean" },
+      { "invoice": "INV-88202", "supplier": "Shenzhen Precision", "amount": "$128,500", "poMatch": "2-way match", "status": "Pending approval", "issue": "Price variance +3.2% vs. PO" },
+      { "invoice": "INV-88203", "supplier": "Summit Logistics", "amount": "$18,700", "poMatch": "No PO", "status": "Flagged", "issue": "No purchase order on file" },
+      { "invoice": "INV-88204", "supplier": "Rheinmetall Alloys", "amount": "EUR 67,300", "poMatch": "3-way match", "status": "Pending FX", "issue": "EUR to USD conversion needed" },
+      { "invoice": "INV-88205", "supplier": "DataForge IT", "amount": "$12,000", "poMatch": "Match", "status": "Auto-approved", "issue": "Below threshold" },
+      { "invoice": "INV-88206", "supplier": "GlobalSteel Corp", "amount": "$342,000", "poMatch": "3-way match", "status": "Flagged", "issue": "Duplicate of INV-88201" }
+    ],
+    "vendors": [
+      { "supplier": "GlobalSteel Corp", "category": "Raw Materials", "region": "Americas", "annualSpend": "$185M", "paymentTerms": "Net-30", "invoiceVolume": "~800/month" },
+      { "supplier": "Rheinmetall Alloys GmbH", "category": "Raw Materials", "region": "Europe", "annualSpend": "$92M", "paymentTerms": "Net-45", "invoiceVolume": "~400/month" },
+      { "supplier": "Shenzhen Precision Parts", "category": "Contract Mfg", "region": "APAC", "annualSpend": "$78M", "paymentTerms": "Net-60", "invoiceVolume": "~600/month" },
+      { "supplier": "Summit Logistics Inc.", "category": "Freight/Logistics", "region": "Americas", "annualSpend": "$45M", "paymentTerms": "Net-30", "invoiceVolume": "~1,200/month" },
+      { "supplier": "KuboTech Industries", "category": "MRO/Tooling", "region": "APAC", "annualSpend": "$28M", "paymentTerms": "Net-30", "invoiceVolume": "~350/month" },
+      { "supplier": "DataForge IT Solutions", "category": "IT Services", "region": "Americas", "annualSpend": "$12M", "paymentTerms": "Net-30", "invoiceVolume": "~50/month" }
+    ]
+  }
+}

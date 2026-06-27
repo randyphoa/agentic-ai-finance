@@ -1,0 +1,45 @@
+{
+  "id": "cash-flow-liquidity",
+  "name": "Cash Flow & Liquidity",
+  "type": "supervisor",
+  "category": "Supervisor Agent",
+  "persona": { "id": "treasury-analyst", "title": "Treasury Analyst", "fullTitle": "Senior Treasury Analyst" },
+  "scenario": {
+    "summary": "90-day cash forecast — Osaka capex, at-risk receivables, elevated AP",
+    "situation": "Mid-November. The Treasury Analyst needs to assess Meridian's cash position for the next 90 days. Q4 is cash-intensive: $45M in capital expenditure commitments (new Osaka production line), $28M in annual insurance renewals, and year-end bonus payouts ($12M). Meanwhile, two large receivables are at risk (Continental EUR 890K and Pacific Dynamics $415K), and the raw material price spike is pushing AP spend higher than planned. The CFO wants to know: can we fund the Osaka capex without drawing on the credit facility?",
+    "dataInputs": [
+      "Current cash balances by entity",
+      "Q4 forecast v2 revenue and cost projections",
+      "AR aging with risk scores",
+      "AP committed payment schedule",
+      "Capital expenditure commitments",
+      "Insurance and bonus payout schedules"
+    ],
+    "agentSteps": [
+      "Step 1 — Financial Forecasting provides the 90-day cash flow projection: expected revenue collections based on Q4 forecast v2 ($1.28B), operating expenses, known commitments (capex, insurance, bonuses)",
+      "Step 2 — Collections & Receivables provides expected inflows: risk-scored receivables portfolio with predicted payment dates. Flags Continental and Pacific Dynamics as at-risk inflows — $1.3M that may not arrive on schedule",
+      "Step 3 — Invoice & AP Processing provides expected outflows: committed AP payments for next 90 days, $18M due next week, $24M the following week, with $8M in discretionary payments that could be delayed",
+      "Synthesis: Supervisor consolidates into a unified cash position — base case (ending cash $62M, capex fundable), downside case (cash dips to $14M in week 8 if receivables fail), recommendation to accelerate collections and delay $8M discretionary AP"
+    ],
+    "expectedOutput": "90-day rolling cash forecast with three scenarios, AR risk exposure, AP optimization recommendations, capex funding analysis, weekly monitoring cadence"
+  },
+  "stats": [
+    { "value": "29%", "label": "DSO reduction by 2027", "source": "Data Story" },
+    { "value": "35%", "label": "AP cycle time improvement by 2027", "source": "Data Story" },
+    { "value": "33%", "label": "AR cycle time reduction by 2027", "source": "Data Story" }
+  ],
+  "orchestrates": ["financial-forecasting", "collections-receivables", "invoice-ap-processing"],
+  "feedsInto": ["risk-performance"],
+  "receivesFrom": ["financial-forecasting", "collections-receivables", "invoice-ap-processing"],
+  "data": {
+    "synthesis": {
+      "baseCase": { "endingCash": "$62M", "capexFundable": true, "creditFacilityNeeded": false },
+      "downsideCase": { "endingCash": "$14M", "week": 8, "trigger": "Continental and Pacific Dynamics don't pay, plus 2 more automotive customers delay" },
+      "recommendations": [
+        "Accelerate collections on Continental (CFO-level escalation this week)",
+        "Delay $8M in discretionary AP payments by 15 days as a precaution",
+        "Monitor weekly"
+      ]
+    }
+  }
+}

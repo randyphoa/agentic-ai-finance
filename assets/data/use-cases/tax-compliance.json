@@ -1,0 +1,49 @@
+{
+  "id": "tax-compliance",
+  "name": "Tax & Compliance",
+  "type": "specialist",
+  "category": "Regulatory & Compliance",
+  "persona": { "id": "tax-compliance-manager", "title": "Tax & Compliance", "fullTitle": "Tax & Compliance Manager" },
+  "scenario": {
+    "summary": "November tax provisions across 5 jurisdictions and 6 APAC entities — HNTE renewal, BOI promotion, transfer pricing reviews",
+    "situation": "It's late November. The Tax & Compliance Manager is preparing monthly tax provisions for all 6 entities across 5 jurisdictions (Singapore, Malaysia, China, Thailand). November tax provisions need to reflect the raw material cost spike (impacting deferred tax assets), intercompany transfer pricing adjustments, Shanghai HNTE renewal due with \u00a532M exposure, and Rayong BOI promotion expiring with \u0e3f42M/year impact. Transfer pricing documentation for Penang needs review, and R&D deductions under Singapore's enhanced scheme need to be applied.",
+    "dataInputs": [
+      "November trial balances for all 6 entities",
+      "Intercompany transaction log and transfer pricing documentation",
+      "Tax rate schedules by jurisdiction (Singapore, Malaysia, China, Thailand)",
+      "R&D expenditure detail for Singapore entity",
+      "Deferred tax asset/liability register",
+      "Shanghai HNTE certification and renewal documentation",
+      "Rayong BOI promotion terms and expiration schedule"
+    ],
+    "agentSteps": [
+      "Calculates monthly tax provisions for each entity: Singapore corporate income tax at 17%, Malaysia corporate tax at 24%, China enterprise income tax at 25%/15% HNTE, Thailand corporate tax at 20%/10% BOI",
+      "Identifies transfer pricing exposure: 3 intercompany transactions with margins outside arm's-length range — recommends adjustments for Penang entity documentation",
+      "Processes Singapore R&D deduction: validates qualifying expenditure, calculates enhanced deduction, adjusts 1000 provision from S$42M to S$39.4M",
+      "Assesses Shanghai HNTE renewal risk: \u00a532M exposure if 15% preferential rate reverts to standard 25% — flags documentation requirements",
+      "Evaluates Rayong BOI promotion expiration: \u0e3f42M/year impact when 10% preferential rate reverts to standard 20% — recommends renewal application timeline",
+      "Reviews Penang transfer pricing: flags documentation gaps in cost-plus methodology for manufacturing services to Singapore HQ",
+      "Generates compliance dashboard: entity-level tax provision summary, transfer pricing risk heat map, HNTE/BOI renewal tracker, and jurisdiction rate comparison"
+    ],
+    "expectedOutput": "November tax provision package for 6 entities across 5 jurisdictions, transfer pricing adjustment recommendations for Penang, HNTE renewal action plan (\u00a532M exposure), BOI promotion renewal timeline (\u0e3f42M/year impact), and R&D deduction documentation"
+  },
+  "stats": [
+    { "value": "147%", "label": "More advanced analytics for risk management", "source": "Advanced Analytics" },
+    { "value": "114%", "label": "More fraud detection capability", "source": "Advanced Analytics" },
+    { "value": "80%", "label": "Adopting or planning compliance analytics", "source": "Advanced Analytics" },
+    { "value": "5", "label": "Jurisdictions across APAC entities", "source": "Demo Spec" }
+  ],
+  "adoption": { "traditionalAI": "37%", "genAI": "13%", "source": "Advanced Analytics" },
+  "feedsInto": ["period-end-close", "risk-performance"],
+  "receivesFrom": [],
+  "data": {
+    "provisions": [
+      { "entity": "Meridian Technologies Pte Ltd (1000)", "jurisdiction": "Singapore Corporate Income Tax", "provision": "S$39.4M", "effectiveRate": "17%", "status": "Calculated", "notes": "Adjusted for R&D enhanced deduction; base provision S$42M reduced by S$2.6M R&D benefit" },
+      { "entity": "Meridian Manufacturing Sdn Bhd (2000)", "jurisdiction": "Malaysia Corporate Tax", "provision": "MYR 38M", "effectiveRate": "24%", "status": "Pending review", "notes": "Transfer pricing review needed — cost-plus documentation gaps for manufacturing services" },
+      { "entity": "Meridian Components Sdn Bhd (2100)", "jurisdiction": "Malaysia Corporate Tax", "provision": "MYR 12M", "effectiveRate": "24%", "status": "Calculated", "notes": "Clean — no transfer pricing adjustments required" },
+      { "entity": "Meridian (Shanghai) Co. Ltd (3000)", "jurisdiction": "China Enterprise Income Tax", "provision": "\u00a558M", "effectiveRate": "25% / 15% HNTE", "status": "Pending review", "notes": "HNTE certification renewal due — \u00a532M exposure if preferential 15% rate reverts to standard 25%" },
+      { "entity": "Meridian (Shenzhen) Co. Ltd (3100)", "jurisdiction": "China Enterprise Income Tax", "provision": "\u00a542M", "effectiveRate": "25%", "status": "Calculated", "notes": "Clean — standard rate applies" },
+      { "entity": "Meridian Thai Co. Ltd (4000)", "jurisdiction": "Thailand Corporate Tax", "provision": "\u0e3f85M", "effectiveRate": "20% / 10% BOI", "status": "Pending review", "notes": "BOI promotion expiring — \u0e3f42M/year impact when preferential 10% rate reverts to standard 20%" }
+    ]
+  }
+}

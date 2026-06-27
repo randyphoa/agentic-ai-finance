@@ -1,0 +1,47 @@
+{
+  "id": "journal-entry-reconciliation",
+  "name": "Journal Entry & Reconciliation",
+  "type": "specialist",
+  "category": "Record-to-Report",
+  "persona": { "id": "controller", "title": "Controller", "fullTitle": "Corporate Controller" },
+  "scenario": {
+    "summary": "November close day 1 — 1,200 entries across 6 entities",
+    "situation": "November month-end close, day 1. The Controller needs to process and reconcile ~1,200 journal entries across 6 entities before the close deadline (business day 4). Key items: intercompany eliminations between Shanghai and Houston ($2.4M component transfers), FX revaluation for EUR and JPY positions, Q4 bonus accrual ($890K), depreciation across 12 plants, and inventory valuation adjustments. Last month, the team found 3 misclassified entries on day 3 that required rework.",
+    "dataInputs": [
+      "Trial balances for all 6 entities",
+      "Sub-ledger data (AP, AR, inventory, fixed assets)",
+      "Intercompany transaction log",
+      "FX rates (ECB, BOJ)",
+      "Depreciation schedules",
+      "Accrual policies",
+      "Prior month entries for pattern matching"
+    ],
+    "agentSteps": [
+      "Auto-generates recurring entries: depreciation for all 12 plants, standard accruals, prepaid amortization — 340 entries posted automatically with zero manual input",
+      "Processes intercompany: matches Shanghai to Houston component transfers against receipts, generates elimination entries, identifies a $48K timing difference (goods in transit) and creates the appropriate accrual",
+      "Runs FX revaluation: recalculates EUR and JPY positions at month-end rates, flags JE-9005 (JPY 12M FX revaluation) as unusual — 3x the historical average due to unhedged JPY receivable",
+      "Validates all entries against GL account rules, historical patterns, and materiality thresholds, catches a $12K entry posted to the wrong cost center (CC-310 instead of CC-300) and auto-corrects",
+      "Reconciles sub-ledgers to GL: AR sub-ledger matches to 1100 accounts, AP sub-ledger matches to 2010 accounts, identifies and resolves 2 minor timing differences"
+    ],
+    "expectedOutput": "1,200 entries processed — 340 auto-posted, 820 validated and posted, 40 routed for human review with context. Intercompany eliminations complete. Sub-ledger reconciliation done. Close timeline: day 1 tasks complete by end of day (vs. typical day 2 completion)."
+  },
+  "stats": [
+    { "value": "31%", "label": "Lower journal entry cost", "source": "Benchmarking" },
+    { "value": "33%", "label": "Faster monthly close", "source": "Benchmarking" },
+    { "value": "2%", "label": "More accurate entries (first-time error-free)", "source": "Benchmarking" },
+    { "value": "23%", "label": "Enhancement in touchless continuous close by 2027", "source": "Data Story" }
+  ],
+  "benchmarks": { "journalEntryCost": "$4.67", "cycleTime": "6 days", "errorFreeRate": "96%", "source": "Benchmarking" },
+  "adoption": { "traditionalAI": "25%", "genAI": "13%", "source": "Benchmarking" },
+  "feedsInto": ["financial-reporting"],
+  "receivesFrom": ["invoice-ap-processing", "collections-receivables"],
+  "data": {
+    "journalEntries": [
+      { "entry": "JE-9001", "entity": "1000", "account": "5100/1200", "description": "Raw material consumption — Chicago", "debit": "$1.8M", "credit": "$1.8M", "status": "Auto-posted" },
+      { "entry": "JE-9002", "entity": "3100>1100", "account": "1400/2200", "description": "Intercompany — Shanghai to Houston", "debit": "$2.4M", "credit": "$2.4M", "status": "Pending review" },
+      { "entry": "JE-9003", "entity": "2000", "account": "6300/1300", "description": "Depreciation — Munich plant", "debit": "EUR 340K", "credit": "EUR 340K", "status": "Auto-posted" },
+      { "entry": "JE-9004", "entity": "1000", "account": "2100/6100", "description": "Accrued bonus — Q4", "debit": "$890K", "credit": "$890K", "status": "Pending approval" },
+      { "entry": "JE-9005", "entity": "3000", "account": "7100", "description": "FX revaluation — JPY exposure", "debit": "JPY 12M", "credit": null, "status": "Unusual amount" }
+    ]
+  }
+}
