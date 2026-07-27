@@ -1,0 +1,58 @@
+{
+  "id": "intercompany-reconciliation",
+  "name": "Intercompany Reconciliation",
+  "type": "specialist",
+  "category": "Record-to-Report",
+  "persona": { "id": "intercompany-accountant", "title": "IC Accountant", "fullTitle": "Intercompany Accountant" },
+  "scenario": {
+    "summary": "November month-end intercompany reconciliation — 148 transactions across 6 entities",
+    "situation": "It's the last week of November. The Intercompany Accountant needs to reconcile all intercompany transactions for the month-end close. There are 148 transactions across the 6 APAC entities — including raw material transfers from Shanghai to Penang, management fee allocations from Singapore HQ to all subsidiaries, contract manufacturing charges from Rayong, and shared services billings. Transfer pricing documentation needs to be verified for arm's-length compliance. Once reconciled, elimination entries must be generated for the consolidated trial balance before Financial Reporting can produce the group financials.",
+    "dataInputs": [
+      "Intercompany transaction log (148 transactions)",
+      "Entity-level trial balances (6 entities)",
+      "Transfer pricing policies and arm's-length documentation",
+      "Intercompany agreements and billing schedules",
+      "FX rates for multi-currency settlements (SGD, MYR, CNY, THB)",
+      "Prior month reconciliation carryforward items",
+      "Management fee allocation methodology"
+    ],
+    "agentSteps": [
+      "Ingests 148 intercompany transactions and auto-matches by counterparty, amount, and reference — 131 transactions (89%) match cleanly",
+      "Identifies 17 unmatched items: 7 timing differences (booked in different periods), 5 FX rounding variances, 3 amount mismatches, 2 missing counterparty entries",
+      "Resolves timing differences: 5 of 7 are within 3-day tolerance and auto-cleared, 2 require journal entries to align periods",
+      "Calculates FX impact on intercompany balances: S$1.8M net exposure from CNY/SGD and THB/SGD movements — generates FX adjustment entries",
+      "Validates transfer pricing: flags 3 transactions where markup falls outside arm's-length range (raw materials Shanghai\u2192Penang, contract manufacturing Rayong\u2192Singapore, shared services Singapore\u2192Shenzhen)",
+      "Generates elimination entries: 74 elimination JEs totaling S$89M in intercompany revenue/expense and S$52M in intercompany receivables/payables",
+      "Produces reconciliation report: matched vs. unmatched summary, aging of open items, FX impact analysis, and transfer pricing exception report for Tax & Compliance review"
+    ],
+    "expectedOutput": "Complete intercompany reconciliation: 131 auto-matched (89%), 17 exceptions resolved or routed, 74 elimination entries for consolidated trial balance, FX adjustment entries (S$1.8M), and transfer pricing exception report"
+  },
+  "stats": [
+    { "value": "31%", "label": "Productivity improvement in R2R", "source": "Modernize R2R" },
+    { "value": "5x", "label": "Faster reconciliation preparation", "source": "Modernize R2R" },
+    { "value": "50%", "label": "Close cycle time reduction", "source": "Modernize R2R" },
+    { "value": "38%", "label": "Lower cost per journal entry", "source": "Modernize R2R" }
+  ],
+  "adoption": { "traditionalAI": "25%", "genAI": "13%", "source": "Benchmarking" },
+  "feedsInto": ["financial-reporting"],
+  "receivesFrom": ["journal-entry-reconciliation"],
+  "data": {
+    "transactions": [
+      { "txnId": "IC-5001", "fromEntity": "Meridian (Shanghai) Co. Ltd (3000)", "toEntity": "Meridian Manufacturing Sdn Bhd (2000)", "amount": "¥18,200,000", "currency": "CNY", "type": "Raw Material Transfer", "matchStatus": "Matched" },
+      { "txnId": "IC-5002", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian Manufacturing Sdn Bhd (2000)", "amount": "S$2,400,000", "currency": "SGD", "type": "Management Fee Allocation", "matchStatus": "Matched" },
+      { "txnId": "IC-5003", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian (Shanghai) Co. Ltd (3000)", "amount": "S$1,850,000", "currency": "SGD", "type": "IP Royalty", "matchStatus": "Matched" },
+      { "txnId": "IC-5004", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian Thai Co. Ltd (4000)", "amount": "S$1,200,000", "currency": "SGD", "type": "Management Fee Allocation", "matchStatus": "Matched" },
+      { "txnId": "IC-5005", "fromEntity": "Meridian Thai Co. Ltd (4000)", "toEntity": "Meridian Technologies Pte Ltd (1000)", "amount": "฿38,500,000", "currency": "THB", "type": "Contract Manufacturing", "matchStatus": "Matched" },
+      { "txnId": "IC-5006", "fromEntity": "Meridian (Shanghai) Co. Ltd (3000)", "toEntity": "Meridian (Shenzhen) Co. Ltd (3100)", "amount": "¥12,800,000", "currency": "CNY", "type": "Component Transfer", "matchStatus": "Matched" },
+      { "txnId": "IC-5007", "fromEntity": "Meridian Manufacturing Sdn Bhd (2000)", "toEntity": "Meridian Technologies Pte Ltd (1000)", "amount": "MYR 8,900,000", "currency": "MYR", "type": "Finished Goods Transfer", "matchStatus": "Matched" },
+      { "txnId": "IC-5008", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian (Shenzhen) Co. Ltd (3100)", "amount": "S$950,000", "currency": "SGD", "type": "Shared Services", "matchStatus": "Amount mismatch — S$18K variance" },
+      { "txnId": "IC-5009", "fromEntity": "Meridian Components Sdn Bhd (2100)", "toEntity": "Meridian Manufacturing Sdn Bhd (2000)", "amount": "MYR 4,200,000", "currency": "MYR", "type": "Component Transfer", "matchStatus": "Matched" },
+      { "txnId": "IC-5010", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian Components Sdn Bhd (2100)", "amount": "S$680,000", "currency": "SGD", "type": "Management Fee Allocation", "matchStatus": "Matched" },
+      { "txnId": "IC-5011", "fromEntity": "Meridian (Shenzhen) Co. Ltd (3100)", "toEntity": "Meridian Thai Co. Ltd (4000)", "amount": "¥6,500,000", "currency": "CNY", "type": "Tooling Transfer", "matchStatus": "Timing — booked in different periods" },
+      { "txnId": "IC-5012", "fromEntity": "Meridian Thai Co. Ltd (4000)", "toEntity": "Meridian Manufacturing Sdn Bhd (2000)", "amount": "฿15,200,000", "currency": "THB", "type": "Sub-assembly Transfer", "matchStatus": "Matched" },
+      { "txnId": "IC-5013", "fromEntity": "Meridian Technologies Pte Ltd (1000)", "toEntity": "Meridian (Shanghai) Co. Ltd (3000)", "amount": "S$3,100,000", "currency": "SGD", "type": "R&D Cost Sharing", "matchStatus": "FX rounding — ¥8K variance" },
+      { "txnId": "IC-5014", "fromEntity": "Meridian Manufacturing Sdn Bhd (2000)", "toEntity": "Meridian Components Sdn Bhd (2100)", "amount": "MYR 2,100,000", "currency": "MYR", "type": "Quality Testing Services", "matchStatus": "Missing counterparty entry" },
+      { "txnId": "IC-5015", "fromEntity": "Meridian (Shanghai) Co. Ltd (3000)", "toEntity": "Meridian Technologies Pte Ltd (1000)", "amount": "¥22,400,000", "currency": "CNY", "type": "Finished Goods Transfer", "matchStatus": "Matched" }
+    ]
+  }
+}

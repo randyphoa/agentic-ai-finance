@@ -1,0 +1,49 @@
+{
+  "id": "variance-analysis",
+  "name": "Variance Analysis",
+  "type": "specialist",
+  "category": "Financial Planning & Analysis",
+  "persona": { "id": "fpa-analyst", "title": "FP&A Analyst", "fullTitle": "Senior FP&A Analyst" },
+  "scenario": {
+    "summary": "Q4 budget-to-actual variance analysis — revenue shortfall, COGS overrun, SG&A savings",
+    "situation": "It's late November. The FP&A Analyst is building the Q4 variance analysis for the CFO's board package. October actuals are in, and November is trending. Precision Components missed revenue targets by 4.2% due to delayed aerospace orders. COGS is running 6.1% over budget across all divisions — driven by the raw material spike that hit in October. The one bright spot: Automation Systems SG&A is 3.8% under budget thanks to the headcount freeze. The analyst needs to decompose variances by division, identify root causes, and draft the variance commentary before the December board meeting.",
+    "dataInputs": [
+      "Q4 budget by division and cost center",
+      "October actuals from GL",
+      "November MTD actuals and accruals",
+      "Prior year Q4 actuals for trend comparison",
+      "Raw material price indices",
+      "Customer order pipeline from CRM",
+      "Headcount and compensation data"
+    ],
+    "agentSteps": [
+      "Pulls Q4 budget vs. actuals by division and line item — identifies 14 material variances exceeding 3% threshold",
+      "Decomposes Precision Components revenue shortfall: $5.2M volume variance (delayed aerospace orders) + $1.1M price variance (competitive discounting)",
+      "Traces COGS overrun to raw material spike: steel +8%, alloys +5.2% — quantifies $12.4M unfavorable purchase price variance across divisions",
+      "Identifies favorable SG&A variance in Automation Systems: $2.8M from headcount freeze + $0.9M from deferred consulting spend",
+      "Cross-references with Financial Forecasting agent's Q4 v2 forecast — validates that variance drivers are consistent with forecast assumptions",
+      "Generates variance commentary with waterfall chart data — revenue walk, margin bridge, and division-level explanations",
+      "Flags 3 variances requiring management action: Precision Components backlog recovery, raw material hedging strategy, Specialty Materials overtime trend"
+    ],
+    "expectedOutput": "Complete Q4 variance package: division-level P&L variance analysis, root cause decomposition for all material variances, variance commentary narrative, waterfall chart data, and 3 action items for CFO review"
+  },
+  "stats": [
+    { "value": "25%", "label": "Lower planning cost", "source": "Benchmarking" },
+    { "value": "33%", "label": "Faster budget cycles", "source": "Benchmarking" },
+    { "value": "4%", "label": "More accurate forecasts", "source": "Benchmarking" },
+    { "value": "24%", "label": "Forecast accuracy improvement by 2027", "source": "Data Story" }
+  ],
+  "adoption": { "traditionalAI": "26%", "genAI": "17%", "source": "Benchmarking" },
+  "feedsInto": ["financial-forecasting", "financial-reporting"],
+  "receivesFrom": ["financial-reporting"],
+  "data": {
+    "variances": [
+      { "division": "Precision Components", "metric": "Revenue", "budget": "$520M", "actual": "$498M", "variance": "-$22M (-4.2%)", "explanation": "Delayed aerospace orders ($5.2M volume) + competitive discounting ($1.1M price) + FX impact ($0.8M)" },
+      { "division": "Precision Components", "metric": "COGS", "budget": "$338M", "actual": "$358M", "variance": "+$20M (+5.9%)", "explanation": "Raw material spike: steel +8% ($12.4M purchase price variance), partially offset by volume decline" },
+      { "division": "Automation Systems", "metric": "Revenue", "budget": "$410M", "actual": "$405M", "variance": "-$5M (-1.2%)", "explanation": "Slight delay in Q4 project milestones — expected to catch up in December" },
+      { "division": "Automation Systems", "metric": "SG&A", "budget": "$73M", "actual": "$69.3M", "variance": "-$3.7M (-5.1%)", "explanation": "Headcount freeze savings ($2.8M) + deferred consulting spend ($0.9M)" },
+      { "division": "Specialty Materials", "metric": "Revenue", "budget": "$190M", "actual": "$188M", "variance": "-$2M (-1.1%)", "explanation": "Within tolerance — minor timing difference on two contracts" },
+      { "division": "Specialty Materials", "metric": "COGS", "budget": "$133M", "actual": "$142M", "variance": "+$9M (+6.8%)", "explanation": "Alloy price increase +5.2% ($6.1M) + overtime costs from expedited orders ($2.9M)" }
+    ]
+  }
+}
